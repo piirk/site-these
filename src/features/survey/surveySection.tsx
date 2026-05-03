@@ -13,7 +13,7 @@ interface SurveySectionProps {
  * - Isole le contenu éditorial ici (textes, id d'ancre)
  * - L'id="survey" est ce que les CTA du Hero ciblent via href="#survey"
  */
-export function QuestionnaireSection({ surveyUrl }: SurveySectionProps) {
+export function SurveySection({ surveyUrl }: SurveySectionProps) {
   return (
     <section
       id="survey"
