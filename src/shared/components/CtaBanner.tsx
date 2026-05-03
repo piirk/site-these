@@ -33,7 +33,7 @@ export function CtaBanner({
 }: CtaBannerProps) {
   return (
     <div
-      className={`cta-banner cta-banner--${variant} ${className}`.trim()}
+      className={`cta-banner cta-banner--${variant} ${className}`.trim()} // check clsx plus tard
       role="region"
       aria-label={title}
     >
