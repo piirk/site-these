@@ -109,3 +109,67 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* start scss moi */ 
+
+/* Sections */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.survey-section {
+  background: var(--accent-bg);
+}
+
+/* CTA Banner */
+.cta-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.cta-banner--highlight {
+  background: var(--accent-bg);
+}
+
+.cta-banner__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.cta-banner__description {
+  font-size: 1.1rem;
+  color: var(--text);
+  max-width: 540px;
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn--lg {
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+}
+ 
