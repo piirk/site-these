@@ -39,7 +39,7 @@ export interface MethodKeyword {
 }
 
 export interface SiteConfig {
-  questionnaireUrl: string // URL Tally, Typeform, etc.
+  surveyUrl: string // URL Tally, Typeform, etc.
   researchTitle: string
   researchTagline: string
 }
