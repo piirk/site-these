@@ -43,3 +43,8 @@ export interface SiteConfig {
   researchTitle: string
   researchTagline: string
 }
+
+export interface SurveyMeta {
+  participantCount?: number
+  estimatedDurationMinutes?: number
+}
