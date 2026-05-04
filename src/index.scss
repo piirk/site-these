@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Variables à intégrer dans ton système de design
 
 :root {
@@ -85,7 +87,7 @@
   transition: background 0.15s;
 
   &:hover {
-    background: darken(#eef4fa, 5%);
+    background: color.scale(#eef4fa, $lightness: -5%);
   }
 }
 
