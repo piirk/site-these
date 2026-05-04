@@ -1,19 +1,22 @@
 import { CtaBanner } from '../../shared/components/CtaBanner'
- 
+//import type { SurveyMeta } from '../../types'
+
 interface SurveySectionProps {
-  /** URL du questionnaire externe (Tally, Typeform, Framaforms…) */
   surveyUrl: string
+  /** Optionnel : données pour la preuve sociale */
+  //meta?: SurveyMeta
 }
- 
+
 /**
- * Section principale du site — appel à action questionnaire.
+ * Section questionnaire — objectif : maximiser le taux de clic.
  *
- * Choix de conception :
- * - Délègue le rendu visuel à CtaBanner (pas de doublon de structure)
- * - Isole le contenu éditorial ici (textes, id d'ancre)
- * - L'id="survey" est ce que les CTA du Hero ciblent via href="#survey"
+ * Stratégie UX :
+ * 1. Titre actionnable + durée explicite → réduit la friction perçue
+ * 2. Preuve sociale → rassure ("d'autres l'ont fait")
+ * 3. Réassurance triple → lève les objections principales
+ * 4. CTA unique et visible → pas de choix concurrent
  */
-export function SurveySection({ surveyUrl }: SurveySectionProps) {
+export function SurveySection({ surveyUrl }: SurveySectionProps) { // meta
   return (
     <section
       id="survey"
@@ -21,18 +24,34 @@ export function SurveySection({ surveyUrl }: SurveySectionProps) {
       className="section survey-section"
     >
       <CtaBanner
-        title="Donner mon avis (5 min)"
+        titleId="survey-title"
+        title="Votre vécu compte pour cette recherche"
+        eyebrow="Participez à l'étude · 5 minutes"
         description={DESCRIPTION}
-        ctaLabel="Répondre au questionnaire — 5 minutes suffisent"
+        ctaLabel="Répondre maintenant — 5 minutes suffisent"
         ctaUrl={surveyUrl}
+        socialProof="Déjà 47 personnes ont partagé leur expérience."
+        reassurances={REASSURANCES}
         variant="highlight"
       />
     </section>
   )
 }
- 
-// Isolé pour lisibilité et traduction future
+
+/*
+socialProof={meta?.participantCount
+  ? `Déjà ${meta.participantCount} personnes ont partagé leur expérience.`
+  : undefined
+}
+*/
+
 const DESCRIPTION =
-  "Cette recherche s'intéresse à des expériences vécues que vous connaissez peut-être. " +
-  "Votre regard, même anonyme, contribue directement à enrichir les résultats. " +
-  "Le questionnaire prend environ 5 minutes."
+  "Cette recherche explore des situations du quotidien que vous connaissez peut-être. " +
+  "Il n'y a pas de bonne ou mauvaise réponse — c'est votre expérience qui intéresse, " +
+  "pas vos connaissances."
+
+const REASSURANCES = [
+  { icon: '🔒', text: 'Anonyme et confidentiel' },
+  { icon: '⏱', text: '5 minutes environ' },
+  { icon: '📬', text: 'Aucune inscription requise' },
+]

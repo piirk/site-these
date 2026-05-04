@@ -1,58 +1,98 @@
 import { Button } from '../ui/Button'
- 
+
+interface Reassurance {
+  icon: string
+  text: string
+}
+
 interface CtaBannerProps {
-  /** Titre affiché en gros dans le bandeau */
+  /** Eyebrow : petit texte au-dessus du titre (contexte, durée) */
+  eyebrow?: string
+  /** id pour aria-labelledby depuis la section parente */
+  titleId?: string
   title: string
-  /** Texte d'accompagnement (optionnel) */
   description?: string
-  /** Texte du bouton */
   ctaLabel: string
-  /** URL cible du CTA */
   ctaUrl: string
-  /** Variante visuelle */
+  /** Phrase de preuve sociale */
+  socialProof?: string
+  /** Liste de réassurances (icône + texte court) */
+  reassurances?: Reassurance[]
   variant?: 'default' | 'highlight'
-  /** Classe CSS additionnelle pour personnalisation contextuelle */
   className?: string
 }
- 
+
 /**
- * Bandeau CTA générique.
- * Utilisé dans QuestionnaireSection (version pleine),
- * et peut être inséré entre d'autres sections (version compacte via className).
+ * CtaBanner enrichi pour maximiser la conversion.
  *
- * Choix : composant purement présentationnel, zéro logique interne.
- * Tout vient des props → facile à réutiliser sans surprise.
+ * Nouveaux éléments UX :
+ * - eyebrow : ancre le contexte avant le titre
+ * - socialProof : "Déjà N personnes ont répondu" — preuve sociale
+ * - reassurances : lève les 3 objections classiques (anonymat, durée, inscription)
+ *
+ * Toujours purement présentationnel — zéro logique interne.
  */
 export function CtaBanner({
+  eyebrow,
+  titleId,
   title,
   description,
   ctaLabel,
   ctaUrl,
+  socialProof,
+  reassurances,
   variant = 'default',
   className = '',
 }: CtaBannerProps) {
   return (
     <div
-      className={`cta-banner cta-banner--${variant} ${className}`.trim()} // check clsx plus tard
+      className={`cta-banner cta-banner--${variant} ${className}`.trim()}
       role="region"
-      aria-label={title}
+      aria-labelledby={titleId}
     >
-      <div className="cta-banner__content">
-        <h2 className="cta-banner__title">{title}</h2>
+      <div className="cta-banner__body">
+        {eyebrow && (
+          <p className="cta-banner__eyebrow" aria-hidden="true">
+            {eyebrow}
+          </p>
+        )}
+
+        <h2 id={titleId} className="cta-banner__title">
+          {title}
+        </h2>
+
         {description && (
           <p className="cta-banner__description">{description}</p>
         )}
+
+        {socialProof && (
+          <p className="cta-banner__social-proof" aria-live="polite">
+            ✓ {socialProof}
+          </p>
+        )}
       </div>
- 
-      <Button
-        as="a"
-        href={ctaUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        label={ctaLabel}
-        variant="primary"
-        size="lg"
-      />
+
+      <div className="cta-banner__action">
+        <Button
+          as="a"
+          href={ctaUrl}
+          target="_blank"
+          label={ctaLabel}
+          variant="primary"
+          size="lg"
+        />
+
+        {reassurances && reassurances.length > 0 && (
+          <ul className="cta-banner__reassurances" aria-label="Informations pratiques">
+            {reassurances.map(({ icon, text }) => (
+              <li key={text} className="cta-banner__reassurance-item">
+                <span aria-hidden="true">{icon}</span>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   )
 }
