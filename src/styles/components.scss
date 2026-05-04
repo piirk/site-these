@@ -1,0 +1,116 @@
+// ── CtaBanner ─────────────────────────────────────────────────────────────────
+
+.cta-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 4rem 1.5rem;
+
+  &--highlight {
+    background: var(--color-surface-emphasis);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+}
+
+.cta-banner__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cta-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-banner__description {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.cta-banner__social-proof {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.cta-banner__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cta-banner__reassurances {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cta-banner__reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+// ── Button ────────────────────────────────────────────────────────────────────
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: opacity 0.15s, transform 0.15s, background 0.15s;
+
+  &:hover  { opacity: 0.92; transform: translateY(-1px); }
+  &:active { transform: translateY(0); }
+
+  &--primary {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    &:hover { background: var(--color-accent-hover); opacity: 1; }
+  }
+
+  &--secondary {
+    background: transparent;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-text);
+  }
+
+  &--sm  { padding: 0.5rem 1rem;    font-size: 0.875rem; }
+  &--md  { padding: 0.7rem 1.5rem;  font-size: 1rem; }
+  &--lg  { padding: 0.95rem 2.25rem; font-size: 1.1rem; }
+}

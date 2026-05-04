@@ -1,0 +1,77 @@
+// ── Tooltip Radix ─────────────────────────────────────────────────────────────
+
+.tooltip-content {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.875rem;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  max-width: 260px;
+  box-shadow: var(--shadow-tooltip);
+  user-select: none;
+
+  &[data-state='delayed-open'] { animation: tooltip-in 150ms ease; }
+  &[data-state='closed']       { animation: tooltip-out 100ms ease; }
+}
+
+.tooltip-arrow { fill: var(--color-text); }
+
+@keyframes tooltip-in {
+  from { opacity: 0; transform: translateY(4px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes tooltip-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+// ── Keyword (terme cliquable, utilisé avec Tooltip) ───────────────────────────
+
+.keyword {
+  color: var(--color-keyword);
+  background: var(--color-keyword-bg);
+  border-bottom: 1.5px dashed currentColor;
+  border-radius: 2px;
+  padding: 0 3px;
+  cursor: help;
+  font-style: italic;
+  transition: background 0.15s;
+
+  &:hover { background: #daeaf7; }
+}
+
+// ── Dialog Radix (pour futures modales "en savoir plus") ──────────────────────
+
+.dialog-overlay {
+  background: rgba(26, 24, 22, 0.55);
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(2px);
+
+  &[data-state='open'] { animation: overlay-in 200ms ease; }
+}
+
+.dialog-content {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 540px;
+  width: 90vw;
+  box-shadow: 0 16px 48px rgba(0,0,0,.2);
+  font-family: var(--font-body);
+
+  &[data-state='open'] {
+    animation: dialog-in 220ms cubic-bezier(.16, 1, .3, 1);
+  }
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}

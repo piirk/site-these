@@ -1,0 +1,123 @@
+// _global.scss — Reset minimal + styles de base
+// body, #root, typographie globale, sections
+
+// ── Reset ─────────────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ── Base document ─────────────────────────────────────────────────────────────
+
+html {
+  // Scroll fluide pour les ancres (#hero, #survey…)
+  scroll-behavior: smooth;
+
+  // Décalage pour compenser la navbar sticky
+  // La navbar fait --navbar-height, on compense au scroll
+  scroll-padding-top: calc(var(--navbar-height) + 1rem);
+
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;    // 17px — confortable pour la lecture longue
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ── #root ─────────────────────────────────────────────────────────────────────
+
+#root {
+  // Crée un contexte d'empilement propre
+  isolation: isolate;
+
+  // Décale le contenu sous la navbar sticky
+  padding-top: var(--navbar-height);
+}
+
+// ── Typographie globale ───────────────────────────────────────────────────────
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+p {
+  max-width: 65ch; // lisibilité optimale
+  margin: auto;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--duration-fast);
+
+  &:hover { opacity: 0.8; }
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+// ── Sections ──────────────────────────────────────────────────────────────────
+
+.section {
+  padding: var(--section-padding-y) var(--content-padding-x);
+}
+
+// Conteneur centré réutilisable
+.section__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+// Titre de section avec petite ligne décorative
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  margin-bottom: 1.5rem;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 3px;
+    background: var(--color-accent);
+    margin-top: 0.75rem;
+    border-radius: 2px;
+  }
+}
+
+// ── Accessibilité ─────────────────────────────────────────────────────────────
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
