@@ -583,5 +583,100 @@ img, svg {
     display: flex;
   }
 }
+.hero-section {
+  min-height: calc(100svh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  background-image: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(200, 90, 42, 0.05) 0%, transparent 70%);
+}
+
+.hero-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--content-padding-x);
+}
+
+.hero-section__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  padding-left: 0.875rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+.hero-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-section__lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 2.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hero-section__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.hero-section__scroll-hint {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: 0.4;
+  animation: scroll-hint-bounce 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-section__scroll-hint {
+    display: none;
+  }
+}
+
+.hero-section__scroll-arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  transform: rotate(45deg);
+}
+
+@keyframes scroll-hint-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+@media (max-width: 480px) {
+  .hero-section__cta-group {
+    flex-direction: column;
+  }
+  .hero-section__cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

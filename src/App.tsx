@@ -3,7 +3,7 @@
 
 import { Navbar } from './features/layout/Navbar'
 import { SurveySection } from './features/survey/SurveySection'
-// import { HeroSection }   from './features/hero/HeroSection'
+import { HeroSection }   from './features/hero/HeroSection'
 // import { WhySection }    from './features/why/WhySection'
 // import { PeopleSection } from './features/people/PeopleSection'
 // import { MethodSection } from './features/method/MethodSection'
@@ -19,7 +19,7 @@ export function App() {
 
       <main>
         {/* Chaque section a son id qui correspond aux NAV_ITEMS */}
-        <section id="hero"    className="section"><p>Hero</p></section>
+        <HeroSection surveyUrl={siteConfig.surveyUrl} />
         <section id="why"     className="section"><p>Why</p></section>
         <section id="people"  className="section"><p>People</p></section>
         <section id="method"  className="section"><p>Method</p></section>

@@ -1,0 +1,128 @@
+// _hero.scss — HeroSection
+// Objectif : impact immédiat, hiérarchie claire, CTA visible
+
+.hero-section {
+  // Hauteur minimale : plein écran moins la navbar
+  // L'utilisateur voit la section entière sans scroller
+  min-height: calc(100svh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+
+  // Texture de fond très subtile — grain papier
+  // Renforce l'identité "recherche / académique chaleureux"
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 60% 40%,
+      rgba(200, 90, 42, 0.05) 0%,   // halo accent très dilué
+      transparent 70%
+    );
+}
+
+.hero-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // alignement gauche — plus dynamique que centré
+  gap: 0;                  // on gère les espaces via margin pour plus de contrôle
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--content-padding-x);
+}
+
+// ── Eyebrow ───────────────────────────────────────────────────────────────────
+
+.hero-section__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+
+  // Petite ligne à gauche — ancre visuelle
+  padding-left: 0.875rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+// ── Titre h1 ──────────────────────────────────────────────────────────────────
+
+.hero-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+
+  // Soulignement accent sur la dernière ligne
+  // Technique : le <br> crée deux lignes, on cible le dernier mot
+  // Alternative simple : un span.hero-section__title-accent si besoin
+}
+
+// ── Chapeau ───────────────────────────────────────────────────────────────────
+
+.hero-section__lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 52ch; // légèrement moins large que le titre
+  margin-bottom: 2.5rem;
+
+  // Override du margin: auto global sur p
+  // Ici on veut l'alignement gauche
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// ── Groupe CTA ────────────────────────────────────────────────────────────────
+
+.hero-section__cta-group {
+  display: flex;
+  flex-wrap: wrap; // passe en colonne sur petit mobile
+  gap: 1rem;
+  margin-bottom: 4rem;
+
+  // Le premier bouton (Survey) est naturellement mis en avant
+  // par son variant primary — pas besoin d'autre artifice
+}
+
+// ── Scroll hint ───────────────────────────────────────────────────────────────
+
+.hero-section__scroll-hint {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: 0.4;
+  animation: scroll-hint-bounce 2s ease-in-out infinite;
+
+  // Disparaît si l'utilisateur a une préférence no-motion
+  @media (prefers-reduced-motion: reduce) {
+    display: none;
+  }
+}
+
+.hero-section__scroll-arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  transform: rotate(45deg);
+}
+
+@keyframes scroll-hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+
+@media (max-width: 480px) {
+  .hero-section__cta-group {
+    flex-direction: column;
+
+    // Sur mobile, les deux boutons prennent toute la largeur
+    .btn { width: 100%; justify-content: center; }
+  }
+}
