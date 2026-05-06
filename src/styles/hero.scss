@@ -37,6 +37,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-accent);
+  margin: 0;
   margin-bottom: 1.25rem;
 
   // Petite ligne à gauche — ancre visuelle
@@ -80,7 +81,9 @@
 .hero-section__cta-group {
   display: flex;
   flex-wrap: wrap; // passe en colonne sur petit mobile
+  justify-content: space-between;
   gap: 1rem;
+  width: 100%;
   margin-bottom: 4rem;
 
   // Le premier bouton (Survey) est naturellement mis en avant
@@ -93,7 +96,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  opacity: 0.4;
+  opacity: 0.1;
   animation: scroll-hint-bounce 2s ease-in-out infinite;
 
   // Disparaît si l'utilisateur a une préférence no-motion

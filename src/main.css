@@ -607,6 +607,7 @@ img, svg {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-accent);
+  margin: 0;
   margin-bottom: 1.25rem;
   padding-left: 0.875rem;
   border-left: 2px solid var(--color-accent);
@@ -635,7 +636,9 @@ img, svg {
 .hero-section__cta-group {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 1rem;
+  width: 100%;
   margin-bottom: 4rem;
 }
 
@@ -643,7 +646,7 @@ img, svg {
   display: flex;
   justify-content: center;
   width: 100%;
-  opacity: 0.4;
+  opacity: 0.1;
   animation: scroll-hint-bounce 2s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
