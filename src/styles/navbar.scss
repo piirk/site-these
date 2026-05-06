@@ -74,6 +74,7 @@
   border-radius: var(--radius-sm);
   transition: color var(--duration-fast), background var(--duration-fast);
   position: relative;
+  white-space: nowrap;
 
   &:hover {
     color: var(--color-text);
@@ -214,7 +215,7 @@
 
 // ── Responsive ────────────────────────────────────────────────────────────────
 
-@media (max-width: 767px) {
+@media (max-width: 840px) {
   .navbar__links { display: none; }
   .navbar__cta   { display: none; }
   .navbar__burger { display: flex; }
