@@ -6,7 +6,7 @@ import { SurveySection } from './features/survey/SurveySection'
 import { HeroSection }   from './features/hero/HeroSection'
 import { WhySection }    from './features/why/WhySection'
 // import { PeopleSection } from './features/people/PeopleSection'
-// import { MethodSection } from './features/method/MethodSection'
+import { MethodSection } from './features/method/MethodSection'
 // import { ResultsSection } from './features/results/ResultsSection'
 
 import { siteConfig } from './data/config'
@@ -22,7 +22,7 @@ export function App() {
         <HeroSection surveyUrl={siteConfig.surveyUrl} />
         <WhySection />
         <section id="people"  className="section"><p>People</p></section>
-        <section id="method"  className="section"><p>Method</p></section>
+        <MethodSection />
         <section id="results" className="section"><p>Results</p></section>
 
         {/* id="survey" est posé dans SurveySection directement */}
