@@ -23,7 +23,7 @@
   flex-direction: column;
   align-items: flex-start; // alignement gauche — plus dynamique que centré
   gap: 0;                  // on gère les espaces via margin pour plus de contrôle
-  max-width: var(--content-max-width);
+  width: var(--content-max-width);
   margin: 0 auto;
   padding: var(--content-padding-x);
 }

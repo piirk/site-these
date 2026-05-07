@@ -596,7 +596,7 @@ img, svg {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-  max-width: var(--content-max-width);
+  width: var(--content-max-width);
   margin: 0 auto;
   padding: var(--content-padding-x);
 }
