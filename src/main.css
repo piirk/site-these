@@ -857,7 +857,7 @@ img, svg {
 }
 
 .method-section {
-  background: var(--color-bg);
+  background: var(--color-surface);
 }
 
 .method-section__inner {
