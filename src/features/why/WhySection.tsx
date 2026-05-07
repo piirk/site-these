@@ -1,67 +1,79 @@
-// features/why/WhySection.tsx
-
 import { FindingBlock } from './FindingBlock'
 
 /**
  * WhySection — genèse et motivation du projet doctoral.
  *
- * Structure narrative (3 temps) :
- * 1. Ancrage      → d'où vient ce projet, en une phrase humaine
- * 2. Les constats → deux observations de terrain (FindingBlock)
- * 3. La question  → pivot narratif, ouvre vers la suite du site
+ * Structure narrative révisée (4 temps) :
+ * 1. Genèse personnelle  → "sortie du master avec encore plus de questions"
+ * 2. Les deux constats   → FindingBlock (théorie + terrain)
+ * 3. La thèse formulée  → ce que la recherche défend
+ * 4. La question pivot   → "Et si c'était en lien ?"
  *
- * Choix UX :
- * - Peu de texte par bloc : l'utilisateur avance naturellement
- * - La question finale est typographiquement isolée :
- *   c'est l'idée centrale du site, elle mérite de l'espace
- * - Pas d'images : le texte seul doit suffire — évite le décor
- * - Les FindingBlock sont en colonne sur mobile, côte à côte sur desktop
- *   → crée une tension visuelle entre les deux constats
+ * Changements vs version initiale :
+ * - Ajout du temps de genèse (absent de notre première version)
+ *   Il humanise le point de départ et explique pourquoi une doctorante
+ *   s'intéresse à ce sujet spécifique
+ * - La thèse est maintenant formulée explicitement entre les constats
+ *   et la question (fidèle au document source)
+ * - Les constats reprennent la nuance théorie/terrain du document
  */
 export function WhySection() {
   return (
     <section id="why" className="section why-section" aria-labelledby="why-title">
       <div className="section__inner why-section__inner">
 
-        {/* ── 1. Ancrage ── */}
+        {/* ── 1. Genèse ── */}
         <header className="why-section__header">
           <p className="why-section__eyebrow">Pourquoi cette recherche</p>
           <h2 id="why-title" className="why-section__title section__title">
-            Tout a commencé par une question simple
+            Tout a commencé par trop de questions
           </h2>
           <p className="why-section__intro">
-            En travaillant avec des enseignants de classes UPE2A —
-            ces classes qui accueillent des élèves allophones nouvellement arrivés —
-            quelque chose d'étrange est apparu : entre ce que les professeurs
-            <em> disent</em> vivre et ce qu'on <em>observe</em> en classe,
-            il y a un écart.
+            À la fin d'un travail de master sur les classes UPE2A,
+            j'avais plus de questions qu'au départ.
+            Alors quand l'opportunité de poursuivre dans le cadre d'un doctorat
+            s'est présentée — j'ai accepté.
+          </p>
+          <p className="why-section__intro">
+            Le projet s'est construit autour de deux choses qui semblaient
+            ne pas coller ensemble.
           </p>
         </header>
 
-        {/* ── 2. Les constats ── */}
+        {/* ── 2. Les deux constats ── */}
         <div className="why-section__findings" role="list">
           <FindingBlock
             index={1}
-            heading="Un malaise difficile à nommer"
+            heading="Ce que dit la littérature"
             body={
-              "Quand on leur demande comment ça se passe, les enseignants d'UPE2A " +
-              "évoquent souvent une fatigue, une incertitude, parfois un sentiment " +
-              "de ne pas vraiment « faire cours ». Quelque chose résiste."
+              "Les enseignants d'UPE2A sont décrits dans les textes comme très investis " +
+              "dans leur travail — mais ils évoquent aussi un mal-être, " +
+              "une impression d'être démunis, de ne pas vraiment « faire cours »."
             }
           />
           <FindingBlock
             index={2}
-            heading="Des classes qui débordent du cadre"
+            heading="Ce qu'on voit sur le terrain"
             body={
-              "Sur le terrain, les observations racontent autre chose : " +
-              "des moments imprévus, des échanges qui sortent du script, " +
-              "des situations où l'enseignant improvise, négocie, invente. " +
-              "Ça ne ressemble pas à un cours traditionnel. Et pourtant, ça fonctionne."
+              "Dans les cours observés, beaucoup de moments s'éloignent de ce " +
+              "qu'on s'attend à trouver dans un cours traditionnel. " +
+              "Quelque chose d'autre se passe — et ça fonctionne."
             }
           />
         </div>
 
-        {/* ── 3. La question pivot ── */}
+        {/* ── 3. La thèse ── */}
+        <div className="why-section__thesis">
+          <p className="why-section__thesis-label">La thèse défendue</p>
+          <blockquote className="why-section__thesis-text">
+            Ces moments qui s'écartent du cours attendu sont au cœur
+            de la diversification des rôles des enseignants d'UPE2A.
+            S'y intéresser permet de rendre visible une partie de leur travail
+            — souvent laissée de côté — celle qui les amène à questionner leur métier.
+          </blockquote>
+        </div>
+
+        {/* ── 4. La question pivot ── */}
         <div className="why-section__pivot" aria-label="Question centrale de la recherche">
           <p className="why-section__pivot-text">
             Et si ces deux éléments étaient liés&nbsp;?

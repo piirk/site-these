@@ -798,6 +798,33 @@ img, svg {
   margin: 0;
 }
 
+.why-section__thesis {
+  border-left: 3px solid var(--color-accent);
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface-emphasis);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.why-section__thesis-label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.625rem;
+}
+
+.why-section__thesis-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-style: normal;
+  quotes: none;
+}
+
 .why-section__pivot {
   display: flex;
   flex-direction: column;
