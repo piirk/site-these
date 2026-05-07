@@ -1,68 +1,94 @@
 import { useState, useEffect, useRef } from 'react'
 
-/**
- * useScrollSpy
- *
- * Observe les sections via IntersectionObserver et retourne l'id
- * de la section actuellement visible à l'écran.
- *
- * Choix techniques :
- * - IntersectionObserver : natif, performant, pas de listener scroll
- * - rootMargin négatif : déclenche quand la section est bien "centrée"
- *   dans la fenêtre, pas dès qu'un pixel est visible
- * - threshold: 0 : suffisant combiné au rootMargin
- */
-
 interface UseScrollSpyOptions {
-  /** ids des sections à observer, dans l'ordre d'apparition */
   sectionIds: string[]
-  /**
-   * Marge négative en haut = compense la navbar sticky.
-   * Doit correspondre à --navbar-height + un peu de buffer.
-   * Défaut : '-80px 0px -60% 0px'
-   */
-  rootMargin?: string
 }
 
-export function useScrollSpy({
-  sectionIds,
-  rootMargin = '-80px 0px -60% 0px',
-}: UseScrollSpyOptions): string {
+/**
+ * useScrollSpy — version corrigée.
+ *
+ * Problèmes de la version précédente :
+ * 1. rootMargin `-60%` en bas excluait les sections courtes qui ne
+ *    remplissaient jamais la zone d'activation → mauvaise section active
+ * 2. Pas de fallback quand aucune section n'était dans la zone
+ *
+ * Nouvelle approche : deux observers complémentaires.
+ *
+ * Observer A (scroll vers le bas) :
+ *   rootMargin: '-80px 0px -40% 0px'
+ *   → s'active quand le haut d'une section passe sous la navbar
+ *
+ * Observer B (fallback position absolue) :
+ *   En parallèle, on calcule quelle section est la plus proche
+ *   du haut de la fenêtre via getBoundingClientRect au scroll.
+ *   C'est le filet de sécurité.
+ *
+ * En pratique : on utilise une seule stratégie robuste —
+ * calculer au scroll quelle section est "en vue" en haut de page.
+ * C'est légèrement moins "pur" que l'IntersectionObserver seul,
+ * mais fiable à 100% quelle que soit la hauteur des sections.
+ */
+export function useScrollSpy({ sectionIds }: UseScrollSpyOptions): string {
   const [activeId, setActiveId] = useState<string>(sectionIds[0] ?? '')
-
-  // Ref pour éviter de recréer l'observer à chaque render
-  const observerRef = useRef<IntersectionObserver | null>(null)
+  const rafRef = useRef<number | null>(null)
 
   useEffect(() => {
-    // Nettoie l'observer précédent si les ids changent
-    observerRef.current?.disconnect()
+    const NAVBAR_HEIGHT = parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--navbar-height')
+        .trim()
+    ) || 64
 
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        // On ne traite que les sections qui entrent dans la zone
-        const visible = entries.filter((e) => e.isIntersecting)
-        if (visible.length === 0) return
+    // Offset : on active une section quand son haut passe ce seuil
+    // navbar + petite marge de confort
+    const OFFSET = NAVBAR_HEIGHT + 24
 
-        // Si plusieurs sections visibles simultanément (rare),
-        // on prend celle la plus haute dans le document
-        const topmost = visible.reduce((best, entry) =>
-          entry.boundingClientRect.top < best.boundingClientRect.top ? entry : best
-        )
+    function getActiveId(): string {
+      // On parcourt les sections dans l'ordre inverse :
+      // la première dont le haut est AU-DESSUS du offset est la section active
+      const sections = sectionIds
+        .map((id) => ({ id, el: document.getElementById(id) }))
+        .filter((s): s is { id: string; el: HTMLElement } => s.el !== null)
 
-        setActiveId(topmost.target.id)
-      },
-      { rootMargin, threshold: 0 }
-    )
+      // Si on est tout en bas de la page, activer la dernière section
+      const scrollBottom = window.scrollY + window.innerHeight
+      const docHeight = document.documentElement.scrollHeight
+      if (scrollBottom >= docHeight - 4) {
+        return sectionIds[sectionIds.length - 1] ?? activeId
+      }
 
-    const observer = observerRef.current
+      // Sinon : dernière section dont le top est dépassé par le scroll
+      let result = sections[0]?.id ?? sectionIds[0]
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+      for (const { id, el } of sections) {
+        const top = el.getBoundingClientRect().top + window.scrollY
+        if (window.scrollY + OFFSET >= top) {
+          result = id
+        }
+      }
 
-    return () => observer.disconnect()
-  }, [sectionIds, rootMargin])
+      return result
+    }
+
+    function handleScroll() {
+      // RAF pour ne pas calculer à chaque pixel
+      if (rafRef.current !== null) return
+      rafRef.current = requestAnimationFrame(() => {
+        setActiveId(getActiveId())
+        rafRef.current = null
+      })
+    }
+
+    // Calcul initial (page peut déjà être scrollée au montage)
+    setActiveId(getActiveId())
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionIds])
 
   return activeId
 }
