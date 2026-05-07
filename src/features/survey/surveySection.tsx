@@ -1,22 +1,23 @@
 import { CtaBanner } from '../../shared/components/CtaBanner'
-//import type { SurveyMeta } from '../../types'
+import type { SurveyMeta } from '../../types'
 
 interface SurveySectionProps {
   surveyUrl: string
-  /** Optionnel : données pour la preuve sociale */
-  //meta?: SurveyMeta
+  meta?: SurveyMeta
 }
 
 /**
- * Section questionnaire — objectif : maximiser le taux de clic.
+ * SurveySection — révisée avec le contenu source.
  *
- * Stratégie UX :
- * 1. Titre actionnable + durée explicite → réduit la friction perçue
- * 2. Preuve sociale → rassure ("d'autres l'ont fait")
- * 3. Réassurance triple → lève les objections principales
- * 4. CTA unique et visible → pas de choix concurrent
+ * La formulation d'origine de la chercheuse est précieuse :
+ * elle explique *pourquoi* elle a fait ce site et ce que les réponses
+ * lui apportent concrètement. C'est bien plus convaincant qu'un CTA générique.
+ *
+ * Deux niveaux de lecture :
+ * - Titre + description : pourquoi votre avis compte (raison personnelle, engagée)
+ * - Réassurances : lever les objections pratiques (durée, anonymat)
  */
-export function SurveySection({ surveyUrl }: SurveySectionProps) { // meta
+export function SurveySection({ surveyUrl, meta }: SurveySectionProps) {
   return (
     <section
       id="survey"
@@ -25,12 +26,16 @@ export function SurveySection({ surveyUrl }: SurveySectionProps) { // meta
     >
       <CtaBanner
         titleId="survey-title"
-        title="Votre vécu compte pour cette recherche"
-        eyebrow="Participez à l'étude · 5 minutes"
+        eyebrow="Donnez votre avis"
+        title="Votre retour compte pour cette recherche"
         description={DESCRIPTION}
-        ctaLabel="Répondre maintenant — 5 minutes suffisent"
+        ctaLabel="Répondre au questionnaire — 5 minutes"
         ctaUrl={surveyUrl}
-        socialProof="Déjà 47 personnes ont partagé leur expérience."
+        socialProof={
+          meta?.participantCount
+            ? `Déjà ${meta.participantCount} personnes ont partagé leur avis.`
+            : undefined
+        }
         reassurances={REASSURANCES}
         variant="highlight"
       />
@@ -38,17 +43,14 @@ export function SurveySection({ surveyUrl }: SurveySectionProps) { // meta
   )
 }
 
-/*
-socialProof={meta?.participantCount
-  ? `Déjà ${meta.participantCount} personnes ont partagé leur expérience.`
-  : undefined
-}
-*/
-
+// Fidèle à la formulation de la chercheuse, légèrement resserrée.
+// On garde le "je" — cohérence avec la voix du reste du site.
 const DESCRIPTION =
-  "Cette recherche explore des situations du quotidien que vous connaissez peut-être. " +
-  "Il n'y a pas de bonne ou mauvaise réponse — c'est votre expérience qui intéresse, " +
-  "pas vos connaissances."
+  "J'ai créé ce site et réfléchi à des formats de restitution plus légers " +
+  "parce qu'il me semble essentiel que les enseignants concernés par les études " +
+  "aient accès aux savoirs qu'ils contribuent eux-mêmes à créer. " +
+  "Votre retour — sur la forme du site, le livret, les memes, ou sur le fond — " +
+  "m'est précieux pour valider à la fois les résultats et ces nouvelles façons de les partager."
 
 const REASSURANCES = [
   { icon: '🔒', text: 'Anonyme et confidentiel' },

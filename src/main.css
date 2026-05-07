@@ -1010,5 +1010,8 @@ img, svg {
     display: none;
   }
 }
+.survey-section {
+  background: var(--color-surface);
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,7 @@
+// _survey.scss — SurveySection
+ 
+.survey-section {
+  // Fond légèrement différent pour marquer la clôture du site
+  // On alterne : hero (bg) → why (surface) → method (bg) → ... → survey (surface)
+  background: var(--color-surface);
+}
