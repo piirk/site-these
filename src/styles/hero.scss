@@ -58,6 +58,13 @@
   // Soulignement accent sur la dernière ligne
   // Technique : le <br> crée deux lignes, on cible le dernier mot
   // Alternative simple : un span.hero-section__title-accent si besoin
+
+  // Italique dans le titre h1 — "vraiment"
+  .em {
+    font-style: italic;
+    // Pas de couleur différente : on garde l'unité du titre
+    // L'italique suffit à créer l'accentuation dans une font serif
+  }
 }
 
 // ── Chapeau ───────────────────────────────────────────────────────────────────
@@ -88,6 +95,21 @@
 
   // Le premier bouton (Survey) est naturellement mis en avant
   // par son variant primary — pas besoin d'autre artifice
+}
+
+// Note discrète sur les tooltips accessibles au survol
+// Placée sous le groupe CTA, avant le scroll-hint
+.hero-section__hint {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;           // override du margin: auto sur p
+  margin-top: -1rem;   // rapproche du groupe CTA
+  max-width: 44ch;
+ 
+  // Petit soulignement pointillé pour rappeler visuellement les tooltips
+  // (cohérence avec .method-term)
+  border-bottom: none;
 }
 
 // ── Scroll hint ───────────────────────────────────────────────────────────────

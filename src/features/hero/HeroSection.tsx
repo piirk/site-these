@@ -4,41 +4,44 @@ interface HeroSectionProps {
   surveyUrl: string
 }
 
-/**
- * HeroSection — première impression du site.
- *
- * Hiérarchie visuelle (ordre de lecture naturel) :
- * 1. Eyebrow   → contexte ("Recherche doctorale") — ancre l'identité
- * 2. Titre h1  → accroche émotionnelle, pas académique
- * 3. Chapeau   → 1-2 phrases max, bénéfice utilisateur
- * 4. CTA pair  → Survey (primaire) + Découvrir (secondaire/ancre)
- *
- * Choix UX :
- * - Le CTA "Donner mon avis" est le bouton de gauche (sens de lecture, œil naturel)
- * - "Découvrir" est secondaire : scroll vers #why, pas une sortie du site
- * - Pas d'image hero pour garder le focus sur le texte et le CTA
- */
 export function HeroSection({ surveyUrl }: HeroSectionProps) {
   return (
     <section id="hero" className="section hero-section" aria-labelledby="hero-title">
       <div className="section__inner hero-section__inner">
 
+        {/*
+          Eyebrow : contexte disciplinaire
+          Court, factuel — ancre l'identité académique sans intimider
+        */}
         <p className="hero-section__eyebrow">
-          Recherche doctorale · Sciences de l'éducation
+          Recherche doctorale · Sciences du langage
         </p>
 
+        {/*
+          Titre : formulation officielle du projet, légèrement adaptée
+          "vraiment" = mot fort, crée la curiosité, annonce la démarche
+        */}
         <h1 id="hero-title" className="hero-section__title">
-          Ce qui se passe vraiment<br />
-          dans une salle de classe
+          Pour décrire ce que font <em>vraiment</em> les enseignants d'UPE2A
         </h1>
 
+        {/*
+          Chapeau : résumé du site en deux phrases
+          On évite "thèse" / "doctorat" à ce stade — on garde ça pour WhySection
+          On annonce les deux espaces (comprendre / donner son avis)
+          sans les nommer encore explicitement
+        */}
         <p className="hero-section__lead">
-          Une chercheuse s'est immergée dans le quotidien d'enseignants
-          et d'élèves pour comprendre comment ils se coordonnent, s'adaptent,
-          et font tenir ensemble une situation d'apprentissage.
+          Ce site présente les résultats d'une recherche menée dans des classes
+          accueillant des élèves allophones — ces moments de cours qui débordent
+          du cadre habituel, et ce qu'ils révèlent sur le travail des enseignants.
         </p>
 
         <div className="hero-section__cta-group">
+          {/*
+            CTA primaire : Survey — priorité absolue (objectif du site)
+            Formulation : bénéfice ("votre avis compte") plutôt qu'action froide
+          */}
           <Button
             as="a"
             href={surveyUrl}
@@ -47,6 +50,10 @@ export function HeroSection({ surveyUrl }: HeroSectionProps) {
             variant="primary"
             size="lg"
           />
+          {/*
+            CTA secondaire : découvrir le contenu
+            Ancre vers WhySection (première section narrative)
+          */}
           <Button
             as="a"
             href="#why"
@@ -56,7 +63,16 @@ export function HeroSection({ surveyUrl }: HeroSectionProps) {
           />
         </div>
 
-        {/* Indicateur scroll discret */}
+        {/*
+          Note discrète sur les infos supplémentaires accessibles au survol
+          Le document source mentionne explicitement cette intention
+          Petit texte en muted — pas un CTA, juste une invitation à explorer
+        */}
+        <p className="hero-section__hint">
+          Tout au long du site, des informations supplémentaires sont accessibles
+          en survolant les termes soulignés.
+        </p>
+
         <div className="hero-section__scroll-hint" aria-hidden="true">
           <span className="hero-section__scroll-arrow" />
         </div>

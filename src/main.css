@@ -622,6 +622,9 @@ img, svg {
   color: var(--color-text);
   margin-bottom: 1.5rem;
 }
+.hero-section__title .em {
+  font-style: italic;
+}
 
 .hero-section__lead {
   font-family: var(--font-body);
@@ -641,6 +644,16 @@ img, svg {
   gap: 1rem;
   width: 100%;
   margin-bottom: 4rem;
+}
+
+.hero-section__hint {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  margin-top: -1rem;
+  max-width: 44ch;
+  border-bottom: none;
 }
 
 .hero-section__scroll-hint {
