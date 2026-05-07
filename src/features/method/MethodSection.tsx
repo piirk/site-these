@@ -1,25 +1,16 @@
-// features/method/MethodSection.tsx
-
 import { MethodStep } from './MethodStep'
 import { TermTooltip } from './TermTooltip'
 
 /**
- * MethodSection — les coulisses de la recherche.
+ * MethodSection — révisée avec le contenu source complet.
  *
- * Structure narrative en 4 temps :
- * 1. La présence terrain → ancrage concret, humain
- * 2. La collecte         → micro, enregistrements, tri
- * 3. L'analyse           → cadre théorique vulgarisé
- * 4. La question         → pivot vers les résultats
- *
- * Choix UX :
- * - Voix à la première personne conservée : "Je suis allée…"
- *   C'est un atout rare dans la vulgarisation scientifique.
- *   Ça humanise et différencie du ton institutionnel.
- * - Les termes académiques sont intégrés inline avec TermTooltip :
- *   l'utilisateur curieux obtient la définition, les autres passent
- * - La question finale ("travail invisible") est hors du flux des étapes :
- *   elle appartient à la transition vers ResultsSection
+ * Changements vs version initiale :
+ * - Étape 3 : le cadre théorique est maintenant détaillé en deux volets
+ *   (théories de l'interaction + théories de l'activité professionnelle)
+ *   fidèle au document source
+ * - La phrase de transition vers ResultsSection est ajoutée à la fin
+ *   ("plutôt qu'un exposé lourd…") — elle fait le lien narratif
+ * - La voix à la première personne est conservée partout
  */
 export function MethodSection() {
   return (
@@ -45,64 +36,79 @@ export function MethodSection() {
           <MethodStep index={1} heading="S'immerger sur le terrain">
             <p>
               Pendant toute l'année scolaire 2021–2022, je me suis rendue chaque
-              semaine dans deux lycées accueillant des classes{' '}
+              semaine dans deux lycées : le lundi dans le lycée Montagne,
+              le mardi dans le lycée Ville. À chaque fois, une journée entière
+              passée dans la classe{' '}
               <TermTooltip
                 term="UPE2A"
                 definition="Unité Pédagogique pour Élèves Allophones Arrivants : classe spécialisée qui accueille des élèves nouvellement arrivés en France ne maîtrisant pas encore le français."
               />{' '}
-              : le lundi dans l'un, le mardi dans l'autre.
+              aux côtés des enseignantes.
             </p>
             <p>
               À la manière d'une{' '}
               <TermTooltip
                 term="ethnographe"
-                definition="Chercheuse qui s'immerge dans un milieu pour l'observer de l'intérieur, comme une exploratrice découvrant une culture inconnue — sans a priori, avec un carnet."
+                definition="Chercheuse qui s'immerge dans un milieu pour l'observer de l'intérieur — comme une exploratrice découvrant une culture inconnue, sans a priori, carnet à la main."
               />{' '}
               , j'observais, je notais, je restais en retrait.
               À la fin de l'année : beaucoup… beaucoup de pages de notes.
             </p>
           </MethodStep>
 
-          <MethodStep index={2} heading="Enregistrer et trier">
+          <MethodStep index={2} heading="Enregistrer, puis trier">
             <p>
-              En parallèle, un micro posé dans la classe captait tout ce qui se disait.
-              Ces enregistrements permettent ce qu'on appelle une{' '}
+              En parallèle des notes, un micro posé en classe captait
+              tout ce qui se disait. Ces enregistrements permettent de réaliser
+              une{' '}
               <TermTooltip
                 term="analyse interactionnelle"
-                definition="Méthode qui étudie les échanges verbaux dans le détail : qui dit quoi, comment, à quel moment — pour comprendre ce qui se joue dans une conversation."
+                definition="Méthode qui étudie les échanges verbaux dans le détail : qui dit quoi, comment, à quel moment — pour comprendre ce qui se joue vraiment dans une conversation."
               />{' '}
               : étudier les échanges mot à mot.
             </p>
             <p>
-              J'ai ensuite fait un tri. Pas tout, seulement les passages où la discussion
-              s'éloignait de la transmission de la langue — ces moments où quelque chose
-              d'autre se passait.
+              J'ai ensuite fait un tri. Pas tout — seulement les passages où
+              la discussion s'éloignait des questions de transmission de la langue.
+              Ces moments-là, précisément.
             </p>
           </MethodStep>
 
-          <MethodStep index={3} heading="Analyser avec des outils">
+          <MethodStep index={3} heading="Analyser avec un cadre théorique">
             <p>
-              Pour donner du sens à ces passages, j'ai eu recours à ce qu'on appelle
-              un{' '}
+              Pour donner du sens à ces passages, on s'appuie sur des concepts
+              et des théories déjà existants — c'est ce qu'on appelle un{' '}
               <TermTooltip
                 term="cadre théorique"
-                definition="Ensemble de concepts et de théories déjà établis par d'autres chercheurs, qui servent de grille de lecture pour interpréter les observations de terrain."
+                definition="Ensemble de théories et concepts établis par d'autres chercheurs, qui servent de grille de lecture pour interpréter ses propres observations de terrain."
               />{' '}
-              : des théories existantes sur le fonctionnement des échanges en classe,
-              sur les relations et les identités qui s'y construisent.
+              .
             </p>
             <p>
-              Mais aussi des théories sur le travail lui-même — notamment la distinction
-              entre ce qu'on <em>est censé faire</em> et ce qu'on <em>fait vraiment</em>,
-              ce qu'on tente, ce qu'on évite, ce qu'on fait sans que personne ne le demande.
+              J'en ai mobilisé deux types. D'abord, des théories sur
+              le fonctionnement des échanges en classe : comment les identités,
+              les rôles et les relations s'y construisent, quels en sont
+              les enjeux affectifs.
+            </p>
+            <p>
+              Ensuite, des théories sur l'activité professionnelle — notamment
+              la distinction entre ce qui est <em>prescrit</em> (ce qu'on est
+              censé faire) et ce qui est <em>réellement fait</em> : ce qu'on
+              tente, ce qu'on évite, ce qu'on fait sans que personne ne le demande.
+              C'est cette partie qui m'intéresse particulièrement.
             </p>
           </MethodStep>
 
-          <MethodStep index={4} heading="Une question qui émerge" isLast>
+          <MethodStep index={4} heading="Et donc — le travail invisible" isLast>
             <p>
               Au fil de l'analyse, une notion s'est imposée : une partie essentielle
               du travail de ces enseignantes n'apparaît dans aucune fiche de poste.
               Elle n'est ni enseignée, ni reconnue, ni nommée.
+            </p>
+            <p>
+              Plutôt qu'un exposé théorique de trois cents pages,
+              j'ai voulu en proposer une restitution plus légère, plus accessible.
+              C'est ce que vous trouverez dans la section suivante.
             </p>
             <p className="method-step__body-emphasis">
               C'est ce travail-là que la recherche cherche à rendre visible.
