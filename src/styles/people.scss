@@ -1,0 +1,239 @@
+// _people.scss — PeopleSection
+
+.people-section {
+  background: var(--color-bg);
+}
+
+.people-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+
+.people-section__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 1.25rem;
+  padding-left: 0.875rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+.people-section__intro {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 54ch;
+  margin: 1.25rem 0 0;
+}
+
+// ── Groupes ───────────────────────────────────────────────────────────────────
+
+.people-section__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  // Séparateur léger entre groupes — pas une card, juste du rythme
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+
+  &:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.people-section__group-label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+// Duo d'enseignantes côte à côte
+.people-section__duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+
+  // Séparateur vertical entre les deux (même pattern que WhySection findings)
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-border);
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    &::before { display: none; }
+  }
+}
+
+// ── PersonPortrait ────────────────────────────────────────────────────────────
+
+.person-portrait {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.person-portrait__avatar {
+  // Cercle sobre avec initiale
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 2.75rem;  // empêche le rétrécissement en flex
+  border-radius: 50%;
+  background: var(--color-surface-emphasis);
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 0.1rem; // micro-alignement avec le nom
+
+  // Version "featured" (la chercheuse) : légèrement plus grande et colorée
+  .person-portrait--featured & {
+    width: 3.25rem;
+    height: 3.25rem;
+    min-width: 3.25rem;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border-color: var(--color-accent);
+    font-size: 1.3rem;
+  }
+}
+
+.person-portrait__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex: 1;
+}
+
+.person-portrait__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.person-portrait__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+
+  .person-portrait--featured & {
+    font-size: 1.2rem;
+  }
+}
+
+.person-portrait__role {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.person-portrait__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    font-family: var(--font-body);
+    font-size: 0.975rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 52ch;
+  }
+}
+
+// ── Élèves (traitement collectif) ─────────────────────────────────────────────
+
+.people-section__students-block {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.people-section__students-avatar {
+  // Symbole "groupe" — cercle concentrique, plus abstrait qu'une initiale
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-surface-emphasis);
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.people-section__students-heading {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.5rem !important; // override du gap gap du parent
+}
+
+.people-section__students-text {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-family: var(--font-body);
+    font-size: 0.975rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 56ch;
+  }
+}
+
+// ── Directrice ────────────────────────────────────────────────────────────────
+
+.people-section__supervisor {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.people-section__supervisor-text {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+
+  strong {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+  }
+}
