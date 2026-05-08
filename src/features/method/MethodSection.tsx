@@ -1,5 +1,5 @@
 import { MethodStep } from './MethodStep'
-import { TermTooltip } from './TermTooltip'
+import { TermTooltip } from '../../shared/components/TermTooltip'
 
 /**
  * MethodSection — révisée avec le contenu source complet.
