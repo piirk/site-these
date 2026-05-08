@@ -11,7 +11,7 @@ import { MethodSection } from './features/method/MethodSection'
 
 import { siteConfig } from './data/config'
 
-export function App() {
+export function App() { 
   return (
     <>
       {/* Navbar sticky — en dehors du <main> car position: fixed */}
