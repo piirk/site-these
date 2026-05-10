@@ -172,20 +172,6 @@ img, svg {
     opacity: 0;
   }
 }
-.term-trigger {
-  color: var(--color-keyword);
-  background: var(--color-keyword-bg);
-  border-bottom: 1.5px dashed currentColor;
-  border-radius: 2px;
-  padding: 0 3px;
-  cursor: help;
-  font-style: italic;
-  transition: background 0.15s;
-}
-.term-trigger:hover {
-  background: #daeaf7;
-}
-
 .dialog-overlay {
   background: rgba(26, 24, 22, 0.55);
   position: fixed;
@@ -1100,21 +1086,6 @@ img, svg {
   text-decoration-color: var(--color-accent);
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
-}
-
-.term-trigger {
-  color: var(--color-keyword);
-  background: var(--color-keyword-bg);
-  border-bottom: 1.5px dashed currentColor;
-  border-radius: 2px;
-  padding: 0 3px;
-  cursor: help;
-  font-style: normal;
-  transition: background var(--duration-fast);
-}
-.term-trigger:hover, .term-trigger:focus-visible {
-  background: #daeaf7;
-  outline: none;
 }
 
 @media (max-width: 480px) {

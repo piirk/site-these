@@ -27,21 +27,6 @@
   to   { opacity: 0; }
 }
 
-// ── Keyword (terme cliquable, utilisé avec Tooltip) ───────────────────────────
-
-.term-trigger {
-  color: var(--color-keyword);
-  background: var(--color-keyword-bg);
-  border-bottom: 1.5px dashed currentColor;
-  border-radius: 2px;
-  padding: 0 3px;
-  cursor: help;
-  font-style: italic;
-  transition: background 0.15s;
-
-  &:hover { background: #daeaf7; }
-}
-
 // ── Dialog Radix (pour futures modales "en savoir plus") ──────────────────────
 
 .dialog-overlay {

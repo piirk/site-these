@@ -146,27 +146,6 @@
   text-decoration-thickness: 2px;
 }
 
-// ── TermTooltip trigger ───────────────────────────────────────────────────────
-
-// Surcharge du .keyword global pour le contexte method
-// (même style, on garde la cohérence)
-.term-trigger {
-  color: var(--color-keyword);
-  background: var(--color-keyword-bg);
-  border-bottom: 1.5px dashed currentColor;
-  border-radius: 2px;
-  padding: 0 3px;
-  cursor: help;
-  font-style: normal; // reste droit même dans un contexte italique
-  transition: background var(--duration-fast);
-
-  &:hover,
-  &:focus-visible {
-    background: #daeaf7;
-    outline: none; // le :focus-visible global gère l'outline
-  }
-}
-
 // ── Responsive ────────────────────────────────────────────────────────────────
 
 @media (max-width: 480px) {
