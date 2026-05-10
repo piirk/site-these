@@ -39,7 +39,7 @@ body {
 
 #root {
   // Crée un contexte d'empilement propre
-  isolation: isolate;
+  //isolation: isolate;
 
   // Décale le contenu sous la navbar sticky
   padding-top: var(--navbar-height);

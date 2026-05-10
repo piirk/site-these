@@ -1,12 +1,13 @@
-@use 'tokens';    // variables CSS + design tokens
-@use 'global';   // reset + body + #root
-@use 'radix';    // tooltip, dialog, keyword
-@use 'components'; // btn, cta-banner, section
-@use 'navbar';   // navigation sticky
+@use 'tokens';      // en premier — les autres en dépendent
+@use 'global';
+@use 'radix';
+
+@use 'term-tooltip'; // ← le nouveau
+@use 'components';
+@use 'navbar';
 
 @use 'hero';
 @use 'why';
-@use 'people';
 @use 'method';
-//@use 'results';
+@use 'people';
 @use 'survey';
