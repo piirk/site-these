@@ -173,7 +173,7 @@ img, svg {
     opacity: 0;
   }
 }
-.keyword {
+.term-trigger {
   color: var(--color-keyword);
   background: var(--color-keyword-bg);
   border-bottom: 1.5px dashed currentColor;
@@ -183,7 +183,7 @@ img, svg {
   font-style: italic;
   transition: background 0.15s;
 }
-.keyword:hover {
+.term-trigger:hover {
   background: #daeaf7;
 }
 
@@ -1198,7 +1198,7 @@ img, svg {
   text-decoration-thickness: 2px;
 }
 
-.method-term {
+.term-trigger {
   color: var(--color-keyword);
   background: var(--color-keyword-bg);
   border-bottom: 1.5px dashed currentColor;
@@ -1208,7 +1208,7 @@ img, svg {
   font-style: normal;
   transition: background var(--duration-fast);
 }
-.method-term:hover, .method-term:focus-visible {
+.term-trigger:hover, .term-trigger:focus-visible {
   background: #daeaf7;
   outline: none;
 }

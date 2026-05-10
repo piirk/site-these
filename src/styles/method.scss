@@ -150,7 +150,7 @@
 
 // Surcharge du .keyword global pour le contexte method
 // (même style, on garde la cohérence)
-.method-term {
+.term-trigger {
   color: var(--color-keyword);
   background: var(--color-keyword-bg);
   border-bottom: 1.5px dashed currentColor;
