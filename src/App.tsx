@@ -7,9 +7,10 @@ import { HeroSection }   from './features/hero/HeroSection'
 import { WhySection }    from './features/why/WhySection'
 import { PeopleSection } from './features/people/PeopleSection'
 import { MethodSection } from './features/method/MethodSection'
-// import { ResultsSection } from './features/results/ResultsSection'
+ import { ResultsSection } from './features/results/ResultsSection'
 
 import { siteConfig } from './data/config'
+import { memes } from './data/results'
 
 export function App() { 
   return (
@@ -23,7 +24,13 @@ export function App() {
         <WhySection />
         <PeopleSection />
         <MethodSection />
-        <section id="results" className="section"><p>Results</p></section>
+         <ResultsSection
+          surveyUrl={siteConfig.surveyUrl}
+          bookPdfUrl="/assets/livret-soutenance.pdf"
+          bookCoverUrl="/assets/livret-cover.jpg"
+          twineUrl="https://twinery.org/2/#/stories/62cf8941-a724-4cb6-92f5-ee2745771e67"
+          memes={memes}
+        />
 
         {/* id="survey" est posé dans SurveySection directement */}
         <SurveySection surveyUrl={siteConfig.surveyUrl} />
