@@ -106,7 +106,7 @@ src/
 ### `TermTooltip`
 ```tsx
 // Desktop : Radix Tooltip au hover
-// Mobile (hover: none + pointer: coarse) : Radix Dialog bottom sheet
+// Mobile (hover: none + pointer: coarse) : Radix Dialog bottom sheet (non draggable — pas de faux affordance)
 // Requiert <div id="portal-root"></div> dans index.html (après #root)
 <TermTooltip term="ethnographe" definition="Définition vulgarisée..." />
 ```
@@ -146,11 +146,20 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 ## SCSS — règles
 
 - Pas de `isolation: isolate` sur `#root` (bloque les Radix Portals)
-- `scroll-padding-top: calc(var(--navbar-height) + 1rem)` sur `html`
+- `scroll-padding-top: var(--navbar-height)` sur `html`
 - `padding-top: var(--navbar-height)` sur `#root`
-- Variables dans `_tokens.scss`, jamais en dur dans les composants
+- Variables dans `tokens.scss`, jamais en dur dans les composants
 - Ordre des `@use` dans main.scss : `tokens` → `global` → `radix` → `term-tooltip`
   → `components` → `navbar` → `hero` → `why` → `method` → `people` → `results` → `survey`
+- BEM nesting : tous les `__éléments` et `--modifiers` sont nestés sous leur bloc parent
+  ```scss
+  .block {
+    &--modifier { }
+    &__element { }
+  }
+  ```
+- Les media queries sont déclarées **inline** dans l'élément concerné, pas dans un bloc séparé en bas de fichier
+- `main.tsx` importe `./styles/main.scss` directement — Vite compile le SCSS nativement (pas de compilation manuelle)
 
 ---
 
