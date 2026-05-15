@@ -25,10 +25,8 @@ export function App() {
         <PeopleSection />
         <MethodSection />
         <ResultsSection
-          surveyUrl={siteConfig.surveyUrl}
           bookPdfUrl="/assets/livret-soutenance.pdf"
           bookCoverUrl="/assets/livret-cover.jpg"
-          twineUrl="https://twinery.org/2/#/stories/62cf8941-a724-4cb6-92f5-ee2745771e67"
           memes={memes}
         />
 

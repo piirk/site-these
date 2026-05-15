@@ -2,34 +2,17 @@
 import { FormatBlock } from './FormatBlock'
 import { BookViewer } from './BookViewer'
 import { MemeGrid } from './MemeGrid'
-import { TwineBlock } from './TwineBlock'
-// import { CtaBanner } from '../../shared/components/CtaBanner'
 import type { Meme } from '../../types/index'
 
 interface ResultsSectionProps {
-  surveyUrl: string
   bookPdfUrl: string
   bookCoverUrl: string
-  twineUrl: string
   memes: Meme[]
 }
 
-/**
- * ResultsSection — orchestrateur pur, zéro logique interne.
- *
- * Structure narrative en 4 temps :
- * 1. Bascule        → transition depuis MethodSection, idée centrale
- * 2. Le livret      → format dense, présenté en premier (attention maximale)
- * 3. Les memes      → rupture de ton, plus léger
- * 4. Twine          → invitation, le plus expérimental
- * + CtaBanner       → rappel Survey avant de quitter la section
- */
-
-// surveyUrl,
 export function ResultsSection({
   bookPdfUrl,
   bookCoverUrl,
-  twineUrl,
   memes,
 }: ResultsSectionProps) {
   return (
@@ -53,13 +36,13 @@ export function ResultsSection({
             </p>
           </div>
           <p className="results-section__sub">
-            Plutôt qu'un exposé théorique, voici trois façons
+            Plutôt qu'un exposé théorique, voici deux façons
             d'entrer dans ces résultats.
           </p>
         </div>
       </div>
 
-      {/* ── 2–4. Les formats ── */}
+      {/* ── 2–3. Les formats ── */}
       <div className="results-section__formats">
         <div className="section__inner results-section__formats-inner">
 
@@ -93,35 +76,8 @@ export function ResultsSection({
             <MemeGrid memes={memes} />
           </FormatBlock>
 
-          <FormatBlock
-            id="results-twine"
-            title="En jouant"
-            description={
-              "Un parcours interactif où vous vous retrouvez " +
-              "à la place de l'enseignante. Même situation, mêmes choix, " +
-              "mêmes contraintes — sans mode d'emploi."
-            }
-          >
-            <TwineBlock url={twineUrl} />
-          </FormatBlock>
-
         </div>
       </div>
-
-      {/* ── Rappel Survey ── */}
-      {/*
-      <div className="section__inner">
-        <CtaBanner
-          eyebrow="Avant de continuer"
-          title="Ces résultats vous ont parlé ?"
-          description="Votre retour — même en deux mots — compte pour la recherche."
-          ctaLabel="Donner mon avis — 5 minutes"
-          ctaUrl={surveyUrl}
-          variant="default"
-          className="results-section__survey-reminder"
-        />
-      </div>
-      */}
 
     </section>
   )

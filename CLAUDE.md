@@ -26,11 +26,14 @@ allophones nouvellement arrivés en France).
 
 ---
 
-## Conventions de nommage importantes
+## Conventions de nommage
 
+- **Tout le code est en anglais** : variables, fonctions, noms de fichiers, classes CSS
+  (le contenu textuel du site reste en français)
 - Tout ce qui concerne le questionnaire s'appelle **Survey**
-  (`SurveySection`, `surveyUrl`, `SurveyMeta`, etc.)
-- Jamais `Questionnaire` dans le code
+  (`SurveySection`, `surveyUrl`, `SurveyMeta`, etc.) — jamais `Questionnaire`
+- Classes CSS en BEM : `.block__element--modifier`
+- Le pattern eyebrow est une classe partagée `.eyebrow` (définie dans `_components.scss`)
 
 ---
 
@@ -43,7 +46,8 @@ src/
 │   ├── why/            WhySection + FindingBlock
 │   ├── people/         PeopleSection + PeoplePortrait
 │   ├── method/         MethodSection + MethodStep
-│   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid + TwineBlock
+│   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
+│   │                   TwineBlock (inactif — Twine pas encore existant)
 │   ├── survey/         SurveySection
 │   └── layout/         Navbar + StickyCtaBtn (à faire)
 ├── shared/
@@ -63,7 +67,7 @@ src/
     ├── _global.scss    reset, body, #root, .section
     ├── _radix.scss     tooltip-content, dialog styles Radix
     ├── _term-tooltip.scss  .term-trigger, .term-sheet, bottom sheet mobile
-    ├── _components.scss    .btn, .cta-banner
+    ├── _components.scss    .btn, .cta-banner, .eyebrow
     ├── _navbar.scss
     ├── _hero.scss
     ├── _why.scss
@@ -109,7 +113,7 @@ src/
 
 ### `CtaBanner`
 ```tsx
-// Utilisé dans SurveySection et en rappel dans ResultsSection
+// Utilisé dans SurveySection
 <CtaBanner
   eyebrow="Texte petit au-dessus"
   titleId="id-pour-aria"
@@ -167,4 +171,5 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 ## À faire (prochaines étapes)
 
 - [ ] `StickyCtaBtn` — bouton flottant visible au scroll sur toute la page
-- [ ] Intégrer les vrais assets (PDF livret, cover, memes, URL Twine)
+- [ ] Intégrer les vrais assets (PDF livret, cover, memes)
+- [ ] Activer TwineBlock quand le parcours Twine sera créé
