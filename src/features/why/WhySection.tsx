@@ -59,7 +59,17 @@ export function WhySection() {
           />
         </div>
 
-        {/* ── 3. La thèse ── */}
+        {/* ── 3. La question pivot ── */}
+        <div className="why-section__pivot" aria-label="Question centrale de la recherche">
+          <p className="why-section__pivot-text">
+            Et si ces deux éléments étaient liés&nbsp;?
+          </p>
+          <p className="why-section__pivot-sub">
+            C'est cette intuition qui est au cœur de la recherche.
+          </p>
+        </div>
+
+        {/* ── 4. La thèse ── */}
         <div className="why-section__thesis">
           <p className="why-section__thesis-label">La thèse défendue</p>
           <blockquote className="why-section__thesis-text">
@@ -68,16 +78,6 @@ export function WhySection() {
             S'y intéresser permet de rendre visible une partie de leur travail
             — souvent laissée de côté — celle qui les amène à questionner leur métier.
           </blockquote>
-        </div>
-
-        {/* ── 4. La question pivot ── */}
-        <div className="why-section__pivot" aria-label="Question centrale de la recherche">
-          <p className="why-section__pivot-text">
-            Et si ces deux éléments étaient liés&nbsp;?
-          </p>
-          <p className="why-section__pivot-sub">
-            C'est cette intuition qui est au cœur de la recherche.
-          </p>
         </div>
 
       </div>

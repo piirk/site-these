@@ -106,7 +106,7 @@ export function MethodSection() {
               C'est ce que vous trouverez dans la section suivante.
             </p>
             <p className="method-step__body-emphasis">
-              C'est ce travail-là que la recherche cherche à rendre visible.
+              C'est ce travail-là que cette recherche vise à rendre visible.
             </p>
           </MethodStep>
 

@@ -42,7 +42,7 @@ export function PeopleSection() {
           <p className="people-section__intro">
             Cette recherche n'aurait pas existé sans deux enseignantes
             qui ont accepté d'ouvrir leurs classes, et sans les élèves
-            qui les composaient. Les voici.
+            qui les composaient.
           </p>
         </header>
 
@@ -55,7 +55,7 @@ export function PeopleSection() {
           <PeoplePortrait
             avatar="M"
             name="Manon"
-            role="Doctorante"
+            role="Docteure"
             variant="featured"
           >
             <p>
@@ -103,8 +103,8 @@ export function PeopleSection() {
           <div className="people-section__duo">
             <PeoplePortrait
               avatar="M"
-              name="Enseignante — lycée Montagne"
-              role="Professeure d'UPE2A"
+              name="Maryse"
+              role="Lycée-Montagne"
             >
               <p>
                 Elle accueille des élèves allophones dans un lycée
@@ -115,14 +115,14 @@ export function PeopleSection() {
             </PeoplePortrait>
 
             <PeoplePortrait
-              avatar="V"
-              name="Enseignante — lycée Ville"
-              role="Professeure d'UPE2A"
+              avatar="M"
+              name="Monique"
+              role="Lycée-Ville"
             >
               <p>
                 Son lycée est en milieu urbain. Chaque mardi, même
-                démarche — même carnet, même posture d'observatrice
-                discrète. Deux contextes différents, une même curiosité.
+                démarche — même carnet, même posture d'observatrice.
+                Deux contextes différents, une même curiosité.
               </p>
             </PeoplePortrait>
           </div>
@@ -167,7 +167,7 @@ export function PeopleSection() {
         <div className="people-section__supervisor" aria-label="Encadrement de la recherche">
           <p className="people-section__supervisor-text">
             Recherche encadrée par{' '}
-            <strong>[Catherine Muller]</strong>
+            <strong>Catherine Muller</strong>
             ,{' '}
             <TermTooltip
               term="directrice de thèse"

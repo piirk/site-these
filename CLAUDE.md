@@ -183,6 +183,8 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Titre du site : **Défocales-UPE2A**
 - [ ] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
 - [ ] Modifier les textes via le doc retour de Manon
-- [ ] `StickyCtaBtn` — bouton flottant visible au scroll sur toute la page
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
+- [ ] Revoir la qualité de SurveySection (accroche, frictions basses, confiance)
+- [ ] Ajouter une section "À venir" (lien vers corpus)
+- [ ] Ajouter liens vers les publications scientifiques s'appuyant sur la recherche
