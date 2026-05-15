@@ -35,7 +35,7 @@ export function Button({ variant = 'primary', size = 'md', label, ariaLabel, ...
   const baseClass = `btn btn--${variant} btn--${size}`
  
   if (rest.as === 'a') {
-    const { ...anchorProps } = rest // as: _as,
+    const { ...anchorProps } = rest
     return (
       <a
         className={baseClass}
@@ -48,7 +48,7 @@ export function Button({ variant = 'primary', size = 'md', label, ariaLabel, ...
     )
   }
  
-  const { ...buttonProps } = rest as ButtonAsButton & { as?: 'button' } // as: _as,
+  const { ...buttonProps } = rest as ButtonAsButton & { as?: 'button' }
   return (
     <button
       className={baseClass}
