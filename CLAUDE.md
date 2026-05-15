@@ -48,10 +48,10 @@ src/
 │   ├── method/         MethodSection + MethodStep
 │   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
 │   │                   TwineBlock (inactif — Twine pas encore existant)
-│   ├── survey/         SurveySection
+│   ├── survey/         SurveySection + CtaBanner
 │   └── layout/         Navbar + StickyCtaBtn (à faire)
 ├── shared/
-│   ├── components/     CtaBanner, TermTooltip
+│   ├── components/     TermTooltip
 │   └── ui/             Button
 ├── hooks/
 │   ├── useScrollSpy.ts
@@ -67,14 +67,14 @@ src/
     ├── _global.scss    reset, body, #root, .section
     ├── _radix.scss     tooltip-content, dialog styles Radix
     ├── _term-tooltip.scss  .term-trigger, .term-sheet, bottom sheet mobile
-    ├── _components.scss    .btn, .cta-banner, .eyebrow
+    ├── _components.scss    .btn, .eyebrow
     ├── _navbar.scss
     ├── _hero.scss
     ├── _why.scss
     ├── _method.scss
     ├── _people.scss
     ├── _results.scss
-    └── _survey.scss
+    └── _survey.scss        .survey-section, .cta-banner
 ```
 
 ---
@@ -111,9 +111,9 @@ src/
 <TermTooltip term="ethnographe" definition="Définition vulgarisée..." />
 ```
 
-### `CtaBanner`
+### `CtaBanner` (`features/survey/CtaBanner.tsx`)
 ```tsx
-// Utilisé dans SurveySection
+// Composant interne à la feature survey
 <CtaBanner
   eyebrow="Texte petit au-dessus"
   titleId="id-pour-aria"

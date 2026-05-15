@@ -1,4 +1,4 @@
-import { CtaBanner } from '../../shared/components/CtaBanner'
+import { CtaBanner } from './CtaBanner'
 import type { SurveyMeta } from '../../types'
 
 interface SurveySectionProps {

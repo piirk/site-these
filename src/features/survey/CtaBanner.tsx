@@ -1,4 +1,4 @@
-import { Button } from '../ui/Button'
+import { Button } from '../../shared/ui/Button'
 
 interface Reassurance {
   icon: string
@@ -22,16 +22,6 @@ interface CtaBannerProps {
   className?: string
 }
 
-/**
- * CtaBanner enrichi pour maximiser la conversion.
- *
- * Nouveaux éléments UX :
- * - eyebrow : ancre le contexte avant le titre
- * - socialProof : "Déjà N personnes ont répondu" — preuve sociale
- * - reassurances : lève les 3 objections classiques (anonymat, durée, inscription)
- *
- * Toujours purement présentationnel — zéro logique interne.
- */
 export function CtaBanner({
   eyebrow,
   titleId,
