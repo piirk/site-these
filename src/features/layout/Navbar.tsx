@@ -73,7 +73,7 @@ export function Navbar({ surveyUrl }: NavbarProps) {
         <nav className="navbar__inner" aria-label="Navigation principale">
 
           <a href="#hero" className="navbar__brand" aria-label="Retour en haut">
-            Recherche
+            Défocales - UPE2A
           </a>
 
           <ul className="navbar__links" role="list">

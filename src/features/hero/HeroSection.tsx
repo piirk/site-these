@@ -29,8 +29,9 @@ export function HeroSection() {
         */}
         <p className="hero-section__lead">
           Ce site présente les résultats d'une recherche menée dans des classes
-          accueillant des élèves allophones — ces moments de cours qui débordent
-          du cadre habituel, et ce qu'ils révèlent sur le travail des enseignants.
+          accueillant des élèves allophones, autour de ces moments de
+          «&nbsp;défocalisation&nbsp;» où le cours déborde du cadre habituel
+          — et de ce qu'ils révèlent sur le travail des enseignants.
         </p>
 
         <div className="hero-section__cta-group">
