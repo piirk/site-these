@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Compiled SCSS artifacts (Vite handles SCSS natively)
+src/main.css
+src/main.css.map
