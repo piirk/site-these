@@ -1,4 +1,5 @@
 import { FindingBlock } from './FindingBlock'
+import { TermTooltip } from '../../shared/components/TermTooltip'
 
 /**
  * WhySection — genèse et motivation du projet doctoral.
@@ -29,7 +30,11 @@ export function WhySection() {
             Tout a commencé par trop de questions
           </h2>
           <p className="why-section__intro">
-            À la fin d'un travail de master sur les classes UPE2A,
+            À la fin d'un travail de master sur les classes{' '}
+              <TermTooltip
+                term="UPE2A"
+                definition="Unité Pédagogique pour Élèves Allophones Arrivants : classe spécialisée qui accueille des élèves nouvellement arrivés en France ne maîtrisant pas encore le français."
+              />{', '}
             j'avais plus de questions qu'au départ.
             Alors quand l'opportunité de poursuivre dans le cadre d'un doctorat
             s'est présentée — j'ai accepté.

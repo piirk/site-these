@@ -38,12 +38,7 @@ export function MethodSection() {
               Pendant toute l'année scolaire 2021–2022, je me suis rendue chaque
               semaine dans deux lycées : le lundi dans le lycée Montagne,
               le mardi dans le lycée Ville. À chaque fois, une journée entière
-              passée dans la classe{' '}
-              <TermTooltip
-                term="UPE2A"
-                definition="Unité Pédagogique pour Élèves Allophones Arrivants : classe spécialisée qui accueille des élèves nouvellement arrivés en France ne maîtrisant pas encore le français."
-              />{' '}
-              aux côtés des enseignantes.
+              passée dans la classe UPE2A aux côtés des enseignantes.
             </p>
             <p>
               À la manière d'une{' '}
