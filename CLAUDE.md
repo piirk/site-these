@@ -170,6 +170,10 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 
 ## À faire (prochaines étapes)
 
+- [ ] Intégrer les vrais assets (PDF livret, memes)
+- [ ] Modifier titre du site : Defocales-UPE2A
+- [ ] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
+- [ ] Modifier les textes via le doc retour de Manon
 - [ ] `StickyCtaBtn` — bouton flottant visible au scroll sur toute la page
-- [ ] Intégrer les vrais assets (PDF livret, cover, memes)
+- [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
