@@ -17,9 +17,7 @@ html {
   // Scroll fluide pour les ancres (#hero, #survey…)
   scroll-behavior: smooth;
 
-  // Décalage pour compenser la navbar sticky
-  // La navbar fait --navbar-height, on compense au scroll
-  scroll-padding-top: calc(var(--navbar-height) + 1rem);
+  scroll-padding-top: var(--navbar-height);
 
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
