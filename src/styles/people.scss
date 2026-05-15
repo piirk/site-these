@@ -12,18 +12,6 @@
 
 // ── Header ────────────────────────────────────────────────────────────────────
 
-.people-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
-}
-
 .people-section__intro {
   font-size: 1.1rem;
   color: var(--color-text-secondary);
@@ -197,17 +185,17 @@
   margin-top: 0.1rem;
 }
 
-.people-section__students-heading {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 0.5rem !important; // override du gap gap du parent
-}
-
 .people-section__students-text {
   display: flex;
   flex-direction: column;
+
+  .people-section__students-heading {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 0.5rem;
+  }
 
   p {
     font-family: var(--font-body);

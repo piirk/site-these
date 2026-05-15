@@ -118,3 +118,17 @@
   &--md  { padding: 0.7rem 1.5rem;  font-size: 1rem; }
   &--lg  { padding: 0.95rem 2.25rem; font-size: 1.1rem; }
 }
+
+// ── Eyebrow ───────────────────────────────────────────────────────────────────
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 1.25rem;
+  padding-left: 0.875rem;
+  border-left: 2px solid var(--color-accent);
+}

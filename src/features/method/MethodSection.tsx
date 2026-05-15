@@ -19,7 +19,7 @@ export function MethodSection() {
 
         {/* ── Header ── */}
         <header className="method-section__header">
-          <p className="method-section__eyebrow">Comment ça s'est passé</p>
+          <p className="eyebrow">Comment ça s'est passé</p>
           <h2 id="method-title" className="section__title">
             Une année dans les classes
           </h2>

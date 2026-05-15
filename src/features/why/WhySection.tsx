@@ -24,7 +24,7 @@ export function WhySection() {
 
         {/* ── 1. Genèse ── */}
         <header className="why-section__header">
-          <p className="why-section__eyebrow">Pourquoi cette recherche</p>
+          <p className="eyebrow">Pourquoi cette recherche</p>
           <h2 id="why-title" className="why-section__title section__title">
             Tout a commencé par trop de questions
           </h2>

@@ -13,19 +13,6 @@
 
 // ── Header ────────────────────────────────────────────────────────────────────
 
-.why-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
-}
-
 .why-section__title {
   // Hérite de .section__title mais on écrase l'underline accent
   // car l'eyebrow joue déjà ce rôle

@@ -38,7 +38,7 @@ export function ResultsSection({
       {/* ── 1. Bascule narrative ── */}
       <div className="results-section__intro">
         <div className="section__inner">
-          <p className="results-section__eyebrow">Les résultats</p>
+          <p className="eyebrow">Les résultats</p>
           <h2 id="results-title" className="section__title">
             Ce que la recherche permet de voir
           </h2>

@@ -13,7 +13,7 @@ export function HeroSection({ surveyUrl }: HeroSectionProps) {
           Eyebrow : contexte disciplinaire
           Court, factuel — ancre l'identité académique sans intimider
         */}
-        <p className="hero-section__eyebrow">
+        <p className="eyebrow">
           Recherche doctorale · Sciences du langage
         </p>
 

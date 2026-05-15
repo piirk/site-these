@@ -35,7 +35,7 @@ export function PeopleSection() {
 
         {/* ── Header ── */}
         <header className="people-section__header">
-          <p className="people-section__eyebrow">Qui ?</p>
+          <p className="eyebrow">Qui ?</p>
           <h2 id="people-title" className="section__title">
             Les personnes au cœur du projet
           </h2>

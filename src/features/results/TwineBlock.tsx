@@ -1,4 +1,5 @@
 // features/results/TwineBlock.tsx
+import { Button } from '../../shared/ui/Button'
 
 interface TwineBlockProps {
   url: string
@@ -28,15 +29,15 @@ export function TwineBlock({ url }: TwineBlockProps) {
           que les enseignantes observées — et vous devrez choisir.
           Il n'y a pas de bonne réponse. C'est le principe.
         </p>
-        <a
+        <Button
+          as="a"
           href={url}
           target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn--secondary btn--md twine-block__cta"
-          aria-label="Ouvrir le parcours interactif dans un nouvel onglet"
-        >
-          Entrer dans le parcours →
-        </a>
+          variant="secondary"
+          size="md"
+          label="Entrer dans le parcours →"
+          ariaLabel="Ouvrir le parcours interactif dans un nouvel onglet"
+        />
       </div>
     </div>
   )

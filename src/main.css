@@ -482,6 +482,18 @@ img, svg {
   font-size: 1.1rem;
 }
 
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 1.25rem;
+  padding-left: 0.875rem;
+  border-left: 2px solid var(--color-accent);
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -708,19 +720,6 @@ img, svg {
   padding: var(--content-padding-x);
 }
 
-.hero-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0;
-  margin-bottom: 1.25rem;
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
-}
-
 .hero-section__title {
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 6vw, 3.75rem);
@@ -810,18 +809,6 @@ img, svg {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-}
-
-.why-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
 }
 
 .why-section__title::after {
@@ -973,18 +960,6 @@ img, svg {
   gap: 3.5rem;
 }
 
-.method-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
-}
-
 .method-section__intro {
   font-size: 1.1rem;
   color: var(--color-text-secondary);
@@ -1075,13 +1050,12 @@ img, svg {
   color: var(--color-text);
   font-weight: 600;
 }
-
-.method-step__body-emphasis {
-  font-family: var(--font-display) !important;
-  font-size: 1.1rem !important;
-  font-weight: 700 !important;
-  color: var(--color-text) !important;
-  font-style: normal !important;
+.method-step__body .method-step__body-emphasis {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  font-style: normal;
   text-decoration: underline;
   text-decoration-color: var(--color-accent);
   text-underline-offset: 5px;
@@ -1110,18 +1084,6 @@ img, svg {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
-}
-
-.people-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
 }
 
 .people-section__intro {
@@ -1282,17 +1244,16 @@ img, svg {
   margin-top: 0.1rem;
 }
 
-.people-section__students-heading {
+.people-section__students-text {
+  display: flex;
+  flex-direction: column;
+}
+.people-section__students-text .people-section__students-heading {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-text);
-  margin: 0 0 0.5rem !important;
-}
-
-.people-section__students-text {
-  display: flex;
-  flex-direction: column;
+  margin: 0 0 0.5rem;
 }
 .people-section__students-text p {
   font-family: var(--font-body);
@@ -1327,18 +1288,6 @@ img, svg {
   background: var(--color-bg);
   padding: var(--section-padding-y) var(--content-padding-x);
   padding-bottom: 3rem;
-}
-
-.results-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
 }
 
 .results-section__thesis-callout {

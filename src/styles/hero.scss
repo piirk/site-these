@@ -28,23 +28,6 @@
   padding: var(--content-padding-x);
 }
 
-// ── Eyebrow ───────────────────────────────────────────────────────────────────
-
-.hero-section__eyebrow {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0;
-  margin-bottom: 1.25rem;
-
-  // Petite ligne à gauche — ancre visuelle
-  padding-left: 0.875rem;
-  border-left: 2px solid var(--color-accent);
-}
-
 // ── Titre h1 ──────────────────────────────────────────────────────────────────
 
 .hero-section__title {
