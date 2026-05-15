@@ -98,6 +98,36 @@
     @media (max-width: 767px) { display: none; }
   }
 
+  &__end {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    @media (max-width: 767px) { margin-left: auto; }
+  }
+
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+    transition: color var(--duration-fast), background var(--duration-fast);
+
+    &:hover {
+      color: var(--color-text);
+      background: var(--color-surface-emphasis);
+    }
+
+    svg { display: block; }
+  }
+
   &__burger {
     display: none;
     flex-direction: column;
@@ -107,7 +137,6 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    margin-left: auto;
     border-radius: var(--radius-sm);
 
     &:hover { background: rgba(0, 0, 0, 0.05); }

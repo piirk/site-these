@@ -5,7 +5,9 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
+import { useTheme } from '../../hooks/useTheme'
 import { Button } from '../../shared/ui/Button'
+import { ThemeToggle } from './ThemeToggle'
 
 interface NavbarProps {
   surveyUrl: string
@@ -24,6 +26,7 @@ const SECTION_IDS = NAV_ITEMS.map((item) => item.id)
 
 export function Navbar({ surveyUrl }: NavbarProps) {
   const activeId = useScrollSpy({ sectionIds: SECTION_IDS })
+  const { theme, toggle } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const drawerRef = useRef<HTMLDivElement>(null)
@@ -94,18 +97,21 @@ export function Navbar({ surveyUrl }: NavbarProps) {
             className="navbar__cta"
           />
 
-          <button
-            ref={burgerRef}
-            className={`navbar__burger ${mobileOpen ? 'navbar__burger--open' : ''}`}
-            aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setMobileOpen((prev) => !prev)}
-          >
-            <span className="navbar__burger-bar" aria-hidden="true" />
-            <span className="navbar__burger-bar" aria-hidden="true" />
-            <span className="navbar__burger-bar" aria-hidden="true" />
-          </button>
+          <div className="navbar__end">
+            <ThemeToggle theme={theme} onToggle={toggle} />
+            <button
+              ref={burgerRef}
+              className={`navbar__burger ${mobileOpen ? 'navbar__burger--open' : ''}`}
+              aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setMobileOpen((prev) => !prev)}
+            >
+              <span className="navbar__burger-bar" aria-hidden="true" />
+              <span className="navbar__burger-bar" aria-hidden="true" />
+              <span className="navbar__burger-bar" aria-hidden="true" />
+            </button>
+          </div>
 
         </nav>
       </header>
