@@ -85,15 +85,15 @@
   }
 }
 
-// ── PersonPortrait ────────────────────────────────────────────────────────────
+// ── PeoplePortrait ────────────────────────────────────────────────────────────
 
-.person-portrait {
+.people-portrait {
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
 }
 
-.person-portrait__avatar {
+.people-portrait__avatar {
   // Cercle sobre avec initiale
   width: 2.75rem;
   height: 2.75rem;
@@ -112,7 +112,7 @@
   margin-top: 0.1rem; // micro-alignement avec le nom
 
   // Version "featured" (la chercheuse) : légèrement plus grande et colorée
-  .person-portrait--featured & {
+  .people-portrait--featured & {
     width: 3.25rem;
     height: 3.25rem;
     min-width: 3.25rem;
@@ -123,32 +123,32 @@
   }
 }
 
-.person-portrait__body {
+.people-portrait__body {
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
   flex: 1;
 }
 
-.person-portrait__header {
+.people-portrait__header {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
 
-.person-portrait__name {
+.people-portrait__name {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.2;
 
-  .person-portrait--featured & {
+  .people-portrait--featured & {
     font-size: 1.2rem;
   }
 }
 
-.person-portrait__role {
+.people-portrait__role {
   font-family: var(--font-ui);
   font-size: 0.8rem;
   font-weight: 500;
@@ -157,7 +157,7 @@
   letter-spacing: 0.06em;
 }
 
-.person-portrait__text {
+.people-portrait__text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
