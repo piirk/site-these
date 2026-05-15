@@ -20,7 +20,7 @@ export function App() {
 
       <main>
         {/* Chaque section a son id qui correspond aux NAV_ITEMS */}
-        <HeroSection surveyUrl={siteConfig.surveyUrl} />
+        <HeroSection />
         <WhySection />
         <PeopleSection />
         <MethodSection />

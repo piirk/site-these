@@ -1,10 +1,6 @@
 import { Button } from '../../shared/ui/Button'
 
-interface HeroSectionProps {
-  surveyUrl: string
-}
-
-export function HeroSection({ surveyUrl }: HeroSectionProps) {
+export function HeroSection() {
   return (
     <section id="hero" className="section hero-section" aria-labelledby="hero-title">
       <div className="section__inner hero-section__inner">
@@ -38,27 +34,11 @@ export function HeroSection({ surveyUrl }: HeroSectionProps) {
         </p>
 
         <div className="hero-section__cta-group">
-          {/*
-            CTA primaire : Survey — priorité absolue (objectif du site)
-            Formulation : bénéfice ("votre avis compte") plutôt qu'action froide
-          */}
-          <Button
-            as="a"
-            href={surveyUrl}
-            target="_blank"
-            label="Donner mon avis — 5 minutes"
-            variant="primary"
-            size="lg"
-          />
-          {/*
-            CTA secondaire : découvrir le contenu
-            Ancre vers WhySection (première section narrative)
-          */}
           <Button
             as="a"
             href="#why"
             label="Découvrir la recherche"
-            variant="secondary"
+            variant="primary"
             size="lg"
           />
         </div>
