@@ -1,3 +1,4 @@
+// src/hooks/useScrollSpy.ts
 import { useState, useEffect, useRef } from 'react'
 
 interface UseScrollSpyOptions {

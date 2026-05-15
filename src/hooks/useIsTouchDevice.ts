@@ -1,4 +1,4 @@
-// shared/hooks/useIsTouchDevice.ts
+// src/hooks/useIsTouchDevice.ts
 import { useState, useEffect } from 'react'
 
 /**
