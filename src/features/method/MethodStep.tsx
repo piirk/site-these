@@ -1,9 +1,10 @@
 // features/method/MethodStep.tsx
+import type { ReactNode } from 'react'
 
 interface MethodStepProps {
   index: number
   heading: string
-  children: React.ReactNode // ReactNode pour permettre les TermTooltip inline
+  children: ReactNode // ReactNode pour permettre les TermTooltip inline
   isLast?: boolean
 }
 
