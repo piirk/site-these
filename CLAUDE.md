@@ -62,19 +62,19 @@ src/
 ├── types/
 │   └── index.ts        Person, Meme, SurveyMeta, SiteConfig...
 └── styles/
-    ├── main.scss       point d'entrée (@use de tous les partiels)
-    ├── _tokens.scss    variables CSS (:root)
-    ├── _global.scss    reset, body, #root, .section
-    ├── _radix.scss     tooltip-content, dialog styles Radix
-    ├── _term-tooltip.scss  .term-trigger, .term-sheet, bottom sheet mobile
-    ├── _components.scss    .btn, .eyebrow
-    ├── _navbar.scss
-    ├── _hero.scss
-    ├── _why.scss
-    ├── _method.scss
-    ├── _people.scss
-    ├── _results.scss
-    └── _survey.scss        .survey-section, .cta-banner
+    ├── main.scss           point d'entrée (@use de tous les partiels)
+    ├── tokens.scss         variables CSS (:root)
+    ├── global.scss         reset, body, #root, .section
+    ├── radix.scss          tooltip-content, dialog styles Radix
+    ├── term-tooltip.scss   .term-trigger, .term-sheet, bottom sheet mobile
+    ├── components.scss     .btn, .eyebrow
+    ├── navbar.scss
+    ├── hero.scss
+    ├── why.scss
+    ├── method.scss
+    ├── people.scss
+    ├── results.scss
+    └── survey.scss         .survey-section, .cta-banner
 ```
 
 ---
@@ -149,8 +149,8 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - `scroll-padding-top: calc(var(--navbar-height) + 1rem)` sur `html`
 - `padding-top: var(--navbar-height)` sur `#root`
 - Variables dans `_tokens.scss`, jamais en dur dans les composants
-- Ordre des `@use` dans main.scss : tokens → global → radix → term-tooltip
-  → components → navbar → hero → why → method → people → results → survey
+- Ordre des `@use` dans main.scss : `tokens` → `global` → `radix` → `term-tooltip`
+  → `components` → `navbar` → `hero` → `why` → `method` → `people` → `results` → `survey`
 
 ---
 

@@ -4,19 +4,11 @@ import { TermTooltip } from '../../shared/components/TermTooltip'
 /**
  * WhySection — genèse et motivation du projet doctoral.
  *
- * Structure narrative révisée (4 temps) :
+ * Structure narrative (4 temps) :
  * 1. Genèse personnelle  → "sortie du master avec encore plus de questions"
  * 2. Les deux constats   → FindingBlock (théorie + terrain)
  * 3. La thèse formulée  → ce que la recherche défend
  * 4. La question pivot   → "Et si c'était en lien ?"
- *
- * Changements vs version initiale :
- * - Ajout du temps de genèse (absent de notre première version)
- *   Il humanise le point de départ et explique pourquoi une doctorante
- *   s'intéresse à ce sujet spécifique
- * - La thèse est maintenant formulée explicitement entre les constats
- *   et la question (fidèle au document source)
- * - Les constats reprennent la nuance théorie/terrain du document
  */
 export function WhySection() {
   return (
