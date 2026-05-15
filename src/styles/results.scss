@@ -1,59 +1,55 @@
-// _results.scss — ResultsSection
-
 .results-section {
-  // Pas de padding global ici — chaque sous-zone gère le sien
-  // pour permettre le fond pleine largeur sur l'intro
-  padding: 0;
-}
+  padding: 0; // chaque sous-zone gère son propre padding pour les fonds pleine largeur
 
-// ── 1. Intro / bascule narrative ──────────────────────────────────────────────
+  &__intro {
+    background: var(--color-bg);
+    padding: var(--section-padding-y) var(--content-padding-x);
+    padding-bottom: 3rem;
+  }
 
-.results-section__intro {
-  background: var(--color-bg);
-  padding: var(--section-padding-y) var(--content-padding-x);
-  padding-bottom: 3rem;
-}
+  &__thesis-callout {
+    background: var(--color-surface-emphasis);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0 1.5rem;
+  }
 
-// L'idée centrale — seul moment du site avec fond coloré pleine largeur
-// Crée une "respiration" visuelle forte — le cœur de la thèse
-.results-section__thesis-callout {
-  background: var(--color-surface-emphasis);
-  border-left: 3px solid var(--color-accent);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  padding: 1.75rem 2rem;
-  margin: 2rem 0 1.5rem;
-}
+  &__thesis-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 58ch;
+  }
 
-.results-section__thesis-text {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.6;
-  margin: 0;
-  max-width: 58ch;
-}
+  &__sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
 
-.results-section__sub {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--color-text-muted);
-  margin: 0;
-}
+  &__formats {
+    background: var(--color-surface);
+    padding: 3rem var(--content-padding-x) var(--section-padding-y);
+  }
 
-// ── 2. Formats ────────────────────────────────────────────────────────────────
+  &__formats-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
 
-.results-section__formats {
-  background: var(--color-surface);
-  padding: 3rem var(--content-padding-x) var(--section-padding-y);
-}
-
-.results-section__formats-inner {
-  display: flex;
-  flex-direction: column;
-  // Espace généreux entre les formats — chacun respire seul
-  gap: 5rem;
+  &__survey-reminder {
+    margin-top: 2rem;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    border-radius: 0;
+  }
 }
 
 // ── FormatBlock ───────────────────────────────────────────────────────────────
@@ -63,36 +59,35 @@
   flex-direction: column;
   gap: 1.75rem;
 
-  // Séparateur discret entre formats
   & + & {
     padding-top: 5rem;
     border-top: 1px solid var(--color-border);
-    margin-top: -5rem; // annule le gap pour que le border soit au bon endroit
+    margin-top: -5rem;
   }
-}
 
-.format-block__header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
 
-.format-block__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 3vw, 1.75rem);
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin: 0;
-}
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+    margin: 0;
+  }
 
-.format-block__description {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-text-secondary);
-  line-height: 1.75;
-  max-width: 56ch;
-  margin: 0;
+  &__description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    max-width: 56ch;
+    margin: 0;
+  }
 }
 
 // ── BookViewer ────────────────────────────────────────────────────────────────
@@ -102,83 +97,82 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-}
 
-.book-viewer__cover-link {
-  display: block;
-  text-decoration: none;
-  // Largeur fixe — comme un vrai livre posé sur la page
-  width: min(240px, 60vw);
-}
-
-.book-viewer__cover {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card), 4px 4px 0 var(--color-border);
-  transition: transform var(--duration-normal), box-shadow var(--duration-normal);
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-card), 6px 6px 0 var(--color-border);
+  &__cover-link {
+    display: block;
+    text-decoration: none;
+    width: min(240px, 60vw);
   }
-}
 
-.book-viewer__cover-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4; // format livret standard
-  object-fit: cover;
-  background: var(--color-surface-emphasis); // placeholder si image absente
-}
+  &__cover {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card), 4px 4px 0 var(--color-border);
+    transition: transform var(--duration-normal), box-shadow var(--duration-normal);
 
-.book-viewer__cover-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 24, 22, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--duration-fast);
-
-  .book-viewer__cover-link:hover & {
-    background: rgba(26, 24, 22, 0.35);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card), 6px 6px 0 var(--color-border);
+    }
   }
-}
 
-.book-viewer__cover-icon {
-  font-size: 1.5rem;
-  color: white;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity var(--duration-fast), transform var(--duration-fast);
-
-  .book-viewer__cover-link:hover & {
-    opacity: 1;
-    transform: translateY(0);
+  &__cover-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: var(--color-surface-emphasis);
   }
-}
 
-.book-viewer__meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  &__cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 24, 22, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--duration-fast);
 
-.book-viewer__page-count {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-}
+    .book-viewer__cover-link:hover & {
+      background: rgba(26, 24, 22, 0.35);
+    }
+  }
 
-.book-viewer__pdf-link {
-  font-family: var(--font-ui);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  &__cover-icon {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity var(--duration-fast), transform var(--duration-fast);
+
+    .book-viewer__cover-link:hover & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__page-count {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  &__pdf-link {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 // ── MemeGrid ──────────────────────────────────────────────────────────────────
@@ -194,45 +188,45 @@
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
-}
 
-.meme-grid__item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.meme-grid__trigger {
-  display: block;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: zoom-in;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  width: 100%;
-
-  &:hover .meme-grid__img {
-    transform: scale(1.02);
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-}
 
-.meme-grid__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  transition: transform var(--duration-normal);
-}
+  &__trigger {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: zoom-in;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    width: 100%;
 
-.meme-grid__caption {
-  font-family: var(--font-ui);
-  font-size: 0.825rem;
-  color: var(--color-text-muted);
-  line-height: 1.4;
-  margin: 0;
+    &:hover .meme-grid__img {
+      transform: scale(1.02);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: transform var(--duration-normal);
+  }
+
+  &__caption {
+    font-family: var(--font-ui);
+    font-size: 0.825rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    margin: 0;
+  }
 }
 
 // ── Meme Lightbox ─────────────────────────────────────────────────────────────
@@ -257,41 +251,41 @@
   flex-direction: column;
   gap: 0.875rem;
   animation: dialog-in var(--duration-normal) var(--ease-out);
-}
 
-.meme-lightbox__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
-}
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
 
-.meme-lightbox__caption {
-  font-family: var(--font-ui);
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
-  text-align: center;
-  margin: 0;
-}
+  &__caption {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    margin: 0;
+  }
 
-.meme-lightbox__close {
-  position: absolute;
-  top: -2.5rem;
-  right: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.1rem;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: color var(--duration-fast), background var(--duration-fast);
+  &__close {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: color var(--duration-fast), background var(--duration-fast);
 
-  &:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+    &:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+  }
 }
 
 // ── TwineBlock ────────────────────────────────────────────────────────────────
@@ -308,44 +302,33 @@
     flex-direction: column;
     gap: 1.25rem;
   }
-}
 
-.twine-block__preview {
-  flex-shrink: 0;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: var(--color-accent);
-}
+  &__preview {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--color-accent);
+  }
 
-.twine-block__body {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
 
-.twine-block__teaser {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-text-secondary);
-  line-height: 1.75;
-  margin: 0;
-  max-width: 52ch;
-}
-
-// ── Rappel Survey dans Results ────────────────────────────────────────────────
-
-.results-section__survey-reminder {
-  // Version compacte du CtaBanner — pas de fond coloré fort
-  // On est déjà dans la même section, pas besoin de surenchérir
-  margin-top: 2rem;
-  padding: 2.5rem 1.5rem;
-  border-top: 1px solid var(--color-border);
-  border-radius: 0; // pas de radius ici — il est dans le flux
+  &__teaser {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 52ch;
+  }
 }

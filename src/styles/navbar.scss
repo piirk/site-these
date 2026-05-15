@@ -1,5 +1,4 @@
-// _navbar.scss — version sans Radix Dialog
-// Le drawer est maintenant contrôlé par une classe CSS plutôt que data-state
+// Drawer contrôlé par classe CSS (pas Radix Dialog) — évite les conflits avec les Dialogs de TermTooltip
 
 .navbar {
   position: fixed;
@@ -17,204 +16,184 @@
     -webkit-backdrop-filter: blur(var(--navbar-blur));
     box-shadow: var(--shadow-navbar);
   }
-}
 
-.navbar__inner {
-  max-width: calc(var(--content-max-width) + 200px);
-  margin: 0 auto;
-  padding: 0 var(--content-padding-x);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.navbar__brand {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
-  flex-shrink: 0;
-
-  &::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: var(--color-accent);
-    transition: width var(--duration-fast);
+  &__inner {
+    max-width: calc(var(--content-max-width) + 200px);
+    margin: 0 auto;
+    padding: 0 var(--content-padding-x);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
-  &:hover::after { width: 100%; }
-}
 
-.navbar__links {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  list-style: none;
-  margin-left: auto;
-}
-
-.navbar__link {
-  font-family: var(--font-ui);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-  transition: color var(--duration-fast), background var(--duration-fast);
-  position: relative;
-
-  &:hover {
+  &__brand {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--color-text);
-    background: rgba(0, 0, 0, 0.04);
-  }
-
-  &.is-active {
-    color: var(--color-accent);
-    font-weight: 600;
+    text-decoration: none;
+    flex-shrink: 0;
 
     &::after {
       content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0.6rem;
-      right: 0.6rem;
+      display: block;
+      width: 0;
       height: 2px;
       background: var(--color-accent);
-      border-radius: 2px;
+      transition: width var(--duration-fast);
+    }
+
+    &:hover::after { width: 100%; }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin-left: auto;
+
+    @media (max-width: 767px) { display: none; }
+  }
+
+  &__link {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    transition: color var(--duration-fast), background var(--duration-fast);
+    position: relative;
+
+    &:hover {
+      color: var(--color-text);
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    &.is-active {
+      color: var(--color-accent);
+      font-weight: 600;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0.6rem;
+        right: 0.6rem;
+        height: 2px;
+        background: var(--color-accent);
+        border-radius: 2px;
+      }
     }
   }
-}
 
-.navbar__cta {
-  flex-shrink: 0;
-  margin-left: 0.5rem;
-}
+  &__cta {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
 
-// ── Burger ────────────────────────────────────────────────────────────────────
-
-.navbar__burger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  margin-left: auto;
-  border-radius: var(--radius-sm);
-
-  &:hover { background: rgba(0, 0, 0, 0.05); }
-}
-
-.navbar__burger-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--color-text);
-  border-radius: 2px;
-  transition: transform var(--duration-fast), opacity var(--duration-fast);
-}
-
-// Animation burger → croix
-.navbar__burger--open {
-  .navbar__burger-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .navbar__burger-bar:nth-child(2) {
-    opacity: 0;
-  }
-  .navbar__burger-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-}
-
-// ── Overlay mobile ────────────────────────────────────────────────────────────
-
-.navbar__mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(26, 24, 22, 0.4);
-  backdrop-filter: blur(2px);
-  // Sous le drawer, au-dessus du contenu
-  z-index: 60;
-  animation: overlay-in var(--duration-normal) ease;
-}
-
-// ── Drawer mobile ─────────────────────────────────────────────────────────────
-
-.navbar__mobile-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: min(320px, 85vw);
-  background: var(--color-surface);
-  z-index: 61;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
-
-  // Fermé par défaut : hors écran à droite
-  transform: translateX(100%);
-  transition: transform var(--duration-normal) var(--ease-out);
-
-  // Ouvert : slide in
-  &--open {
-    transform: translateX(0);
-  }
-}
-
-.navbar__mobile-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-top: calc(var(--navbar-height) - 1rem);
-}
-
-.navbar__mobile-link {
-  font-family: var(--font-ui);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  padding: 0.6rem 0.75rem;
-  border-radius: var(--radius-md);
-  display: block;
-  white-space: nowrap;
-  transition: color var(--duration-fast), background var(--duration-fast);
-
-  &:hover {
-    color: var(--color-text);
-    background: var(--color-surface-emphasis);
+    @media (max-width: 767px) { display: none; }
   }
 
-  &.is-active {
-    color: var(--color-accent);
-    font-weight: 600;
-    background: var(--color-surface-emphasis);
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    border-radius: var(--radius-sm);
+
+    &:hover { background: rgba(0, 0, 0, 0.05); }
+
+    @media (max-width: 767px) { display: flex; }
+
+    &--open {
+      .navbar__burger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .navbar__burger-bar:nth-child(2) { opacity: 0; }
+      .navbar__burger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
   }
-}
 
-.navbar__mobile-cta {
-  width: 100%;
-  justify-content: center;
-}
+  &__burger-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: transform var(--duration-fast), opacity var(--duration-fast);
+  }
 
-// ── Responsive ────────────────────────────────────────────────────────────────
+  &__mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 24, 22, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 60;
+    animation: overlay-in var(--duration-normal) ease;
+  }
 
-@media (max-width: 767px) {
-  .navbar__links { display: none; }
-  .navbar__cta   { display: none; }
-  .navbar__burger { display: flex; }
+  &__mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 85vw);
+    background: var(--color-surface);
+    z-index: 61;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+    transform: translateX(100%);
+    transition: transform var(--duration-normal) var(--ease-out);
+
+    &--open { transform: translateX(0); }
+  }
+
+  &__mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: calc(var(--navbar-height) - 1rem);
+  }
+
+  &__mobile-link {
+    font-family: var(--font-ui);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-md);
+    display: block;
+    white-space: nowrap;
+    transition: color var(--duration-fast), background var(--duration-fast);
+
+    &:hover {
+      color: var(--color-text);
+      background: var(--color-surface-emphasis);
+    }
+
+    &.is-active {
+      color: var(--color-accent);
+      font-weight: 600;
+      background: var(--color-surface-emphasis);
+    }
+  }
+
+  &__mobile-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @keyframes overlay-in { from { opacity: 0; } to { opacity: 1; } }

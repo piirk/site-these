@@ -1,58 +1,107 @@
-// _why.scss — WhySection
-
 .why-section {
   background: var(--color-surface);
-}
 
-.why-section__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-}
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
 
-// ── Header ────────────────────────────────────────────────────────────────────
+  &__intro {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    max-width: 58ch;
+    margin: 1.25rem 0 0;
 
-.why-section__intro {
-  font-size: 1.1rem;
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-  max-width: 58ch;
-  margin: 1.25rem 0 0;
+    em {
+      font-style: italic;
+      color: var(--color-text);
+      font-weight: 600;
+    }
+  }
 
-  em {
-    font-style: italic;
-    color: var(--color-text); // légèrement plus fort que le secondaire
+  &__findings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--color-border);
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+
+      &::before { display: none; }
+    }
+  }
+
+  &__thesis {
+    border-left: 3px solid var(--color-accent);
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface-emphasis);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  &__thesis-label {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
     font-weight: 600;
-  }
-}
-
-// ── Findings ──────────────────────────────────────────────────────────────────
-
-.why-section__findings {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 3rem;
-
-  // Séparateur vertical entre les deux blocs
-  // Plus subtil que des cards, crée quand même une distinction
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: var(--color-border);
-    transform: translateX(-50%);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 0.625rem;
   }
 
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  &__thesis-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-style: normal; // blockquote met en italique par défaut
+    quotes: none;
+  }
 
-    &::before { display: none; }
+  &__pivot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__pivot-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    margin: 0;
+  }
+
+  &__pivot-sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
   }
 }
 
@@ -62,105 +111,36 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-}
 
-.finding-block__index {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  // Couleur très atténuée : indicateur de rythme, pas élément central
-  color: var(--color-border);
-  user-select: none;
-}
+  &__index {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-border); // atténué : indicateur de rythme, pas élément central
+    user-select: none;
+  }
 
-.finding-block__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
 
-.finding-block__heading {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.3;
-  margin: 0;
-}
+  &__heading {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.3;
+    margin: 0;
+  }
 
-.finding-block__body {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-text-secondary);
-  line-height: 1.75;
-  margin: 0;
-}
-
-// ── Bloc thèse ──────────────────────────────────────────────────────────────
-
-.why-section__thesis {
-  border-left: 3px solid var(--color-accent);
-  padding: 1.25rem 1.5rem;
-  background: var(--color-surface-emphasis);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-}
- 
-.why-section__thesis-label {
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 0.625rem;
-}
- 
-.why-section__thesis-text {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-style: normal; // blockquote natif met en italique par défaut
-  quotes: none;
-}
-
-
-// ── Pivot (question centrale) ─────────────────────────────────────────────────
-
-.why-section__pivot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-
-  // Séparation visuelle avec ce qui précède
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.why-section__pivot-text {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
-
-  // Léger soulignement accent — marque l'importance sans sur-styliser
-  text-decoration: underline;
-  text-decoration-color: var(--color-accent);
-  text-underline-offset: 6px;
-  text-decoration-thickness: 2px;
-
-  margin: 0;
-}
-
-.why-section__pivot-sub {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--color-text-muted);
-  margin: 0;
+  &__body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+  }
 }

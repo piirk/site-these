@@ -1,8 +1,4 @@
-// _term-tooltip.scss
-// Styles partagés pour TermTooltip (desktop + mobile)
-// À ajouter dans main.scss : @use 'term-tooltip';
-
-// ── Trigger (commun desktop + mobile) ────────────────────────────────────────
+// Styles partagés pour TermTooltip (desktop Radix Tooltip + mobile Radix Dialog bottom sheet)
 
 .term-trigger {
   color: var(--color-keyword);
@@ -10,25 +6,20 @@
   border-bottom: 1.5px dashed currentColor;
   border-radius: 2px;
   padding: 0 3px;
-  font-style: normal; // reste droit même dans un <em>
+  font-style: normal;
   transition: background var(--duration-fast);
-  // Curseur différent selon le contexte
-  cursor: help; // desktop
+  cursor: help;
 
   @media (hover: none) {
-    cursor: pointer; // mobile : indique que c'est tappable
+    cursor: pointer;
   }
 
   &:hover,
   &:focus-visible {
     background: #daeaf7;
-    outline: none; // géré par le :focus-visible global
+    outline: none;
   }
 }
-
-// ── Desktop Tooltip ───────────────────────────────────────────────────────────
-// (styles déjà dans _radix.scss — on conserve pour rappel)
-// .tooltip-content et .tooltip-arrow sont définis dans _radix.scss
 
 // ── Mobile Bottom Sheet ───────────────────────────────────────────────────────
 
@@ -53,78 +44,69 @@
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   padding: 1rem 1.5rem 2rem;
 
-  // Hauteur max : laisse toujours la moitié supérieure de la page visible
-  // L'utilisateur garde le contexte de ce qu'il lisait
+  // Laisse toujours la moitié supérieure visible : l'utilisateur garde le contexte
   max-height: 55vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  // Ombre vers le haut
   box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.15);
 
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
 
-  &[data-state='open'] {
-    animation: sheet-in var(--duration-normal) var(--ease-out);
-  }
-  &[data-state='closed'] {
-    animation: sheet-out var(--duration-fast) ease;
-  }
-}
+  &[data-state='open']   { animation: sheet-in var(--duration-normal) var(--ease-out); }
+  &[data-state='closed'] { animation: sheet-out var(--duration-fast) ease; }
 
-.term-sheet__term {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin: 0;
-
-  // Petite ligne accent — cohérence avec les titres du site
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.term-sheet__definition {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-  margin: 0;
-  // Pas de max-width ici : sur mobile on utilise toute la largeur disponible
-}
-
-.term-sheet__close {
-  position: absolute;
-  top: 0.6rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--color-text-muted);
-  font-size: 1rem;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background var(--duration-fast), color var(--duration-fast);
-
-  &:hover {
-    background: var(--color-surface-emphasis);
+  &__term {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
     color: var(--color-text);
+    line-height: 1.2;
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  &:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
+  &__definition {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background var(--duration-fast), color var(--duration-fast);
+
+    &:hover {
+      background: var(--color-surface-emphasis);
+      color: var(--color-text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
   }
 }
 
-// ── Animations bottom sheet ───────────────────────────────────────────────────
+// ── Animations ────────────────────────────────────────────────────────────────
 
 @keyframes sheet-in {
   from { transform: translateY(100%); }
@@ -136,7 +118,5 @@
   to   { transform: translateY(100%); opacity: 0; }
 }
 
-// overlay-in / overlay-out déjà définis dans _navbar.scss ou _radix.scss
-// Si ce n'est pas le cas, les rajouter ici :
 @keyframes overlay-in  { from { opacity: 0; } to { opacity: 1; } }
 @keyframes overlay-out { from { opacity: 1; } to { opacity: 0; } }

@@ -1,136 +1,93 @@
-// _hero.scss — HeroSection
-// Objectif : impact immédiat, hiérarchie claire, CTA visible
-
 .hero-section {
-  // Hauteur minimale : plein écran moins la navbar
-  // L'utilisateur voit la section entière sans scroller
   min-height: calc(100svh - var(--navbar-height));
   display: flex;
   align-items: center;
-
-  // Texture de fond très subtile — grain papier
-  // Renforce l'identité "recherche / académique chaleureux"
   background-image:
     radial-gradient(
       ellipse 80% 60% at 60% 40%,
-      rgba(200, 90, 42, 0.05) 0%,   // halo accent très dilué
+      rgba(200, 90, 42, 0.05) 0%,
       transparent 70%
     );
-}
 
-.hero-section__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; // alignement gauche — plus dynamique que centré
-  gap: 0;                  // on gère les espaces via margin pour plus de contrôle
-  width: var(--content-max-width);
-  margin: 0 auto;
-  padding: var(--content-padding-x);
-}
-
-// ── Titre h1 ──────────────────────────────────────────────────────────────────
-
-.hero-section__title {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 6vw, 3.75rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-text);
-  margin-bottom: 1.5rem;
-
-  // Soulignement accent sur la dernière ligne
-  // Technique : le <br> crée deux lignes, on cible le dernier mot
-  // Alternative simple : un span.hero-section__title-accent si besoin
-
-  // Italique dans le titre h1 — "vraiment"
-  .em {
-    font-style: italic;
-    // Pas de couleur différente : on garde l'unité du titre
-    // L'italique suffit à créer l'accentuation dans une font serif
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: var(--content-max-width);
+    margin: 0 auto;
+    padding: var(--content-padding-x);
   }
-}
 
-// ── Chapeau ───────────────────────────────────────────────────────────────────
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
 
-.hero-section__lead {
-  font-family: var(--font-body);
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  color: var(--color-text-secondary);
-  line-height: 1.75;
-  max-width: 52ch; // légèrement moins large que le titre
-  margin-bottom: 2.5rem;
-
-  // Override du margin: auto global sur p
-  // Ici on veut l'alignement gauche
-  margin-left: 0;
-  margin-right: 0;
-}
-
-// ── Groupe CTA ────────────────────────────────────────────────────────────────
-
-.hero-section__cta-group {
-  display: flex;
-  flex-wrap: wrap; // passe en colonne sur petit mobile
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  margin-bottom: 4rem;
-
-  // Le premier bouton (Survey) est naturellement mis en avant
-  // par son variant primary — pas besoin d'autre artifice
-}
-
-// Note discrète sur les tooltips accessibles au survol
-// Placée sous le groupe CTA, avant le scroll-hint
-.hero-section__hint {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  margin: 0;           // override du margin: auto sur p
-  margin-top: -1rem;   // rapproche du groupe CTA
-  max-width: 44ch;
- 
-  // Petit soulignement pointillé pour rappeler visuellement les tooltips
-  // (cohérence avec .method-term)
-  border-bottom: none;
-}
-
-// ── Scroll hint ───────────────────────────────────────────────────────────────
-
-.hero-section__scroll-hint {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  opacity: 0.1;
-  animation: scroll-hint-bounce 2s ease-in-out infinite;
-
-  // Disparaît si l'utilisateur a une préférence no-motion
-  @media (prefers-reduced-motion: reduce) {
-    display: none;
+    .em {
+      font-style: italic;
+    }
   }
-}
 
-.hero-section__scroll-arrow {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-right: 2px solid var(--color-text);
-  border-bottom: 2px solid var(--color-text);
-  transform: rotate(45deg);
+  &__lead {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    max-width: 52ch;
+    margin-bottom: 2.5rem;
+    margin-left: 0; // override du margin: auto global sur p
+    margin-right: 0;
+  }
+
+  &__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    @media (max-width: 715px) {
+      flex-direction: column;
+
+      .btn { width: 100%; justify-content: center; }
+    }
+  }
+
+  &__hint {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    margin-top: -1rem;
+    max-width: 44ch;
+  }
+
+  &__scroll-hint {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0.1;
+    animation: scroll-hint-bounce 2s ease-in-out infinite;
+
+    @media (prefers-reduced-motion: reduce) { display: none; }
+  }
+
+  &__scroll-arrow {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid var(--color-text);
+    border-bottom: 2px solid var(--color-text);
+    transform: rotate(45deg);
+  }
 }
 
 @keyframes scroll-hint-bounce {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(6px); }
-}
-
-// ── Responsive ────────────────────────────────────────────────────────────────
-
-@media (max-width: 715px) {
-  .hero-section__cta-group {
-    flex-direction: column;
-
-    // Sur mobile, les deux boutons prennent toute la largeur
-    .btn { width: 100%; justify-content: center; }
-  }
 }

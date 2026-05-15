@@ -1,7 +1,4 @@
-// _global.scss — Reset minimal + styles de base
-// body, #root, typographie globale, sections
-
-// ── Reset ─────────────────────────────────────────────────────────────────────
+// Reset minimal + styles de base
 
 *,
 *::before,
@@ -11,14 +8,9 @@
   padding: 0;
 }
 
-// ── Base document ─────────────────────────────────────────────────────────────
-
 html {
-  // Scroll fluide pour les ancres (#hero, #survey…)
   scroll-behavior: smooth;
-
   scroll-padding-top: var(--navbar-height);
-
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
 }
@@ -27,23 +19,16 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 1.0625rem;    // 17px — confortable pour la lecture longue
+  font-size: 1.0625rem; // 17px — confort lecture longue
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// ── #root ─────────────────────────────────────────────────────────────────────
-
 #root {
-  // Crée un contexte d'empilement propre
-  //isolation: isolate;
-
-  // Décale le contenu sous la navbar sticky
+  // isolation: isolate bloquait les Radix Portals — laissé désactivé
   padding-top: var(--navbar-height);
 }
-
-// ── Typographie globale ───────────────────────────────────────────────────────
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
@@ -53,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  max-width: 65ch; // lisibilité optimale
+  max-width: 65ch;
   margin: auto;
 }
 
@@ -71,25 +56,20 @@ img, svg {
   max-width: 100%;
 }
 
-// ── Sections ──────────────────────────────────────────────────────────────────
-
 .section {
   padding: var(--section-padding-y) var(--content-padding-x);
-}
 
-// Conteneur centré réutilisable
-.section__inner {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-}
+  &__inner {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
 
-.section__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
-  margin-bottom: 1.5rem;
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    margin-bottom: 1.5rem;
+  }
 }
-
-// ── Accessibilité ─────────────────────────────────────────────────────────────
 
 :focus-visible {
   outline: 2px solid var(--color-accent);
