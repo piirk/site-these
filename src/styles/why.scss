@@ -1,7 +1,6 @@
 // _why.scss — WhySection
 
 .why-section {
-  // Fond légèrement différent du hero pour marquer la transition
   background: var(--color-surface);
 }
 
@@ -12,12 +11,6 @@
 }
 
 // ── Header ────────────────────────────────────────────────────────────────────
-
-.why-section__title {
-  // Hérite de .section__title mais on écrase l'underline accent
-  // car l'eyebrow joue déjà ce rôle
-  &::after { display: none; }
-}
 
 .why-section__intro {
   font-size: 1.1rem;
