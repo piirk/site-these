@@ -1,4 +1,4 @@
-import type { Meme } from '../features/results/MemeGrid'
+import type { Meme } from '../types/index'
  
 export const memes: Meme[] = [
   {
