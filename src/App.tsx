@@ -40,14 +40,3 @@ export function App() {
 }
 
 export default App
-
-// ─── data/config.ts ───────────────────────────────────────────────────────────
-// (à créer séparément)
-//
-// import type { SiteConfig } from '../types'
-//
-// export const siteConfig: SiteConfig = {
-//   surveyUrl: 'https://tally.so/r/ton-id-ici',
-//   researchTitle: 'Titre de la recherche',
-//   researchTagline: 'Phrase d\'accroche',
-// }

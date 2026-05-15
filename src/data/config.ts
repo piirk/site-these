@@ -1,4 +1,5 @@
-export const siteConfig = {
-  surveyUrl: 'https://tally.so/r/ton-id-ici',
-  // ou : 'https://framaforms.org/...'
+import type { SiteConfig } from '../types'
+
+export const siteConfig: SiteConfig = {
+  surveyUrl: 'https://enquetes.univ-grenoble-alpes.fr/v4/s/85ea42',
 }

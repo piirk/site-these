@@ -39,9 +39,7 @@ export interface MethodKeyword {
 }
 
 export interface SiteConfig {
-  surveyUrl: string // URL Tally, Typeform, etc.
-  researchTitle: string
-  researchTagline: string
+  surveyUrl: string
 }
 
 export interface SurveyMeta {
