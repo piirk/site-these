@@ -1,5 +1,5 @@
 // features/people/PeopleSection.tsx
-import { PersonPortrait } from './PeoplePortrait'
+import { PeoplePortrait } from './PeoplePortrait'
 import { TermTooltip } from '../../shared/components/TermTooltip'
 
 /**
@@ -52,7 +52,7 @@ export function PeopleSection() {
             La chercheuse
           </p>
 
-          <PersonPortrait
+          <PeoplePortrait
             avatar="M"
             name="Manon"
             role="Doctorante"
@@ -91,7 +91,7 @@ export function PeopleSection() {
               Ce site, c'est ma façon de partager ce travail au-delà
               du manuscrit de thèse — et de recueillir vos retours.
             </p>
-          </PersonPortrait>
+          </PeoplePortrait>
         </div>
 
         {/* ── Les enseignantes ── */}
@@ -101,7 +101,7 @@ export function PeopleSection() {
           </p>
 
           <div className="people-section__duo">
-            <PersonPortrait
+            <PeoplePortrait
               avatar="M"
               name="Enseignante — lycée Montagne"
               role="Professeure d'UPE2A"
@@ -112,9 +112,9 @@ export function PeopleSection() {
                 passé chaque lundi pendant un an à observer, noter,
                 comprendre.
               </p>
-            </PersonPortrait>
+            </PeoplePortrait>
 
-            <PersonPortrait
+            <PeoplePortrait
               avatar="V"
               name="Enseignante — lycée Ville"
               role="Professeure d'UPE2A"
@@ -124,7 +124,7 @@ export function PeopleSection() {
                 démarche — même carnet, même posture d'observatrice
                 discrète. Deux contextes différents, une même curiosité.
               </p>
-            </PersonPortrait>
+            </PeoplePortrait>
           </div>
         </div>
 

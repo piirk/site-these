@@ -1,7 +1,7 @@
-// features/people/PersonPortrait.tsx
+// features/people/PeoplePortrait.tsx
 import type { ReactNode } from 'react'
 
-interface PersonPortraitProps {
+interface PeoplePortraitProps {
   /** Initiale ou emoji servant d'avatar sobre */
   avatar: string
   /** Prénom ou pseudonyme — pas de nom de famille pour les participants */
@@ -15,7 +15,7 @@ interface PersonPortraitProps {
 }
 
 /**
- * PersonPortrait — un portrait sobre, pas une carte.
+ * PeoplePortrait — un portrait sobre, pas une carte.
  *
  * Choix UX :
  * - Pas de photo : cohérence avec l'anonymat des participants,
@@ -27,27 +27,27 @@ interface PersonPortraitProps {
  * - variant "featured" pour la chercheuse : légèrement plus de présence
  *   sans créer deux composants différents
  */
-export function PersonPortrait({
+export function PeoplePortrait({
   avatar,
   name,
   role,
   children,
   variant = 'default',
-}: PersonPortraitProps) {
+}: PeoplePortraitProps) {
   return (
     <article
-      className={`person-portrait person-portrait--${variant}`}
+      className={`people-portrait people-portrait--${variant}`}
       aria-label={`${name}, ${role}`}
     >
-      <div className="person-portrait__avatar" aria-hidden="true">
+      <div className="people-portrait__avatar" aria-hidden="true">
         {avatar}
       </div>
-      <div className="person-portrait__body">
-        <header className="person-portrait__header">
-          <span className="person-portrait__name">{name}</span>
-          <span className="person-portrait__role">{role}</span>
+      <div className="people-portrait__body">
+        <header className="people-portrait__header">
+          <span className="people-portrait__name">{name}</span>
+          <span className="people-portrait__role">{role}</span>
         </header>
-        <div className="person-portrait__text">
+        <div className="people-portrait__text">
           {children}
         </div>
       </div>
