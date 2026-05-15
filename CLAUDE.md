@@ -168,7 +168,3 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 
 - [ ] `StickyCtaBtn` — bouton flottant visible au scroll sur toute la page
 - [ ] Intégrer les vrais assets (PDF livret, cover, memes, URL Twine)
-- [ ] Remplir `data/config.ts` avec l'URL Survey réelle
-- [ ] Remplir le nom de la directrice de thèse dans `PeopleSection`
-- [ ] Tester `TermTooltip` sur vrai appareil mobile
-- [ ] Vérifier l'ordre des sections dans `App.tsx`
