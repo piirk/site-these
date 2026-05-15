@@ -167,11 +167,11 @@ export function PeopleSection() {
         <div className="people-section__supervisor" aria-label="Encadrement de la recherche">
           <p className="people-section__supervisor-text">
             Recherche encadrée par{' '}
-            <strong>[Prénom Nom]</strong>
+            <strong>[Catherine Muller]</strong>
             ,{' '}
             <TermTooltip
               term="directrice de thèse"
-              definition="Chercheuse en poste à l'université qui accompagne et supervise le travail doctoral — elle guide les choix méthodologiques et valide la démarche scientifique."
+              definition="Enseignante-chercheuse en poste à l'université qui accompagne et supervise le travail doctoral — elle guide les choix méthodologiques et valide la démarche scientifique."
             />{' '}
             à l'Université Grenoble Alpes.
           </p>
