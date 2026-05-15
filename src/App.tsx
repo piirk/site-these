@@ -7,7 +7,7 @@ import { HeroSection }   from './features/hero/HeroSection'
 import { WhySection }    from './features/why/WhySection'
 import { PeopleSection } from './features/people/PeopleSection'
 import { MethodSection } from './features/method/MethodSection'
- import { ResultsSection } from './features/results/ResultsSection'
+import { ResultsSection } from './features/results/ResultsSection'
 
 import { siteConfig } from './data/config'
 import { memes } from './data/results'
@@ -24,7 +24,7 @@ export function App() {
         <WhySection />
         <PeopleSection />
         <MethodSection />
-         <ResultsSection
+        <ResultsSection
           surveyUrl={siteConfig.surveyUrl}
           bookPdfUrl="/assets/livret-soutenance.pdf"
           bookCoverUrl="/assets/livret-cover.jpg"
