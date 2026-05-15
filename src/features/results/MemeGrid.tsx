@@ -1,13 +1,7 @@
 // features/results/MemeGrid.tsx
 import { useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-
-export interface Meme {
-  id: string
-  imageUrl: string
-  caption: string
-  altText: string
-}
+import type { Meme } from '../../types/index'
 
 interface MemeGridProps {
   memes: Meme[]

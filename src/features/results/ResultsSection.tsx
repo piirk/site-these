@@ -4,7 +4,7 @@ import { BookViewer } from './BookViewer'
 import { MemeGrid } from './MemeGrid'
 import { TwineBlock } from './TwineBlock'
 // import { CtaBanner } from '../../shared/components/CtaBanner'
-import type { Meme } from './MemeGrid'
+import type { Meme } from '../../types/index'
 
 interface ResultsSectionProps {
   surveyUrl: string
