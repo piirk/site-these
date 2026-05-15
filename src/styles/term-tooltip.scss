@@ -74,16 +74,6 @@
   }
 }
 
-// Poignée visuelle (drag handle)
-.term-sheet__handle {
-  width: 2.5rem;
-  height: 4px;
-  background: var(--color-border);
-  border-radius: 2px;
-  margin: 0 auto 0.5rem;
-  flex-shrink: 0;
-}
-
 .term-sheet__term {
   font-family: var(--font-display);
   font-size: 1.15rem;

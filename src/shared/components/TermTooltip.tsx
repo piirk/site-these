@@ -90,8 +90,6 @@ function TermBottomSheet({ term, definition }: TermTooltipProps) {
       <Dialog.Portal container={getPortalContainer()}>
         <Dialog.Overlay className="term-sheet-overlay" />
         <Dialog.Content className="term-sheet">
-          <div className="term-sheet__handle" aria-hidden="true" />
-
           <Dialog.Title className="term-sheet__term">
             {term}
           </Dialog.Title>
