@@ -181,7 +181,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 
 - [ ] Intégrer les vrais assets (PDF livret, memes)
 - [x] Titre du site : **Défocales-UPE2A**
-- [ ] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
+- [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
 - [ ] Modifier les textes via le doc retour de Manon
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
