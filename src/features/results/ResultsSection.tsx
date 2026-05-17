@@ -59,7 +59,7 @@ export function ResultsSection({
               pdfUrl={bookPdfUrl}
               coverUrl={bookCoverUrl}
               title="Livret de soutenance"
-              pageCount={24}
+              pageCount={12}
             />
           </FormatBlock>
 

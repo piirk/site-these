@@ -40,7 +40,7 @@ export function MemeGrid({ memes }: MemeGridProps) {
                 loading="lazy"
               />
             </button>
-            <p className="meme-grid__caption">{meme.caption}</p>
+            {meme.caption && <p className="meme-grid__caption">{meme.caption}</p>}
           </li>
         ))}
       </ul>
@@ -67,7 +67,7 @@ export function MemeGrid({ memes }: MemeGridProps) {
                   alt={selected.altText}
                   className="meme-lightbox__img"
                 />
-                <p className="meme-lightbox__caption">{selected.caption}</p>
+                {selected.caption && <p className="meme-lightbox__caption">{selected.caption}</p>}
               </>
             )}
 

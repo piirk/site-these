@@ -16,8 +16,8 @@ export interface Person {
 export interface Meme {
   id: string
   imageUrl: string
-  caption: string
   altText: string // accessibilité obligatoire
+  caption?: string
 }
 
 export interface BookPage {
