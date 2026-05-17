@@ -1,8 +1,8 @@
 .results-section {
-  padding: 0; // chaque sous-zone gère son propre padding pour les fonds pleine largeur
+  background: var(--color-bg);
+  padding: 0; // chaque sous-zone gère son propre padding
 
   &__intro {
-    background: var(--color-bg);
     padding: var(--section-padding-y) var(--content-padding-x);
     padding-bottom: 3rem;
   }
@@ -34,7 +34,6 @@
   }
 
   &__formats {
-    background: var(--color-surface);
     padding: 3rem var(--content-padding-x) var(--section-padding-y);
   }
 
