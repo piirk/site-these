@@ -1,29 +1,5 @@
-// features/people/PeopleSection.tsx
 import { PeoplePortrait } from './PeoplePortrait'
 import { TermTooltip } from '../../shared/components/TermTooltip'
-
-/**
- * PeopleSection — les personnes derrière la recherche.
- *
- * Structure narrative (5 temps) :
- * 1. Intro           → pose la relation avant les individus
- * 2. La chercheuse   → à la première personne, affiliations en tooltips
- * 3. Les enseignantes → deux portraits sobres, anonymisés
- * 4. Les élèves      → traitement collectif et sensible
- * 5. La directrice   → ligne discrète en bas
- *
- * Choix éditoriaux :
- * - Les enseignantes sont anonymisées (Enseignante A / B) mais
- *   leurs lycées ont des noms poétiques (Montagne / Ville) — fidèle au doc
- * - Les élèves ne sont pas listés individuellement : ils forment un groupe.
- *   C'est plus juste éthiquement et plus fort narrativement.
- * - La directrice de thèse est présente mais discrète —
- *   le doc source dit "voir avec elle" donc on propose une ligne neutre
- *
- * TermTooltip réutilisé depuis features/method/ :
- * Si tu veux l'extraire dans shared/, c'est le bon moment quand
- * PeopleSection sera stable.
- */
 export function PeopleSection() {
   return (
     <section
@@ -33,7 +9,6 @@ export function PeopleSection() {
     >
       <div className="section__inner people-section__inner">
 
-        {/* ── Header ── */}
         <header className="people-section__header">
           <p className="eyebrow">Qui ?</p>
           <h2 id="people-title" className="section__title">
@@ -46,7 +21,6 @@ export function PeopleSection() {
           </p>
         </header>
 
-        {/* ── La chercheuse ── */}
         <div className="people-section__group">
           <p className="people-section__group-label" aria-hidden="true">
             La chercheuse
@@ -94,7 +68,6 @@ export function PeopleSection() {
           </PeoplePortrait>
         </div>
 
-        {/* ── Les enseignantes ── */}
         <div className="people-section__group">
           <p className="people-section__group-label" aria-hidden="true">
             Les enseignantes participantes
@@ -128,18 +101,12 @@ export function PeopleSection() {
           </div>
         </div>
 
-        {/* ── Les élèves ── */}
+        {/* Les élèves sont traités collectivement — pas de portraits individuels pour des raisons éthiques */}
         <div className="people-section__group people-section__group--students">
           <p className="people-section__group-label" aria-hidden="true">
             Les élèves
           </p>
 
-          {/*
-            Traitement collectif intentionnel :
-            - Pas de portraits individuels (éthique + cohérence anonymat)
-            - Un paragraphe qui rend hommage au groupe sans les réduire
-            - L'icône "groupe" plutôt qu'une initiale individuelle
-          */}
           <div className="people-section__students-block">
             <div className="people-section__students-avatar" aria-hidden="true">
               ◎
@@ -159,11 +126,6 @@ export function PeopleSection() {
           </div>
         </div>
 
-        {/* ── Directrice de thèse ── */}
-        {/*
-          Ligne discrète — le doc dit "voir avec elle"
-          On propose une présence sobre, facilement modifiable
-        */}
         <div className="people-section__supervisor" aria-label="Encadrement de la recherche">
           <p className="people-section__supervisor-text">
             Recherche encadrée par{' '}
