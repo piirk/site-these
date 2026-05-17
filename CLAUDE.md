@@ -181,6 +181,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 
 - [x] Intégrer les vrais assets (PDF livret, memes) — déposer dans `public/assets/` (cf. structure dans le code)
 - [ ] Demander à Manon les alt texts des mèmes (à renseigner dans `src/data/results.ts`)
+- [ ] Vérifier avec Manon si les pseudonymes des enseignantes sont à préciser — déplacer ou élargir la note "Tous les prénoms sont des pseudonymes" en conséquence (`PeopleSection`)
 - [ ] Créer une favicon aux couleurs du site (remplacer `public/favicon.svg`)
 - [x] Titre du site : **Défocales-UPE2A**
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
