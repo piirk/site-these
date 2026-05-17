@@ -22,6 +22,7 @@ allophones nouvellement arrivés en France).
 - Vite
 - SCSS (modules partiels avec `@use`)
 - Radix UI (uniquement pour les interactions utiles)
+- Phosphor Icons (`@phosphor-icons/react`) — icônes dans PeopleSection
 - Architecture feature-based
 
 ---
@@ -49,7 +50,7 @@ src/
 │   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
 │   │                   TwineBlock (inactif — Twine pas encore existant)
 │   ├── survey/         SurveySection + CtaBanner
-│   └── layout/         Navbar + StickyCtaBtn (à faire)
+│   └── layout/         Navbar
 ├── shared/
 │   ├── components/     TermTooltip
 │   └── ui/             Button
