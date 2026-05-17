@@ -190,3 +190,4 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [ ] Revoir la qualité de SurveySection (accroche, frictions basses, confiance)
 - [ ] Ajouter une section "À venir" (lien vers corpus)
 - [ ] Ajouter liens vers les publications scientifiques s'appuyant sur la recherche
+- [ ] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
