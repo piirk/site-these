@@ -266,6 +266,36 @@
     margin: 0;
   }
 
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    line-height: 0;
+    padding-bottom: 0.1em;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background var(--duration-fast);
+
+    &:hover { background: rgba(255, 255, 255, 0.2); }
+
+    &--prev { left: -3.5rem; }
+    &--next { right: -3.5rem; }
+
+    @media (max-width: 700px) {
+      &--prev { left: 0.5rem; }
+      &--next { right: 0.5rem; }
+    }
+  }
+
   &__close {
     position: absolute;
     top: -2.5rem;
