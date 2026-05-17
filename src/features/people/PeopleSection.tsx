@@ -120,8 +120,19 @@ export function PeopleSection() {
                 de la langue française, ils composaient les deux classes
                 UPE2A observées. Ce sont leurs échanges, leurs silences,
                 leurs interactions avec les enseignantes qui sont au cœur
-                de l'analyse — sans jamais être nommés ni identifiés.
+                de l'analyse.
               </p>
+              <div className="people-section__students-names">
+                <p className="people-section__students-class">
+                  <span className="people-section__students-class-label">Lycée-Montagne</span>
+                  {' - '}Cintio, Tiago, Karim, Kimiko
+                </p>
+                <p className="people-section__students-class">
+                  <span className="people-section__students-class-label">Lycée-Ville</span>
+                  {' - '}Luana, Hasna, Eteri, Ivo, Adel, Dilara, Bruna
+                </p>
+                <p className="people-section__students-note">Tous les prénoms sont des pseudonymes.</p>
+              </div>
             </div>
           </div>
         </div>
