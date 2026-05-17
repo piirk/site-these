@@ -179,7 +179,8 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 
 ## À faire (prochaines étapes)
 
-- [ ] Intégrer les vrais assets (PDF livret, memes)
+- [ ] Intégrer les vrais assets (PDF livret, memes) — déposer dans `public/assets/` (cf. structure dans le code)
+- [ ] Créer une favicon aux couleurs du site (remplacer `public/favicon.svg`)
 - [x] Titre du site : **Défocales-UPE2A**
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
 - [ ] Modifier les textes via le doc retour de Manon
