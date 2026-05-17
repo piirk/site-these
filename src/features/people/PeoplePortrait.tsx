@@ -1,14 +1,15 @@
 import type { ReactNode } from 'react'
+import type { Icon } from '@phosphor-icons/react'
 
 interface PeoplePortraitProps {
-  avatar: string
+  icon: Icon
   name: string
   role: string
   children: ReactNode
   variant?: 'default' | 'featured'
 }
 export function PeoplePortrait({
-  avatar,
+  icon: IconComponent,
   name,
   role,
   children,
@@ -20,7 +21,7 @@ export function PeoplePortrait({
       aria-label={`${name}, ${role}`}
     >
       <div className="people-portrait__avatar" aria-hidden="true">
-        {avatar}
+        <IconComponent weight={variant === 'featured' ? 'fill' : 'light'} />
       </div>
       <div className="people-portrait__body">
         <header className="people-portrait__header">

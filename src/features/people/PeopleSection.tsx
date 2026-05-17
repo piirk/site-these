@@ -1,3 +1,4 @@
+import { Binoculars, Mountains, Buildings } from '@phosphor-icons/react'
 import { PeoplePortrait } from './PeoplePortrait'
 import { TermTooltip } from '../../shared/components/TermTooltip'
 export function PeopleSection() {
@@ -27,7 +28,7 @@ export function PeopleSection() {
           </p>
 
           <PeoplePortrait
-            avatar="M"
+            icon={Binoculars}
             name="Manon"
             role="Docteure"
             variant="featured"
@@ -75,7 +76,7 @@ export function PeopleSection() {
 
           <div className="people-section__duo">
             <PeoplePortrait
-              avatar="M"
+              icon={Mountains}
               name="Maryse"
               role="Lycée-Montagne"
             >
@@ -88,7 +89,7 @@ export function PeopleSection() {
             </PeoplePortrait>
 
             <PeoplePortrait
-              avatar="M"
+              icon={Buildings}
               name="Monique"
               role="Lycée-Ville"
             >
