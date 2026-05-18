@@ -1,4 +1,4 @@
-import { LockSimple, Timer, Envelope } from '@phosphor-icons/react'
+import { LockSimpleIcon, TimerIcon, EnvelopeSimpleIcon } from '@phosphor-icons/react'
 import { CtaBanner } from './CtaBanner'
 import type { SurveyMeta } from '../../types'
 
@@ -54,7 +54,7 @@ const DESCRIPTION =
   "m'est précieux pour valider à la fois les résultats et ces nouvelles façons de les partager."
 
 const REASSURANCES = [
-  { icon: <LockSimple size={16} weight="bold" />, text: 'Anonyme et confidentiel' },
-  { icon: <Timer size={16} weight="bold" />, text: '5 minutes environ' },
-  { icon: <Envelope size={16} weight="bold" />, text: 'Aucune inscription requise' },
+  { icon: <LockSimpleIcon size={16} weight="bold" />, text: 'Anonyme et confidentiel' },
+  { icon: <TimerIcon size={16} weight="bold" />, text: '5 minutes environ' },
+  { icon: <EnvelopeSimpleIcon size={16} weight="bold" />, text: 'Aucune inscription requise' },
 ]
