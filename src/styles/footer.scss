@@ -1,0 +1,75 @@
+.site-footer {
+  background: var(--color-surface-emphasis);
+  padding: clamp(3.5rem, 7vw, 5.5rem) var(--content-padding-x) 2.5rem;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__closing {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.85;
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 0;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  &__research {
+    font-family: var(--font-ui);
+    font-size: 0.825rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: none;
+  }
+
+  &__site-name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  &__institution {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: none;
+  }
+
+  &__thesis-link {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--duration-fast);
+
+    &:hover {
+      color: var(--color-accent);
+      opacity: 1;
+    }
+  }
+
+  &__credits {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    opacity: 0.6;
+    margin: 0;
+    max-width: none;
+  }
+}

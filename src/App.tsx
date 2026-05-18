@@ -2,6 +2,7 @@
 // Montre l'intégration Navbar + sections + SurveySection (renommée)
 
 import { Navbar } from './features/layout/Navbar'
+import { Footer } from './features/layout/Footer'
 import { SurveySection } from './features/survey/SurveySection'
 import { HeroSection }   from './features/hero/HeroSection'
 import { WhySection }    from './features/why/WhySection'
@@ -34,6 +35,8 @@ export function App() {
         {/* id="survey" est posé dans SurveySection directement */}
         <SurveySection surveyUrl={siteConfig.surveyUrl} />
       </main>
+
+      <Footer surveyUrl={siteConfig.surveyUrl} thesisUrl={siteConfig.thesisUrl} />
     </>
   )
 }

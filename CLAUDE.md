@@ -188,7 +188,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Titre du site : **Défocales-UPE2A**
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
 - [x] Remplacer les emojis des `reassurances` dans `CtaBanner` (SurveySection) par des icônes Phosphor (`LockSimpleIcon`, `TimerIcon`, `EnvelopeSimpleIcon`)
-- [ ] Faire le footer
+- [x] Faire le footer
 - [x] Intégrer le lien vers la thèse de Manon : https://theses.hal.science/tel-05578702
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
