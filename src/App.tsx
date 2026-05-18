@@ -28,6 +28,7 @@ export function App() {
           bookPdfUrl="/assets/livret-soutenance.pdf"
           bookCoverUrl="/assets/livret-cover.jpg"
           memes={memes}
+          thesisUrl={siteConfig.thesisUrl}
         />
 
         {/* id="survey" est posé dans SurveySection directement */}

@@ -70,6 +70,13 @@
     gap: 0.625rem;
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
   &__title {
     font-family: var(--font-display);
     font-size: clamp(1.3rem, 3vw, 1.75rem);

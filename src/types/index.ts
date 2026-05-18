@@ -40,6 +40,7 @@ export interface MethodKeyword {
 
 export interface SiteConfig {
   surveyUrl: string
+  thesisUrl: string
 }
 
 export interface SurveyMeta {

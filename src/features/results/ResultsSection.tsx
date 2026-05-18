@@ -2,18 +2,21 @@
 import { FormatBlock } from './FormatBlock'
 import { BookViewer } from './BookViewer'
 import { MemeGrid } from './MemeGrid'
+import { Button } from '../../shared/ui/Button'
 import type { Meme } from '../../types/index'
 
 interface ResultsSectionProps {
   bookPdfUrl: string
   bookCoverUrl: string
   memes: Meme[]
+  thesisUrl: string
 }
 
 export function ResultsSection({
   bookPdfUrl,
   bookCoverUrl,
   memes,
+  thesisUrl,
 }: ResultsSectionProps) {
   return (
     <section id="results" className="section results-section" aria-labelledby="results-title">
@@ -60,6 +63,14 @@ export function ResultsSection({
               coverUrl={bookCoverUrl}
               title="Livret de soutenance"
               pageCount={12}
+            />
+            <Button
+              as="a"
+              href={thesisUrl}
+              label="Lire le manuscrit complet (HAL)"
+              variant="ghost"
+              size="sm"
+              target="_blank"
             />
           </FormatBlock>
 
