@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import type { Meme } from '../../types/index'
 
@@ -18,6 +18,36 @@ export function MemeGrid({ memes }: MemeGridProps) {
   const next = useCallback(() => {
     setSelectedIndex((i) => i !== null ? (i + 1) % memes.length : null)
   }, [memes.length])
+
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  const resetTransform = useCallback((animate: boolean) => {
+    if (!contentRef.current) return
+    contentRef.current.style.transition = animate ? 'transform var(--duration-normal) ease' : 'none'
+    contentRef.current.style.transform = 'translate(-50%, -50%)'
+  }, [])
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }
+    if (contentRef.current) contentRef.current.style.transition = 'none'
+  }, [])
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!touchStart.current || !contentRef.current) return
+    const dx = e.touches[0].clientX - touchStart.current.x
+    contentRef.current.style.transform = `translate(calc(-50% + ${dx * 0.4}px), -50%)`
+  }, [])
+
+  const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (!touchStart.current) return
+    const dx = e.changedTouches[0].clientX - touchStart.current.x
+    const dy = e.changedTouches[0].clientY - touchStart.current.y
+    touchStart.current = null
+    const shouldNavigate = Math.abs(dx) >= 50 && Math.abs(dx) >= Math.abs(dy)
+    resetTransform(!shouldNavigate)
+    if (shouldNavigate) dx < 0 ? next() : prev()
+  }, [prev, next, resetTransform])
 
   useEffect(() => {
     if (selectedIndex === null) return
@@ -57,7 +87,7 @@ export function MemeGrid({ memes }: MemeGridProps) {
       >
         <Dialog.Portal container={document.getElementById('portal-root') ?? undefined}>
           <Dialog.Overlay className="meme-lightbox-overlay" />
-          <Dialog.Content className="meme-lightbox" aria-label={selected?.altText}>
+          <Dialog.Content ref={contentRef} className="meme-lightbox" aria-label={selected?.altText} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Dialog.Title className="sr-only">{selected?.altText}</Dialog.Title>
             <Dialog.Description className="sr-only">{selected?.caption}</Dialog.Description>
 
