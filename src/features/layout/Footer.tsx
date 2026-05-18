@@ -25,7 +25,7 @@ export function Footer({ surveyUrl, thesisUrl }: FooterProps) {
             {' · '}Thèse de doctorat en sciences du langage
           </p>
           <p className="site-footer__institution">
-            Manon BOUCHARECHAS · Laboratoire LIDILEM · Université Grenoble Alpes · 2026
+            Manon BOUCHARÉCHAS · Laboratoire LIDILEM · Université Grenoble Alpes · 2026
           </p>
           <a
             href={thesisUrl}
