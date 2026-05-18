@@ -50,7 +50,7 @@ src/
 │   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
 │   │                   TwineBlock (inactif — Twine pas encore existant)
 │   ├── survey/         SurveySection + CtaBanner
-│   └── layout/         Navbar
+│   └── layout/         Navbar + Footer
 ├── shared/
 │   ├── components/     TermTooltip
 │   └── ui/             Button
@@ -90,6 +90,7 @@ src/
 | MethodSection | `#method` | ✅ |
 | ResultsSection | `#results` | ✅ |
 | SurveySection | `#survey` | ✅ |
+| Footer | — | ✅ |
 
 ---
 
@@ -123,7 +124,7 @@ src/
   ctaLabel="Texte du bouton"
   ctaUrl={surveyUrl}
   socialProof="Déjà 47 personnes ont répondu."  // optionnel
-  reassurances={[{ icon: '🔒', text: 'Anonyme' }]}  // optionnel
+  reassurances={[{ icon: <LockSimpleIcon size={16} weight="bold" />, text: 'Anonyme' }]}  // optionnel — icon est ReactNode (Phosphor)
   variant="default | highlight"
 />
 ```
@@ -151,7 +152,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - `padding-top: var(--navbar-height)` sur `#root`
 - Variables dans `tokens.scss`, jamais en dur dans les composants
 - Ordre des `@use` dans main.scss : `tokens` → `global` → `radix` → `term-tooltip`
-  → `components` → `navbar` → `hero` → `why` → `method` → `people` → `results` → `survey`
+  → `components` → `navbar` → `hero` → `why` → `method` → `people` → `results` → `survey` → `footer`
 - BEM nesting : tous les `__éléments` et `--modifiers` sont nestés sous leur bloc parent
   ```scss
   .block {
@@ -183,7 +184,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Intégrer les vrais assets (PDF livret, memes) — déposer dans `public/assets/` (cf. structure dans le code)
 - [ ] **[avec Manon — mercredi]** Alt texts des mèmes (à renseigner dans `src/data/results.ts`)
 - [ ] **[avec Manon — mercredi]** Révision des textes via le doc retour de Manon (utiliser le skill Boileau)
-- [ ] Vérifier avec Manon si les pseudonymes des enseignantes sont à préciser — déplacer ou élargir la note "Tous les prénoms sont des pseudonymes" en conséquence (`PeopleSection`)
+- [x] Vérifier avec Manon si les pseudonymes des enseignantes sont à préciser — déplacer ou élargir la note "Tous les prénoms sont des pseudonymes" en conséquence (`PeopleSection`)
 - [ ] Créer une favicon aux couleurs du site (remplacer `public/favicon.svg`)
 - [x] Titre du site : **Défocales-UPE2A**
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)

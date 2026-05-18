@@ -1,4 +1,4 @@
-import { Binoculars, Mountains, Buildings } from '@phosphor-icons/react'
+import { BinocularsIcon, MountainsIcon, BuildingsIcon } from '@phosphor-icons/react'
 import { PeoplePortrait } from './PeoplePortrait'
 import { TermTooltip } from '../../shared/components/TermTooltip'
 export function PeopleSection() {
@@ -28,7 +28,7 @@ export function PeopleSection() {
           </p>
 
           <PeoplePortrait
-            icon={Binoculars}
+            icon={BinocularsIcon}
             name="Manon"
             role="Docteure"
             variant="featured"
@@ -76,7 +76,7 @@ export function PeopleSection() {
 
           <div className="people-section__duo">
             <PeoplePortrait
-              icon={Mountains}
+              icon={MountainsIcon}
               name="Maryse"
               role="Lycée-Montagne"
             >
@@ -89,7 +89,7 @@ export function PeopleSection() {
             </PeoplePortrait>
 
             <PeoplePortrait
-              icon={Buildings}
+              icon={BuildingsIcon}
               name="Monique"
               role="Lycée-Ville"
             >
@@ -132,11 +132,14 @@ export function PeopleSection() {
                   <span className="people-section__students-class-label">Lycée-Ville</span>
                   {' - '}Luana, Hasna, Eteri, Ivo, Adel, Dilara, Bruna
                 </p>
-                <p className="people-section__students-note">Tous les prénoms sont des pseudonymes.</p>
               </div>
             </div>
           </div>
         </div>
+
+        <p className="people-section__pseudonyms-note">
+          Les prénoms des enseignantes et des élèves sont des pseudonymes.
+        </p>
 
         <div className="people-section__supervisor" aria-label="Encadrement de la recherche">
           <p className="people-section__supervisor-text">

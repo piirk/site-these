@@ -131,12 +131,12 @@
     color: var(--color-text-muted);
   }
 
-  &__students-note {
+  &__pseudonyms-note {
     font-family: var(--font-ui);
     font-size: 0.8rem;
     font-style: italic;
     color: var(--color-text-muted);
-    margin: 0.4rem 0 0;
+    margin: -1.5rem 0 0;
   }
 
   &__supervisor {
