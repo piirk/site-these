@@ -181,12 +181,15 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 ## À faire (prochaines étapes)
 
 - [x] Intégrer les vrais assets (PDF livret, memes) — déposer dans `public/assets/` (cf. structure dans le code)
-- [ ] Demander à Manon les alt texts des mèmes (à renseigner dans `src/data/results.ts`)
+- [ ] **[avec Manon — mercredi]** Alt texts des mèmes (à renseigner dans `src/data/results.ts`)
+- [ ] **[avec Manon — mercredi]** Révision des textes via le doc retour de Manon (utiliser le skill Boileau)
 - [ ] Vérifier avec Manon si les pseudonymes des enseignantes sont à préciser — déplacer ou élargir la note "Tous les prénoms sont des pseudonymes" en conséquence (`PeopleSection`)
 - [ ] Créer une favicon aux couleurs du site (remplacer `public/favicon.svg`)
 - [x] Titre du site : **Défocales-UPE2A**
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
-- [ ] Modifier les textes via le doc retour de Manon
+- [ ] Remplacer les emojis des `reassurances` dans `CtaBanner` (SurveySection) par des icônes Phosphor
+- [ ] Faire le footer
+- [ ] Intégrer le lien vers la thèse de Manon : https://theses.hal.science/tel-05578702
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
 - [ ] Revoir la qualité de SurveySection (accroche, frictions basses, confiance)
