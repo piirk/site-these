@@ -189,7 +189,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
 - [ ] Remplacer les emojis des `reassurances` dans `CtaBanner` (SurveySection) par des icônes Phosphor
 - [ ] Faire le footer
-- [ ] Intégrer le lien vers la thèse de Manon : https://theses.hal.science/tel-05578702
+- [x] Intégrer le lien vers la thèse de Manon : https://theses.hal.science/tel-05578702
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
 - [ ] Revoir la qualité de SurveySection (accroche, frictions basses, confiance)
