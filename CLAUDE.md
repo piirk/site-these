@@ -185,7 +185,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [ ] **[avec Manon — mercredi]** Alt texts des mèmes (à renseigner dans `src/data/results.ts`)
 - [ ] **[avec Manon — mercredi]** Révision des textes via le doc retour de Manon (utiliser le skill Boileau)
 - [x] Vérifier avec Manon si les pseudonymes des enseignantes sont à préciser — déplacer ou élargir la note "Tous les prénoms sont des pseudonymes" en conséquence (`PeopleSection`)
-- [ ] Créer une favicon aux couleurs du site (remplacer `public/favicon.svg`)
+- [ ] Créer une favicon aux couleurs du site (remplacer `public/favicon.svg`) — deux propositions prêtes dans `public/` : `favicon-option-a.svg` (monogramme "D" sur fond terre cuite) et `favicon-option-b.svg` (◎ défocale). À faire choisir à Manon.
 - [x] Titre du site : **Défocales-UPE2A**
 - [x] Revoir PeopleSection pour l'intégration des pseudonymes (cf. doc)
 - [x] Remplacer les emojis des `reassurances` dans `CtaBanner` (SurveySection) par des icônes Phosphor (`LockSimpleIcon`, `TimerIcon`, `EnvelopeSimpleIcon`)
