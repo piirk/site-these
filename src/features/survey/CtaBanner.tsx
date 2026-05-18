@@ -1,7 +1,9 @@
 import { Button } from '../../shared/ui/Button'
 
+import type { ReactNode } from 'react'
+
 interface Reassurance {
-  icon: string
+  icon: ReactNode
   text: string
 }
 
