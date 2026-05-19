@@ -1,22 +1,10 @@
-// features/results/TwineBlock.tsx
 import { Button } from '../../shared/ui/Button'
 
 interface TwineBlockProps {
   url: string
 }
 
-/**
- * TwineBlock — invitation au parcours interactif Twine.
- *
- * Choix délibéré : lien externe, pas d'iframe.
- * Raisons :
- * - Les iframes Twine sont fragiles sur mobile (scroll capturé, viewport incorrect)
- * - Un nouvel onglet donne toute la place à l'expérience Twine
- * - Plus simple à maintenir — si l'URL change, un seul endroit à modifier
- *
- * Le bloc doit donner envie d'entrer dans le parcours —
- * courte mise en contexte + affordance claire.
- */
+// external link, not iframe — Twine iframes break on mobile (captured scroll, wrong viewport)
 export function TwineBlock({ url }: TwineBlockProps) {
   return (
     <div className="twine-block">

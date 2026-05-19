@@ -3,7 +3,6 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 type ButtonVariant = 'primary' | 'secondary' | 'ghost'
 type ButtonSize = 'sm' | 'md' | 'lg'
  
-// Props de base partagées
 interface ButtonBaseProps {
   variant?: ButtonVariant
   size?: ButtonSize
@@ -11,7 +10,6 @@ interface ButtonBaseProps {
   ariaLabel?: string
 }
  
-// Deux cas d'usage : bouton natif ou lien externe
 type ButtonAsButton = ButtonBaseProps &
   ButtonHTMLAttributes<HTMLButtonElement> & {
     as?: 'button'
@@ -26,11 +24,6 @@ type ButtonAsLink = ButtonBaseProps &
  
 export type ButtonProps = ButtonAsButton | ButtonAsLink
  
-/**
- * Bouton réutilisable à double nature :
- * - <button> par défaut (actions internes)
- * - <a> quand as="a" + href (liens externes, CTA questionnaire)
- */
 export function Button({ variant = 'primary', size = 'md', label, ariaLabel, ...rest }: ButtonProps) {
   const baseClass = `btn btn--${variant} btn--${size}`
  

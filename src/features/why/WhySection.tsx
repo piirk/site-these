@@ -1,21 +1,11 @@
 import { FindingBlock } from './FindingBlock'
 import { TermTooltip } from '../../shared/components/TermTooltip'
 
-/**
- * WhySection — genèse et motivation du projet doctoral.
- *
- * Structure narrative (4 temps) :
- * 1. Genèse personnelle  → "sortie du master avec encore plus de questions"
- * 2. Les deux constats   → FindingBlock (théorie + terrain)
- * 3. La thèse formulée  → ce que la recherche défend
- * 4. La question pivot   → "Et si c'était en lien ?"
- */
 export function WhySection() {
   return (
     <section id="why" className="section why-section" aria-labelledby="why-title">
       <div className="section__inner why-section__inner">
 
-        {/* ── 1. Genèse ── */}
         <header className="why-section__header">
           <p className="eyebrow">Pourquoi cette recherche</p>
           <h2 id="why-title" className="section__title">
@@ -37,7 +27,6 @@ export function WhySection() {
           </p>
         </header>
 
-        {/* ── 2. Les deux constats ── */}
         <div className="why-section__findings" role="list">
           <FindingBlock
             index={1}
@@ -59,7 +48,6 @@ export function WhySection() {
           />
         </div>
 
-        {/* ── 3. La question pivot ── */}
         <div className="why-section__pivot" aria-label="Question centrale de la recherche">
           <p className="why-section__pivot-text">
             Et si ces deux éléments étaient liés&nbsp;?
@@ -69,7 +57,6 @@ export function WhySection() {
           </p>
         </div>
 
-        {/* ── 4. La thèse ── */}
         <div className="why-section__thesis">
           <p className="why-section__thesis-label">La thèse défendue</p>
           <blockquote className="why-section__thesis-text">

@@ -1,23 +1,11 @@
 import { MethodStep } from './MethodStep'
 import { TermTooltip } from '../../shared/components/TermTooltip'
 
-/**
- * MethodSection — révisée avec le contenu source complet.
- *
- * Changements vs version initiale :
- * - Étape 3 : le cadre théorique est maintenant détaillé en deux volets
- *   (théories de l'interaction + théories de l'activité professionnelle)
- *   fidèle au document source
- * - La phrase de transition vers ResultsSection est ajoutée à la fin
- *   ("plutôt qu'un exposé lourd…") — elle fait le lien narratif
- * - La voix à la première personne est conservée partout
- */
 export function MethodSection() {
   return (
     <section id="method" className="section method-section" aria-labelledby="method-title">
       <div className="section__inner method-section__inner">
 
-        {/* ── Header ── */}
         <header className="method-section__header">
           <p className="eyebrow">Comment ça s'est passé</p>
           <h2 id="method-title" className="section__title">
@@ -30,7 +18,6 @@ export function MethodSection() {
           </p>
         </header>
 
-        {/* ── Étapes ── */}
         <ol className="method-section__steps" aria-label="Étapes de la recherche">
 
           <MethodStep index={1} heading="S'immerger sur le terrain">

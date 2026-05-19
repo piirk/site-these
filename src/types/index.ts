@@ -1,6 +1,3 @@
-// types/index.ts
-
-// à simplifier en string si complexité inutile
 export type PersonRole = 'researcher' | 'participant' | 'supervisor'
 
 export interface Person {
@@ -16,7 +13,7 @@ export interface Person {
 export interface Meme {
   id: string
   imageUrl: string
-  altText: string // accessibilité obligatoire
+  altText: string
   caption?: string
 }
 
@@ -26,7 +23,6 @@ export interface BookPage {
   altText: string
 }
 
-// ici simplifiable -> dans BookPage mettre id: string à la place de pageNumber si ordre = index et retirer BookViewerData
 export interface BookViewerData {
   title: string
   pages: BookPage[]

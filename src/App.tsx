@@ -1,6 +1,3 @@
-// App.tsx — Assemblage final
-// Montre l'intégration Navbar + sections + SurveySection (renommée)
-
 import { Navbar } from './features/layout/Navbar'
 import { Footer } from './features/layout/Footer'
 import { SurveySection } from './features/survey/SurveySection'
@@ -16,11 +13,10 @@ import { memes } from './data/results'
 export function App() { 
   return (
     <>
-      {/* Navbar sticky — en dehors du <main> car position: fixed */}
+      {/* outside <main> — position: fixed */}
       <Navbar surveyUrl={siteConfig.surveyUrl} />
 
       <main>
-        {/* Chaque section a son id qui correspond aux NAV_ITEMS */}
         <HeroSection />
         <WhySection />
         <PeopleSection />
@@ -32,7 +28,6 @@ export function App() {
           thesisUrl={siteConfig.thesisUrl}
         />
 
-        {/* id="survey" est posé dans SurveySection directement */}
         <SurveySection surveyUrl={siteConfig.surveyUrl} />
       </main>
 

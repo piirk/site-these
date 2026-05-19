@@ -1,4 +1,3 @@
-// features/results/ResultsSection.tsx
 import { FormatBlock } from './FormatBlock'
 import { BookViewer } from './BookViewer'
 import { MemeGrid } from './MemeGrid'
@@ -21,14 +20,12 @@ export function ResultsSection({
   return (
     <section id="results" className="section results-section" aria-labelledby="results-title">
 
-      {/* ── 1. Bascule narrative ── */}
       <div className="results-section__intro">
         <div className="section__inner">
           <p className="eyebrow">Les résultats</p>
           <h2 id="results-title" className="section__title">
             Ce que la recherche permet de voir
           </h2>
-          {/* Idée centrale — typographiquement forte, fond coloré */}
           <div className="results-section__thesis-callout">
             <p className="results-section__thesis-text">
               Les enseignants d'UPE2A font bien plus que transmettre
@@ -45,7 +42,6 @@ export function ResultsSection({
         </div>
       </div>
 
-      {/* ── 2–3. Les formats ── */}
       <div className="results-section__formats">
         <div className="section__inner results-section__formats-inner">
 

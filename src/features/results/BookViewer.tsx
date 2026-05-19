@@ -1,5 +1,3 @@
-// features/results/BookViewer.tsx
-
 interface BookViewerProps {
   /** URL du PDF à ouvrir */
   pdfUrl: string
@@ -11,23 +9,6 @@ interface BookViewerProps {
   pageCount?: number
 }
 
-/**
- * BookViewer — MVP.
- *
- * Version actuelle : couverture + lien PDF.
- * Pas de flip book pour l'instant — la complexité n'est pas justifiée
- * avant de savoir si les visiteurs interagissent avec ce contenu.
- *
- * Ce qu'un vrai BookViewer demanderait plus tard :
- * - gestion des pages (useState<number>)
- * - swipe mobile (touch events ou bibliothèque légère)
- * - images par page en webp optimisé
- * - lazy loading
- * → À construire si les analytics montrent un vrai usage.
- *
- * La couverture est cliquable — c'est l'affordance principale.
- * Le bouton texte en dessous est le fallback accessible.
- */
 export function BookViewer({ pdfUrl, coverUrl, title, pageCount }: BookViewerProps) {
   return (
     <div className="book-viewer">
@@ -44,7 +25,6 @@ export function BookViewer({ pdfUrl, coverUrl, title, pageCount }: BookViewerPro
             alt={`Couverture du livret : ${title}`}
             className="book-viewer__cover-img"
           />
-          {/* Overlay au hover — indique que c'est interactif */}
           <div className="book-viewer__cover-overlay" aria-hidden="true">
             <span className="book-viewer__cover-icon">↗</span>
           </div>

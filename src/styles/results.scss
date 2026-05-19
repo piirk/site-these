@@ -1,6 +1,6 @@
 .results-section {
   background: var(--color-bg);
-  padding: 0; // chaque sous-zone gère son propre padding
+  padding: 0;
 
   &__intro {
     padding: var(--section-padding-y) var(--content-padding-x);

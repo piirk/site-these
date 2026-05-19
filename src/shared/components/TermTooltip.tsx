@@ -1,5 +1,3 @@
-// shared/components/TermTooltip.tsx
-
 import * as Tooltip from '@radix-ui/react-tooltip'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState } from 'react'
@@ -30,8 +28,6 @@ export function TermTooltip({ term, definition }: TermTooltipProps) {
     : <TermDesktopTooltip term={term} definition={definition} />
 }
 
-// ── Desktop ───────────────────────────────────────────────────────────────────
-
 function TermDesktopTooltip({ term, definition }: TermTooltipProps) {
   return (
     <Tooltip.Provider delayDuration={150}>
@@ -61,8 +57,6 @@ function TermDesktopTooltip({ term, definition }: TermTooltipProps) {
     </Tooltip.Provider>
   )
 }
-
-// ── Mobile bottom sheet ───────────────────────────────────────────────────────
 
 function TermBottomSheet({ term, definition }: TermTooltipProps) {
   const [open, setOpen] = useState(false)

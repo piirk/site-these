@@ -1,7 +1,4 @@
-// features/layout/Navbar.tsx
-// Menu mobile remplacé par état React + position fixed.
-// Radix Dialog retiré de la Navbar pour éviter le conflit avec
-// les Dialog de TermTooltip (deux Dialog.Root simultanés = comportement imprévisible).
+// Radix Dialog removed — two simultaneous Dialog.Root caused unpredictable behavior with TermTooltip.
 
 import { useEffect, useState, useRef } from 'react'
 import { useScrollSpy } from '../../hooks/useScrollSpy'

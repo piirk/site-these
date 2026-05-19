@@ -7,17 +7,6 @@ interface SurveySectionProps {
   meta?: SurveyMeta
 }
 
-/**
- * SurveySection — révisée avec le contenu source.
- *
- * La formulation d'origine de la chercheuse est précieuse :
- * elle explique *pourquoi* elle a fait ce site et ce que les réponses
- * lui apportent concrètement. C'est bien plus convaincant qu'un CTA générique.
- *
- * Deux niveaux de lecture :
- * - Titre + description : pourquoi votre avis compte (raison personnelle, engagée)
- * - Réassurances : lever les objections pratiques (durée, anonymat)
- */
 export function SurveySection({ surveyUrl, meta }: SurveySectionProps) {
   return (
     <section
@@ -44,8 +33,6 @@ export function SurveySection({ surveyUrl, meta }: SurveySectionProps) {
   )
 }
 
-// Fidèle à la formulation de la chercheuse, légèrement resserrée.
-// On garde le "je" — cohérence avec la voix du reste du site.
 const DESCRIPTION =
   "J'ai créé ce site et réfléchi à des formats de restitution plus légers " +
   "parce qu'il me semble essentiel que les enseignants concernés par les études " +

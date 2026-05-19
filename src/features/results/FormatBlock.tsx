@@ -1,4 +1,3 @@
-// features/results/FormatBlock.tsx
 import type { ReactNode } from 'react'
 
 interface FormatBlockProps {
@@ -12,16 +11,6 @@ interface FormatBlockProps {
   id?: string
 }
 
-/**
- * FormatBlock — wrapper narratif pour chaque format de restitution.
- *
- * Rôle : garantir la cohérence entre les trois formats
- * sans les rendre visuellement identiques.
- * Le contenu (children) peut être très différent d'un format à l'autre —
- * seule l'intro (titre + description) est standardisée.
- *
- * Pas de state, pas de logique — purement présentationnel.
- */
 export function FormatBlock({ title, description, children, id }: FormatBlockProps) {
   return (
     <div className="format-block" id={id}>
