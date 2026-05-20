@@ -32,7 +32,7 @@ export function MethodSection() {
               <TermTooltip
                 term="ethnographe"
                 definition="Chercheuse qui s'immerge dans un milieu pour l'observer de l'intérieur, comme une exploratrice découvrant une culture inconnue, sans a priori, carnet à la main."
-              />{' '}
+              />
               , j'observais, je notais, je restais plus ou moins en retrait.
               Résultats : à la fin de l'année : beaucoup… beaucoup de pages de notes !
             </p>
@@ -63,7 +63,7 @@ export function MethodSection() {
               <TermTooltip
                 term="cadre théorique"
                 definition="Ensemble de théories et concepts établis par d'autres chercheurs, qui servent de grille de lecture pour interpréter ses propres observations de terrain."
-              />{' '}
+              />
               .
             </p>
             <p>
