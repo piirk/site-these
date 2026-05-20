@@ -31,7 +31,7 @@ export function ResultsSection({
               Les enseignants d'UPE2A font bien plus que transmettre
               une langue. Ils construisent des relations, négocient
               des identités, inventent des rôles que personne ne leur
-              a demandés — et c'est précisément là que réside
+              a demandés, et c'est précisément là que réside
               l'essentiel de leur travail.
             </p>
           </div>
@@ -51,7 +51,7 @@ export function ResultsSection({
             description={
               "Le livret résumé, conçu à l'origine pour la soutenance de thèse. " +
               "Il présente les grandes lignes des résultats de manière condensée " +
-              "et accessible — sans les 300 pages du manuscrit."
+              "et accessible, sans les 300 pages du manuscrit."
             }
           >
             <BookViewer
@@ -63,7 +63,7 @@ export function ResultsSection({
             <Button
               as="a"
               href={thesisUrl}
-              label="Lire le manuscrit complet (HAL)"
+              label="Lire le manuscrit complet ↗"
               variant="ghost"
               size="sm"
               target="_blank"

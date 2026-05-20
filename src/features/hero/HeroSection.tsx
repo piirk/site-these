@@ -16,8 +16,8 @@ export function HeroSection() {
         <p className="hero-section__lead">
           Ce site présente les résultats d'une recherche menée dans des classes
           accueillant des élèves allophones, autour de ces moments de
-          «&nbsp;défocalisation&nbsp;» où le cours déborde du cadre habituel
-          — et de ce qu'ils révèlent sur le travail des enseignants.
+          «&nbsp;défocalisation&nbsp;» où le cours déborde du cadre habituel, 
+          et de ce qu'ils révèlent sur le travail des enseignants.
         </p>
 
         <div className="hero-section__cta-group">
@@ -31,8 +31,7 @@ export function HeroSection() {
         </div>
 
         <p className="hero-section__hint">
-          Tout au long du site, des informations supplémentaires sont accessibles
-          en survolant les termes soulignés.
+          Les termes soulignés cachent des définitions&nbsp;: survolez-les ou appuyez dessus.
         </p>
 
         <div className="hero-section__scroll-hint" aria-hidden="true">

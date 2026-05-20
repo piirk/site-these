@@ -14,7 +14,7 @@ export function Footer({ surveyUrl, thesisUrl }: FooterProps) {
           <a href={surveyUrl} target="_blank" rel="noopener noreferrer">
             il reste ouvert
           </a>
-          {' '}— votre point de vue compte vraiment pour la suite de ce travail.
+          {' : '}votre point de vue compte vraiment pour la suite de ce travail.
         </p>
 
         <hr className="site-footer__divider" aria-hidden="true" />
@@ -33,12 +33,12 @@ export function Footer({ surveyUrl, thesisUrl }: FooterProps) {
             rel="noopener noreferrer"
             className="site-footer__thesis-link"
           >
-            Lire le manuscrit complet (HAL) ↗
+            Lire le manuscrit complet ↗
           </a>
         </div>
 
         <p className="site-footer__credits">
-          © 2026 — Site conçu par piirk
+          © 2026 · Site conçu par piirk
         </p>
 
       </div>

@@ -19,7 +19,7 @@ export function SurveySection({ surveyUrl, meta }: SurveySectionProps) {
         eyebrow="Donnez votre avis"
         title="Votre retour compte pour cette recherche"
         description={DESCRIPTION}
-        ctaLabel="Répondre au questionnaire — 5 minutes"
+        ctaLabel="Répondre au questionnaire · 5 minutes"
         ctaUrl={surveyUrl}
         socialProof={
           meta?.participantCount
@@ -37,7 +37,7 @@ const DESCRIPTION =
   "J'ai créé ce site et réfléchi à des formats de restitution plus légers " +
   "parce qu'il me semble essentiel que les enseignants concernés par les études " +
   "aient accès aux savoirs qu'ils contribuent eux-mêmes à créer. " +
-  "Votre retour — sur la forme du site, le livret, les memes, ou sur le fond — " +
+  "Votre retour (sur la forme du site, le livret, les memes, ou sur le fond) " +
   "m'est précieux pour valider à la fois les résultats et ces nouvelles façons de les partager."
 
 const REASSURANCES = [

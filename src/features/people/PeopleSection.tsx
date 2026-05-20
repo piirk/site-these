@@ -42,7 +42,7 @@ export function PeopleSection() {
               au laboratoire{' '}
               <TermTooltip
                 term="LIDILEM"
-                definition="Linguistique et Didactique des Langues Étrangères et Maternelles — laboratoire de recherche de l'Université Grenoble Alpes spécialisé dans l'étude des langues et de leur enseignement."
+                definition="Linguistique et Didactique des Langues Étrangères et Maternelles : laboratoire de recherche de l'Université Grenoble Alpes spécialisé dans l'étude des langues et de leur enseignement."
               />{' '}
               de l'Université Grenoble Alpes,
               j'ai publié une{' '}
@@ -53,18 +53,18 @@ export function PeopleSection() {
               en{' '}
               <TermTooltip
                 term="sciences du langage"
-                definition="Science humaine qui étudie le langage dans son sens large — ses sons, ses structures, ses usages sociaux. Elle englobe des domaines comme la syntaxe, la phonétique, ou encore la didactique."
-              />{' '}
+                definition="Science humaine qui étudie le langage dans son sens large, ses sons, ses structures, ses usages sociaux. Elle englobe des domaines comme la syntaxe, la phonétique, ou encore la didactique."
+              />
               , spécialité{' '}
               <TermTooltip
                 term="didactique du FLES"
                 definition="Didactique du Français Langue Étrangère et Seconde : domaine qui s'intéresse à la manière dont le français est enseigné à des personnes qui ne l'ont pas comme langue maternelle."
-              />{' '}
+              />
               .
             </p>
             <p>
               Ce site, c'est ma façon de partager ce travail au-delà
-              du manuscrit de thèse — et de recueillir vos retours.
+              du manuscrit de thèse, et de recueillir vos retours.
             </p>
           </PeoplePortrait>
         </div>
@@ -95,7 +95,7 @@ export function PeopleSection() {
             >
               <p>
                 Son lycée est en milieu urbain. Chaque mardi, même
-                démarche — même carnet, même posture d'observatrice.
+                démarche&nbsp;: même carnet, même posture d'observatrice.
                 Deux contextes différents, une même curiosité.
               </p>
             </PeoplePortrait>
@@ -148,7 +148,7 @@ export function PeopleSection() {
             ,{' '}
             <TermTooltip
               term="directrice de thèse"
-              definition="Enseignante-chercheuse en poste à l'université qui accompagne et supervise le travail doctoral — elle guide les choix méthodologiques et valide la démarche scientifique."
+              definition="Enseignante-chercheuse en poste à l'université qui accompagne et supervise le travail doctoral, elle guide les choix méthodologiques et valide la démarche scientifique."
             />{' '}
             à l'Université Grenoble Alpes.
           </p>

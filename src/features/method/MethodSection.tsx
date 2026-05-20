@@ -12,9 +12,9 @@ export function MethodSection() {
             Une année dans les classes
           </h2>
           <p className="method-section__intro">
-            Pas de questionnaire envoyé par mail, pas d'entretien en bureau.
-            Pour comprendre ce qui se passe vraiment en cours,
-            il fallait y être — semaine après semaine.
+            Pas de questionnaire envoyé par mail : pour comprendre 
+            ce qui se passe vraiment en cours,
+            il fallait y être, semaine après semaine.
           </p>
         </header>
 
@@ -31,10 +31,10 @@ export function MethodSection() {
               À la manière d'une{' '}
               <TermTooltip
                 term="ethnographe"
-                definition="Chercheuse qui s'immerge dans un milieu pour l'observer de l'intérieur — comme une exploratrice découvrant une culture inconnue, sans a priori, carnet à la main."
+                definition="Chercheuse qui s'immerge dans un milieu pour l'observer de l'intérieur, comme une exploratrice découvrant une culture inconnue, sans a priori, carnet à la main."
               />{' '}
-              , j'observais, je notais, je restais en retrait.
-              À la fin de l'année : beaucoup… beaucoup de pages de notes.
+              , j'observais, je notais, je restais plus ou moins en retrait.
+              Résultats : à la fin de l'année : beaucoup… beaucoup de pages de notes !
             </p>
           </MethodStep>
 
@@ -45,21 +45,21 @@ export function MethodSection() {
               une{' '}
               <TermTooltip
                 term="analyse interactionnelle"
-                definition="Méthode qui étudie les échanges verbaux dans le détail : qui dit quoi, comment, à quel moment — pour comprendre ce qui se joue vraiment dans une conversation."
+                definition="Méthode qui étudie les échanges verbaux dans le détail : qui dit quoi, comment, à quel moment, pour comprendre ce qui se joue vraiment dans une conversation."
               />{' '}
               : étudier les échanges mot à mot.
             </p>
             <p>
-              J'ai ensuite fait un tri. Pas tout — seulement les passages où
+              J'ai ensuite fait un tri. Je n'ai pas tout analysé, seulement les passages où
               la discussion s'éloignait des questions de transmission de la langue.
-              Ces moments-là, précisément.
+              Ce sont ces moments-là précisément, sur lesquels je me suis penchée.
             </p>
           </MethodStep>
 
           <MethodStep index={3} heading="Analyser avec un cadre théorique">
             <p>
               Pour donner du sens à ces passages, on s'appuie sur des concepts
-              et des théories déjà existants — c'est ce qu'on appelle un{' '}
+              et des théories déjà existants : c'est ce qu'on appelle un{' '}
               <TermTooltip
                 term="cadre théorique"
                 definition="Ensemble de théories et concepts établis par d'autres chercheurs, qui servent de grille de lecture pour interpréter ses propres observations de terrain."
@@ -67,13 +67,13 @@ export function MethodSection() {
               .
             </p>
             <p>
-              J'en ai mobilisé deux types. D'abord, des théories sur
+              J'en ai mobilisé un, pluridisciplinaire. D'abord, des théories sur
               le fonctionnement des échanges en classe : comment les identités,
               les rôles et les relations s'y construisent, quels en sont
               les enjeux affectifs.
             </p>
             <p>
-              Ensuite, des théories sur l'activité professionnelle — notamment
+              Ensuite, des théories sur l'activité professionnelle, notamment
               la distinction entre ce qui est <em>prescrit</em> (ce qu'on est
               censé faire) et ce qui est <em>réellement fait</em> : ce qu'on
               tente, ce qu'on évite, ce qu'on fait sans que personne ne le demande.
@@ -81,11 +81,16 @@ export function MethodSection() {
             </p>
           </MethodStep>
 
-          <MethodStep index={4} heading="Et donc — le travail invisible" isLast>
+          <MethodStep index={4} heading="Et donc : le travail invisible" isLast>
             <p>
-              Au fil de l'analyse, une notion s'est imposée : une partie essentielle
+              Au fil de l'analyse, un résultat s'est imposé : une partie essentielle
               du travail de ces enseignantes n'apparaît dans aucune fiche de poste.
               Elle n'est ni enseignée, ni reconnue, ni nommée.
+            </p>
+            <p>
+              S'intéresser aux moments qui s'éloignent du cadre typique permet de 
+              mettre au jour le <em>travail invisible</em> effectué par ces deux
+              enseignantes.
             </p>
             <p>
               Plutôt qu'un exposé théorique de trois cents pages,

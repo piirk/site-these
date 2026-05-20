@@ -14,7 +14,7 @@ export function TwineBlock({ url }: TwineBlockProps) {
       <div className="twine-block__body">
         <p className="twine-block__teaser">
           Dans ce parcours, vous ferez face aux mêmes situations
-          que les enseignantes observées — et vous devrez choisir.
+          que les enseignantes observées, et vous devrez choisir.
           Il n'y a pas de bonne réponse. C'est le principe.
         </p>
         <Button

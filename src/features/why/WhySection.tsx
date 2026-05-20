@@ -19,7 +19,7 @@ export function WhySection() {
               />{', '}
             j'avais plus de questions qu'au départ.
             Alors quand l'opportunité de poursuivre dans le cadre d'un doctorat
-            s'est présentée — j'ai accepté.
+            s'est présentée, j'ai accepté.
           </p>
           <p className="why-section__intro">
             Le projet s'est construit autour de deux choses qui semblaient
@@ -33,8 +33,8 @@ export function WhySection() {
             heading="Ce que dit la littérature"
             body={
               "Les enseignants d'UPE2A sont décrits dans les textes comme très investis " +
-              "dans leur travail — mais ils évoquent aussi un mal-être, " +
-              "une impression d'être démunis, de ne pas vraiment « faire cours »."
+              "dans leur travail, mais ils évoquent aussi un mal-être, " +
+              "une impression d'être démunis, de ne pas vraiment « faire cours »."
             }
           />
           <FindingBlock
@@ -43,7 +43,7 @@ export function WhySection() {
             body={
               "Dans les cours observés, beaucoup de moments s'éloignent de ce " +
               "qu'on s'attend à trouver dans un cours traditionnel. " +
-              "Quelque chose d'autre se passe — et ça fonctionne."
+              "Quelque chose d'autre se passe, et ça fonctionne."
             }
           />
         </div>
@@ -62,8 +62,8 @@ export function WhySection() {
           <blockquote className="why-section__thesis-text">
             Ces moments qui s'écartent du cours attendu sont au cœur
             de la diversification des rôles des enseignants d'UPE2A.
-            S'y intéresser permet de rendre visible une partie de leur travail
-            — souvent laissée de côté — celle qui les amène à questionner leur métier.
+            S'y intéresser permet de rendre visible une partie de leur travail, 
+            souvent laissée de côté : celle qui les amène à questionner leur métier.
           </blockquote>
         </div>
 
