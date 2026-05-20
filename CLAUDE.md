@@ -182,8 +182,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 ## À faire (prochaines étapes)
 
 - [x] Intégrer les vrais assets (PDF livret, memes) — déposer dans `public/assets/` (cf. structure dans le code)
-- [ ] **[avec Manon — mercredi]** Alt texts des mèmes (à renseigner dans `src/data/results.ts`)
-- [ ] **[avec Manon — mercredi]** Révision des textes via le doc retour de Manon (utiliser le skill Boileau)
+- [x] **[avec Manon]** Révision des textes via le doc retour de Manon (skill Boileau)
 - [x] Vérifier avec Manon si les pseudonymes des enseignantes sont à préciser — déplacer ou élargir la note "Tous les prénoms sont des pseudonymes" en conséquence (`PeopleSection`)
 - [x] Créer une favicon aux couleurs du site — option A choisie (monogramme "D" blanc sur fond terre cuite, `favicon-option-a.svg` copié dans `favicon.svg`)
 - [x] Titre du site : **Défocales-UPE2A**
@@ -195,6 +194,9 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
 - [ ] Revoir la qualité de SurveySection (accroche, frictions basses, confiance)
-- [ ] Ajouter une section "À venir" (lien vers corpus)
-- [ ] Ajouter liens vers les publications scientifiques s'appuyant sur la recherche
+- [ ] Accessibilité : audit complet (score Lighthouse, contrastes couleurs WCAG AA, focus visible, aria-labels, navigation clavier) — inclut les alt texts des mèmes (`src/data/results.ts`)
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
+
+**Éventuellement, si décidé :**
+- Ajouter une section "À venir" (lien vers corpus)
+- Ajouter des liens vers les publications scientifiques s'appuyant sur la recherche
