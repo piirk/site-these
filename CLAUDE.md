@@ -22,7 +22,7 @@ allophones nouvellement arrivés en France).
 - Vite
 - SCSS (modules partiels avec `@use`)
 - Radix UI (uniquement pour les interactions utiles)
-- Phosphor Icons (`@phosphor-icons/react`) — icônes dans PeopleSection
+- Phosphor Icons (`@phosphor-icons/react`) — icônes dans PeopleSection, SurveySection, LegalNoticesDialog
 - Architecture feature-based
 
 ---
@@ -49,8 +49,8 @@ src/
 │   ├── method/         MethodSection + MethodStep
 │   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
 │   │                   TwineBlock (inactif — Twine pas encore existant)
-│   ├── survey/         SurveySection + CtaBanner
-│   └── layout/         Navbar + Footer
+│   ├── survey/         SurveySection + CtaBanner (inactif — conservé pour usage futur)
+│   └── layout/         Navbar + Footer + LegalNoticesDialog
 ├── shared/
 │   ├── components/     TermTooltip
 │   └── ui/             Button
@@ -58,7 +58,7 @@ src/
 │   ├── useScrollSpy.ts
 │   └── useIsTouchDevice.ts
 ├── data/
-│   ├── config.ts       siteConfig (surveyUrl, etc.)
+│   ├── config.ts       siteConfig (surveyUrl, thesisUrl, contactEmail)
 │   └── results.ts      memes[]
 ├── types/
 │   └── index.ts        Person, Meme, SurveyMeta, SiteConfig...
@@ -75,7 +75,8 @@ src/
     ├── method.scss
     ├── people.scss
     ├── results.scss
-    └── survey.scss         .survey-section, .cta-banner
+    ├── survey.scss         .survey-section, .cta-banner (inactif)
+    └── footer.scss         .site-footer, .legal-notices-dialog
 ```
 
 ---
@@ -115,7 +116,8 @@ src/
 
 ### `CtaBanner` (`features/survey/CtaBanner.tsx`)
 ```tsx
-// Composant interne à la feature survey
+// Composant interne à la feature survey — actuellement inactif (SurveySection redesignée)
+// Conservé pour un éventuel usage futur
 <CtaBanner
   eyebrow="Texte petit au-dessus"
   titleId="id-pour-aria"
@@ -129,12 +131,21 @@ src/
 />
 ```
 
+### `LegalNoticesDialog` (`features/layout/LegalNoticesDialog.tsx`)
+```tsx
+// Radix Dialog centré, ouvert depuis le footer
+// Contenu : éditeur, conception, hébergement, contact, droits mèmes
+// Keyframe dédié `legal-dialog-in` (intègre translate(-50%,-50%) pour éviter flash bas-droite)
+<LegalNoticesDialog open={legalOpen} onOpenChange={setLegalOpen} contactEmail={contactEmail} />
+```
+
 ---
 
 ## Radix UI — règles d'utilisation
 
 - `TermTooltip` → `@radix-ui/react-tooltip` + `@radix-ui/react-dialog`
 - `MemeGrid` lightbox → `@radix-ui/react-dialog`
+- `LegalNoticesDialog` → `@radix-ui/react-dialog` (centré, scrollable, ouvert depuis le footer)
 - Navbar burger → **PAS de Radix** (état React simple, évite conflit Dialog)
 - Tous les Portals utilisent `container={document.getElementById('portal-root')}`
 
@@ -191,9 +202,10 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Faire le footer
 - [x] Corriger l'orthographe du nom dans le footer : "Boucharéchas" (avec accent)
 - [x] Intégrer le lien vers la thèse de Manon : https://theses.hal.science/tel-05578702
+- [x] Ajouter les mentions légales (LegalNoticesDialog) — ouvert depuis le footer, lien GitHub "piirk"
+- [x] Revoir la qualité de SurveySection — redesignée pour s'aligner sur les autres sections (plus de CtaBanner centré)
 - [ ] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
-- [ ] Revoir la qualité de SurveySection (accroche, frictions basses, confiance)
 - [ ] Accessibilité : audit complet (score Lighthouse, contrastes couleurs WCAG AA, focus visible, aria-labels, navigation clavier) — inclut les alt texts des mèmes (`src/data/results.ts`)
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
 
