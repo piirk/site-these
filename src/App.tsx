@@ -31,7 +31,7 @@ export function App() {
         <SurveySection surveyUrl={siteConfig.surveyUrl} />
       </main>
 
-      <Footer surveyUrl={siteConfig.surveyUrl} thesisUrl={siteConfig.thesisUrl} />
+      <Footer surveyUrl={siteConfig.surveyUrl} thesisUrl={siteConfig.thesisUrl} contactEmail={siteConfig.contactEmail} />
     </>
   )
 }

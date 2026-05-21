@@ -1,9 +1,15 @@
+import { useState } from 'react'
+import { LegalNoticesDialog } from './LegalNoticesDialog'
+
 interface FooterProps {
   surveyUrl: string
   thesisUrl: string
+  contactEmail: string
 }
 
-export function Footer({ surveyUrl, thesisUrl }: FooterProps) {
+export function Footer({ surveyUrl, thesisUrl, contactEmail }: FooterProps) {
+  const [legalOpen, setLegalOpen] = useState(false)
+
   return (
     <footer className="site-footer">
       <div className="site-footer__inner section__inner">
@@ -38,10 +44,32 @@ export function Footer({ surveyUrl, thesisUrl }: FooterProps) {
         </div>
 
         <p className="site-footer__credits">
-          © 2026 · Site conçu par piirk
+          {'© 2026 · Site conçu par '}
+          <a
+            href="https://github.com/piirk"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Profil GitHub de piirk"
+            className="site-footer__credits-link"
+          >
+            piirk
+          </a>
+          {' · '}
+          <button
+            className="site-footer__credits-btn"
+            onClick={() => setLegalOpen(true)}
+          >
+            Mentions légales
+          </button>
         </p>
 
       </div>
+
+      <LegalNoticesDialog
+        open={legalOpen}
+        onOpenChange={setLegalOpen}
+        contactEmail={contactEmail}
+      />
     </footer>
   )
 }
