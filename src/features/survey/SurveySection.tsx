@@ -1,5 +1,5 @@
 import { LockSimpleIcon, TimerIcon, EnvelopeSimpleIcon } from '@phosphor-icons/react'
-import { CtaBanner } from './CtaBanner'
+import { Button } from '../../shared/ui/Button'
 import type { SurveyMeta } from '../../types'
 
 interface SurveySectionProps {
@@ -14,21 +14,43 @@ export function SurveySection({ surveyUrl, meta }: SurveySectionProps) {
       aria-labelledby="survey-title"
       className="section survey-section"
     >
-      <CtaBanner
-        titleId="survey-title"
-        eyebrow="Donnez votre avis"
-        title="Votre retour compte pour cette recherche"
-        description={DESCRIPTION}
-        ctaLabel="Répondre au questionnaire · 5 minutes"
-        ctaUrl={surveyUrl}
-        socialProof={
-          meta?.participantCount
-            ? `Déjà ${meta.participantCount} personnes ont partagé leur avis.`
-            : undefined
-        }
-        reassurances={REASSURANCES}
-        variant="highlight"
-      />
+      <div className="section__inner">
+
+        <header className="survey-section__header">
+          <p className="eyebrow" aria-hidden="true">Donnez votre avis</p>
+          <h2 id="survey-title" className="section__title">
+            Votre retour compte pour cette recherche
+          </h2>
+          <p className="survey-section__description">{DESCRIPTION}</p>
+        </header>
+
+        {meta?.participantCount && (
+          <p className="survey-section__social-proof" aria-live="polite">
+            ✓ Déjà {meta.participantCount} personnes ont partagé leur avis.
+          </p>
+        )}
+
+        <div className="survey-section__cta">
+          <Button
+            as="a"
+            href={surveyUrl}
+            target="_blank"
+            label="Répondre au questionnaire · 5 minutes"
+            variant="primary"
+            size="lg"
+          />
+        </div>
+
+        <ul className="survey-section__reassurances" aria-label="Informations pratiques">
+          {REASSURANCES.map(({ icon, text }) => (
+            <li key={text} className="survey-section__reassurance-item">
+              <span aria-hidden="true">{icon}</span>
+              <span>{text}</span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
     </section>
   )
 }
