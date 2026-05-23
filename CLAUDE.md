@@ -50,13 +50,14 @@ src/
 │   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
 │   │                   TwineBlock (inactif — Twine pas encore existant)
 │   ├── survey/         SurveySection + CtaBanner (inactif — conservé pour usage futur)
-│   └── layout/         Navbar + Footer + LegalNoticesDialog
+│   └── layout/         Navbar + Footer + LegalNoticesDialog + CookieConsentBanner
 ├── shared/
 │   ├── components/     TermTooltip
 │   └── ui/             Button
 ├── hooks/
 │   ├── useScrollSpy.ts
-│   └── useIsTouchDevice.ts
+│   ├── useIsTouchDevice.ts
+│   └── useCookieConsent.ts
 ├── data/
 │   ├── config.ts       siteConfig (surveyUrl, thesisUrl, contactEmail)
 │   └── results.ts      memes[]
@@ -76,7 +77,8 @@ src/
     ├── people.scss
     ├── results.scss
     ├── survey.scss         .survey-section, .cta-banner (inactif)
-    └── footer.scss         .site-footer, .legal-notices-dialog
+    ├── footer.scss         .site-footer, .legal-notices-dialog
+    └── cookie-consent.scss .cookie-banner (bannière RGPD)
 ```
 
 ---
@@ -131,6 +133,16 @@ src/
 />
 ```
 
+### `CookieConsentBanner` (`features/layout/CookieConsentBanner.tsx`)
+```tsx
+// Bannière RGPD/CNIL fixe en bas de page — pas de Radix, HTML natif
+// Montée uniquement si consent === 'unset' (localStorage key: 'cookie-consent')
+// Focus auto sur "Accepter" au montage (accessibilité clavier)
+// Analytics Vercel conditionnés au consentement dans App.tsx
+// Bouton "Cookies" dans le footer pour rouvrir (onResetConsent prop)
+// useCookieConsent hook : { consent, accept, refuse, reset }
+```
+
 ### `LegalNoticesDialog` (`features/layout/LegalNoticesDialog.tsx`)
 ```tsx
 // Radix Dialog centré, ouvert depuis le footer
@@ -163,7 +175,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - `padding-top: var(--navbar-height)` sur `#root`
 - Variables dans `tokens.scss`, jamais en dur dans les composants
 - Ordre des `@use` dans main.scss : `tokens` → `global` → `radix` → `term-tooltip`
-  → `components` → `navbar` → `hero` → `why` → `method` → `people` → `results` → `survey` → `footer`
+  → `components` → `navbar` → `hero` → `why` → `method` → `people` → `results` → `survey` → `footer` → `cookie-consent`
 - BEM nesting : tous les `__éléments` et `--modifiers` sont nestés sous leur bloc parent
   ```scss
   .block {
@@ -205,6 +217,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Ajouter les mentions légales (LegalNoticesDialog) — ouvert depuis le footer, lien GitHub "piirk"
 - [x] Revoir la qualité de SurveySection — redesignée pour s'aligner sur les autres sections (plus de CtaBanner centré)
 - [x] Installer et implémenter les analytics Vercel
+- [x] Implémenter la gestion de consentement cookies (RGPD/CNIL) — `useCookieConsent`, `CookieConsentBanner`, analytics conditionnés
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
 - [ ] Accessibilité : audit complet (score Lighthouse, contrastes couleurs WCAG AA, focus visible, aria-labels, navigation clavier) — inclut les alt texts des mèmes (`src/data/results.ts`)
 - [ ] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt

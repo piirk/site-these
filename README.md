@@ -32,7 +32,7 @@ npm run dev
 src/
 ├── features/       # Page sections (hero, why, people, method, results, survey, layout)
 ├── shared/         # Shared components (Button, TermTooltip)
-├── hooks/          # useScrollSpy, useTheme, useIsTouchDevice
+├── hooks/          # useScrollSpy, useTheme, useIsTouchDevice, useCookieConsent
 ├── data/           # siteConfig, memes
 ├── types/          # Shared TypeScript types
 └── styles/         # Global SCSS organized by tokens, components and features

@@ -5,9 +5,10 @@ interface FooterProps {
   surveyUrl: string
   thesisUrl: string
   contactEmail: string
+  onResetConsent: () => void
 }
 
-export function Footer({ surveyUrl, thesisUrl, contactEmail }: FooterProps) {
+export function Footer({ surveyUrl, thesisUrl, contactEmail, onResetConsent }: FooterProps) {
   const [legalOpen, setLegalOpen] = useState(false)
 
   return (
@@ -60,6 +61,13 @@ export function Footer({ surveyUrl, thesisUrl, contactEmail }: FooterProps) {
             onClick={() => setLegalOpen(true)}
           >
             Mentions légales
+          </button>
+          {' · '}
+          <button
+            className="site-footer__credits-btn"
+            onClick={onResetConsent}
+          >
+            Cookies
           </button>
         </p>
 
