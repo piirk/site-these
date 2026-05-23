@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# Défocales-UPE2A
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A science communication website presenting doctoral research on the work of UPE2A teachers
+(pedagogical units for newly arrived allophone students in France).
 
-Currently, two official plugins are available:
+Designed to make a linguistics thesis accessible to a general audience, and to collect
+responses to a research survey.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+→ [defocales-upe2a.com](https://defocales-upe2a.com)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+- React 19 + TypeScript
+- Vite
+- SCSS (partials, BEM architecture)
+- Radix UI (Tooltip, Dialog)
+- Phosphor Icons
+- Vercel (hosting + Analytics + Speed Insights)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Local development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── features/       # Page sections (hero, why, people, method, results, survey, layout)
+├── shared/         # Shared components (Button, TermTooltip)
+├── hooks/          # useScrollSpy, useTheme, useIsTouchDevice
+├── data/           # siteConfig, memes
+├── types/          # Shared TypeScript types
+└── styles/         # Global SCSS organized by tokens, components and features
+```
+
+## Deployment
+
+The site deploys automatically to Vercel on every push to `main`.
+
+---
+
+## Licenses
+
+This repository is published under **two separate licenses** depending on the nature of the content.
+
+### Source code — MIT License
+
+Copyright (c) 2026 Baptiste Boucharéchas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+### Editorial content — CC BY-NC-ND 4.0
+
+The texts, images, and editorial content of this site are the property of
+Manon Boucharéchas and are published under the
+[Creative Commons Attribution – NonCommercial – NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
+
+You are free to share this content provided you: credit the author,
+do not use it for commercial purposes, and do not modify it.
