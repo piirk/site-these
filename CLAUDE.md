@@ -204,9 +204,10 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Intégrer le lien vers la thèse de Manon : https://theses.hal.science/tel-05578702
 - [x] Ajouter les mentions légales (LegalNoticesDialog) — ouvert depuis le footer, lien GitHub "piirk"
 - [x] Revoir la qualité de SurveySection — redesignée pour s'aligner sur les autres sections (plus de CtaBanner centré)
-- [ ] Installer et implémenter les analytics Vercel
+- [x] Installer et implémenter les analytics Vercel
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
 - [ ] Accessibilité : audit complet (score Lighthouse, contrastes couleurs WCAG AA, focus visible, aria-labels, navigation clavier) — inclut les alt texts des mèmes (`src/data/results.ts`)
+- [ ] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
 
 **Éventuellement, si décidé :**
