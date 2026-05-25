@@ -35,6 +35,7 @@ export interface MethodKeyword {
 }
 
 export interface SiteConfig {
+  siteUrl: string
   surveyUrl: string
   thesisUrl: string
   contactEmail: string
