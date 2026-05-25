@@ -220,7 +220,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Implémenter la gestion de consentement cookies (RGPD/CNIL) — `useCookieConsent`, `CookieConsentBanner`, analytics conditionnés
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
 - [ ] Accessibilité : audit complet (score Lighthouse, contrastes couleurs WCAG AA, focus visible, aria-labels, navigation clavier) — inclut les alt texts des mèmes (`src/data/results.ts`)
-- [ ] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt
+- [x] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
 
 **Éventuellement, si décidé :**
