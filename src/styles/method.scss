@@ -102,7 +102,7 @@
     flex-direction: column;
     gap: 0.75rem;
 
-    p {
+    p:not(.method-step__body-emphasis) {
       font-family: var(--font-body);
       font-size: 1rem;
       color: var(--color-text-secondary);
@@ -127,6 +127,7 @@
       text-decoration-color: var(--color-accent);
       text-underline-offset: 5px;
       text-decoration-thickness: 2px;
+      margin: 0;
     }
   }
 }
