@@ -8,7 +8,8 @@
   --color-text-secondary:   #5c5550;
   --color-text-muted:       #777069;
 
-  --color-accent:           #ae4d24;   // terre cuite — CTA principal
+  --color-accent:           #ae4d24;   // terre cuite — texte, eyebrows, liens
+  --color-accent-btn:       #ae4d24;   // fond bouton primaire
   --color-accent-hover:     #a84820;
   --color-on-accent:        #ffffff;
 
@@ -26,15 +27,16 @@
 
 @mixin dark-tokens {
   --color-bg:               #1a1816;
-  --color-surface:          #242220;
+  --color-surface:          #1d1c1b;
   --color-surface-emphasis: #2d2a27;
   --color-border:           #3d3834;
 
   --color-text:             #f0ebe4;
   --color-text-secondary:   #b0a9a2;
-  --color-text-muted:       #7a7470;
+  --color-text-muted:       #898380;
 
-  --color-accent:           #d96b3a;
+  --color-accent:           #d96b3a;   // texte, eyebrows, liens
+  --color-accent-btn:       #c15425;   // fond bouton primaire
   --color-accent-hover:     #e07848;
   --color-on-accent:        #ffffff;
 

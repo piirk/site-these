@@ -50,8 +50,9 @@
   &__thesis {
     border-left: 3px solid var(--color-accent);
     padding: 1.25rem 1.5rem;
-    background: var(--color-surface-emphasis);
+    background: var(--color-bg);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    box-shadow: var(--shadow-card);
   }
 
   &__thesis-label {
