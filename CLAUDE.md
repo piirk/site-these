@@ -219,7 +219,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Installer et implémenter les analytics Vercel
 - [x] Implémenter la gestion de consentement cookies (RGPD/CNIL) — `useCookieConsent`, `CookieConsentBanner`, analytics conditionnés
 - [ ] Activer TwineBlock quand le parcours Twine sera créé
-- [ ] Accessibilité : audit complet (score Lighthouse, contrastes couleurs WCAG AA, focus visible, aria-labels, navigation clavier) — inclut les alt texts des mèmes (`src/data/results.ts`)
+- [x] Accessibilité : audit complet (focus trap, aria, list semantics, contrastes WCAG AA light+dark, prefers-reduced-motion) — alt texts des mèmes encore génériques, à préciser avec Manon
 - [x] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
 
