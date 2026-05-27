@@ -44,14 +44,31 @@ export function Navbar({ surveyUrl }: NavbarProps) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Ferme sur Escape + gère le focus trap minimal
+  // Focus trap + Escape quand le menu est ouvert
   useEffect(() => {
-    if (!mobileOpen) return
+    if (!mobileOpen || !drawerRef.current) return
+
+    const drawer = drawerRef.current
+    const focusables = Array.from(
+      drawer.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex="0"]')
+    )
+    focusables[0]?.focus()
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setMobileOpen(false)
         burgerRef.current?.focus()
+        return
+      }
+      if (e.key !== 'Tab' || focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
       }
     }
 
@@ -59,9 +76,16 @@ export function Navbar({ surveyUrl }: NavbarProps) {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [mobileOpen])
 
-  // Bloque le scroll body quand le menu est ouvert
+  // Bloque le scroll body + rend le drawer inerte (non-tabulable) quand fermé
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    if (drawerRef.current) {
+      if (mobileOpen) {
+        drawerRef.current.removeAttribute('inert')
+      } else {
+        drawerRef.current.setAttribute('inert', '')
+      }
+    }
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 

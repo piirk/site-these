@@ -30,7 +30,7 @@ export function App() {
         <MethodSection />
         <ResultsSection
           bookPdfUrl="/assets/livret-soutenance.pdf"
-          bookCoverUrl="/assets/livret-cover.jpg"
+          bookCoverUrl="/assets/livret-cover.webp"
           memes={memes}
           thesisUrl={siteConfig.thesisUrl}
         />

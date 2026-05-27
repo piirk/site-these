@@ -14,7 +14,7 @@
 
   &:hover,
   &:focus-visible {
-    background: #daeaf7;
+    background: var(--color-keyword-bg-hover);
     outline: none;
   }
 }

@@ -36,7 +36,7 @@ function TermDesktopTooltip({ term, definition }: TermTooltipProps) {
           <span
             className="term-trigger"
             tabIndex={0}
-            role="note"
+            role="button"
             aria-label={`${term} : ${definition}`}
           >
             {term}
