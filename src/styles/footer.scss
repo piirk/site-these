@@ -1,5 +1,5 @@
 .site-footer {
-  background: var(--color-surface-emphasis);
+  background: var(--color-bg);
   padding: clamp(3.5rem, 7vw, 5.5rem) var(--content-padding-x) 2.5rem;
 
   &__inner {
@@ -68,7 +68,6 @@
     font-family: var(--font-ui);
     font-size: 0.75rem;
     color: var(--color-text-muted);
-    opacity: 0.6;
     margin: 0;
     max-width: none;
   }

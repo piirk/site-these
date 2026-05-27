@@ -1,3 +1,29 @@
+@mixin light-tokens {
+  --color-bg:               #faf9f7;   // blanc chaud — fond de page
+  --color-surface:          #ffffff;   // cartes, panneaux
+  --color-surface-emphasis: #f2ede6;   // sections mises en avant (survey)
+  --color-border:           #e2ddd6;
+
+  --color-text:             #1a1816;
+  --color-text-secondary:   #5c5550;
+  --color-text-muted:       #777069;
+
+  --color-accent:           #ae4d24;   // terre cuite — CTA principal
+  --color-accent-hover:     #a84820;
+  --color-on-accent:        #ffffff;
+
+  --color-success:          #2e7d4f;   // preuve sociale, validation
+  --color-keyword:          #2a5c8a;   // termes académiques
+  --color-keyword-bg:       #eef4fa;
+  --color-keyword-bg-hover: #daeaf7;
+
+  --navbar-bg:              rgba(250, 249, 247, 0.92);
+  --navbar-border:          rgba(226, 221, 214, 0.8);
+
+  --shadow-tooltip: 0 4px 16px rgba(0, 0, 0, .12), 0 1px 4px rgba(0, 0, 0, .08);
+  --shadow-card:    0 2px 8px rgba(0, 0, 0, .06);
+}
+
 @mixin dark-tokens {
   --color-bg:               #1a1816;
   --color-surface:          #242220;
@@ -25,32 +51,13 @@
 }
 
 :root {
-  // ── Couleurs ───────────────────────────────────────────────────────────────
-
-  --color-bg:               #faf9f7;   // blanc chaud — fond de page
-  --color-surface:          #ffffff;   // cartes, panneaux
-  --color-surface-emphasis: #f2ede6;   // sections mises en avant (survey)
-  --color-border:           #e2ddd6;
-
-  --color-text:             #1a1816;
-  --color-text-secondary:   #5c5550;
-  --color-text-muted:       #8c857d;
-
-  --color-accent:           #c85a2a;   // terre cuite — CTA principal
-  --color-accent-hover:     #a84820;
-  --color-on-accent:        #ffffff;
-
-  --color-success:          #2e7d4f;   // preuve sociale, validation
-  --color-keyword:          #2a5c8a;   // termes académiques
-  --color-keyword-bg:       #eef4fa;
-  --color-keyword-bg-hover: #daeaf7;
+  @include light-tokens;
 
   // ── Navbar ─────────────────────────────────────────────────────────────────
 
   --navbar-height:          60px;
-  --navbar-bg:              rgba(250, 249, 247, 0.92); // --color-bg + transparence
-  --navbar-border:          rgba(226, 221, 214, 0.8);
   --navbar-blur:            12px;
+  --shadow-navbar:          0 1px 0 var(--navbar-border);
 
   // ── Typographie ────────────────────────────────────────────────────────────
 
@@ -70,12 +77,6 @@
   --radius-md: 8px;
   --radius-lg: 16px;
 
-  // ── Ombres ─────────────────────────────────────────────────────────────────
-
-  --shadow-tooltip: 0 4px 16px rgba(0, 0, 0, .12), 0 1px 4px rgba(0, 0, 0, .08);
-  --shadow-card:    0 2px 8px rgba(0, 0, 0, .06);
-  --shadow-navbar:  0 1px 0 var(--navbar-border);
-
   // ── Transitions ────────────────────────────────────────────────────────────
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -88,29 +89,4 @@
 }
 
 html[data-theme="dark"]  { @include dark-tokens; }
-
-html[data-theme="light"] {
-  --color-bg:               #faf9f7;
-  --color-surface:          #ffffff;
-  --color-surface-emphasis: #f2ede6;
-  --color-border:           #e2ddd6;
-
-  --color-text:             #1a1816;
-  --color-text-secondary:   #5c5550;
-  --color-text-muted:       #8c857d;
-
-  --color-accent:           #c85a2a;
-  --color-accent-hover:     #a84820;
-  --color-on-accent:        #ffffff;
-
-  --color-success:          #2e7d4f;
-  --color-keyword:          #2a5c8a;
-  --color-keyword-bg:       #eef4fa;
-  --color-keyword-bg-hover: #daeaf7;
-
-  --navbar-bg:              rgba(250, 249, 247, 0.92);
-  --navbar-border:          rgba(226, 221, 214, 0.8);
-
-  --shadow-tooltip: 0 4px 16px rgba(0, 0, 0, .12), 0 1px 4px rgba(0, 0, 0, .08);
-  --shadow-card:    0 2px 8px rgba(0, 0, 0, .06);
-}
+html[data-theme="light"] { @include light-tokens; }
