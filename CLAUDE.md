@@ -222,7 +222,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Accessibilité : audit complet (focus trap, aria, list semantics, contrastes WCAG AA light+dark, prefers-reduced-motion) — alt texts des mèmes encore génériques, à préciser avec Manon
 - [x] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
-- [ ] Refaire la og:image — la palette a changé depuis la version Canva (`--color-accent` est désormais `#ae4d24` light / `#d96b3a` dark, tons plus foncés)
+- [ ] Refaire la og:image — palette changée (`--color-accent` : `#ae4d24` light / `#d96b3a` dark) + doit être lisible en petit (Google Search affiche la vignette en ~40px) + tester le rendu en ratio 1:1 (certains contextes rognent le 1200×630 en carré centré)
 
 **Éventuellement, si décidé :**
 - Ajouter une section "À venir" (lien vers corpus)
