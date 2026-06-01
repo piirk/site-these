@@ -195,7 +195,7 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - Beaucoup d'air et de respiration entre les éléments
 - Forte hiérarchie typographique (eyebrow → titre → intro → corps)
 - Eyebrow pattern : `font-ui`, 0.8rem, uppercase, letter-spacing, border-left accent
-- Palette : blanc chaud (`#faf9f7`), terre cuite accent (`#c85a2a`),
+- Palette : blanc chaud (`#faf9f7`), terre cuite accent (`#ae4d24` light / `#d96b3a` dark),
   serif pour les titres (Playfair Display), serif pour le corps (Source Serif 4),
   sans-serif pour l'UI (DM Sans)
 - Transitions : `--duration-fast: 150ms`, `--duration-normal: 220ms`
@@ -222,9 +222,9 @@ dans `index.html` passé comme `container` à chaque `Dialog.Portal`.
 - [x] Accessibilité : audit complet (focus trap, aria, list semantics, contrastes WCAG AA light+dark, prefers-reduced-motion) — alt texts des mèmes encore génériques, à préciser avec Manon
 - [x] SEO : balises meta (title, description, og:image, og:url…), sitemap, robots.txt
 - [x] Passer sur tous les fichiers et retirer les commentaires superflus (description du WHAT)
-- [ ] Refaire la og:image — palette changée (`--color-accent` : `#ae4d24` light / `#d96b3a` dark) + doit être lisible en petit (Google Search affiche la vignette en ~40px) + tester le rendu en ratio 1:1 (certains contextes rognent le 1200×630 en carré centré)
+- [x] Refaire la og:image — palette changée (`--color-accent` : `#ae4d24` light / `#d96b3a` dark) + doit être lisible en petit (Google Search affiche la vignette en ~40px) + tester le rendu en ratio 1:1 (certains contextes rognent le 1200×630 en carré centré)
 
 **Éventuellement, si décidé :**
 - Ajouter une section "À venir" (lien vers corpus)
 - Ajouter des liens vers les publications scientifiques s'appuyant sur la recherche
-- Harmoniser et réduire les tokens couleurs dans `tokens.scss` (trop de tokens proches, simplifier la palette)
+- [x] Harmoniser et réduire les tokens couleurs dans `tokens.scss` — renommage `--color-btn-primary-bg`, suppression `--color-finding-index`
