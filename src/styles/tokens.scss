@@ -3,14 +3,14 @@
   --color-surface:          #ffffff;   // cartes, panneaux
   --color-surface-emphasis: #f2ede6;   // sections mises en avant (survey)
   --color-border:           #e2ddd6;
-  --color-finding-index:    #A3927B;
+
 
   --color-text:             #1a1816;
   --color-text-secondary:   #5c5550;
   --color-text-muted:       #777069;
 
   --color-accent:           #ae4d24;   // terre cuite — texte, eyebrows, liens
-  --color-accent-btn:       #ae4d24;   // fond bouton primaire
+  --color-btn-primary-bg:   #ae4d24;   // fond bouton primaire (≠ accent en dark)
   --color-accent-hover:     #a84820;
   --color-on-accent:        #ffffff;
 
@@ -31,14 +31,14 @@
   --color-surface:          #1d1c1b;
   --color-surface-emphasis: #2d2a27;
   --color-border:           #3d3834;
-  --color-finding-index:    #6E665E;
+
 
   --color-text:             #f0ebe4;
   --color-text-secondary:   #b0a9a2;
   --color-text-muted:       #898380;
 
   --color-accent:           #d96b3a;   // texte, eyebrows, liens
-  --color-accent-btn:       #c15425;   // fond bouton primaire
+  --color-btn-primary-bg:   #c15425;   // fond bouton primaire (≠ accent en dark)
   --color-accent-hover:     #e07848;
   --color-on-accent:        #ffffff;
 

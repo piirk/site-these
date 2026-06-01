@@ -16,7 +16,7 @@
   &:active { transform: translateY(0); }
 
   &--primary {
-    background: var(--color-accent-btn);
+    background: var(--color-btn-primary-bg);
     color: var(--color-on-accent);
     &:hover { background: var(--color-accent-hover); opacity: 1; }
   }
