@@ -20,6 +20,7 @@ allophones nouvellement arrivés en France).
 
 - React + TypeScript
 - Vite
+- react-router-dom (BrowserRouter — uniquement pour la route `/` et le catch-all `*` 404)
 - SCSS (modules partiels avec `@use`)
 - Radix UI (uniquement pour les interactions utiles)
 - Phosphor Icons (`@phosphor-icons/react`) — icônes dans PeopleSection, SurveySection, LegalNoticesDialog
@@ -50,7 +51,7 @@ src/
 │   ├── results/        ResultsSection + FormatBlock + BookViewer + MemeGrid
 │   │                   TwineBlock (inactif — Twine pas encore existant)
 │   ├── survey/         SurveySection + CtaBanner (inactif — conservé pour usage futur)
-│   └── layout/         Navbar + Footer + LegalNoticesDialog + CookieConsentBanner
+│   └── layout/         Navbar + Footer + LegalNoticesDialog + CookieConsentBanner + NotFoundPage
 ├── shared/
 │   ├── components/     TermTooltip
 │   └── ui/             Button
@@ -78,7 +79,8 @@ src/
     ├── results.scss
     ├── survey.scss         .survey-section, .cta-banner (inactif)
     ├── footer.scss         .site-footer, .legal-notices-dialog
-    └── cookie-consent.scss .cookie-banner (bannière RGPD)
+    ├── cookie-consent.scss .cookie-banner (bannière RGPD)
+    └── not-found.scss      .not-found (page 404 standalone)
 ```
 
 ---

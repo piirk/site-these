@@ -25,6 +25,7 @@ typographic hierarchy, and progressive disclosure of content.
 |---|---|
 | Framework | React 19 + TypeScript |
 | Build | Vite |
+| Routing | react-router-dom (single page + 404) |
 | Styling | SCSS (custom architecture, BEM) |
 | UI primitives | Radix UI (Tooltip, Dialog) |
 | Icons | Phosphor Icons |
@@ -36,7 +37,7 @@ typographic hierarchy, and progressive disclosure of content.
 ## Architecture
 
 Feature-based structure: each section of the page owns its components, styles, and logic.
-No global state management. No routing.
+No global state management. Minimal routing: `/` for the main page, `*` catch-all for the 404.
 
 ```
 src/
@@ -47,7 +48,7 @@ src/
 │   ├── method/
 │   ├── results/
 │   ├── survey/
-│   └── layout/         Navbar, Footer, dialogs, cookie consent
+│   └── layout/         Navbar, Footer, dialogs, cookie consent, NotFoundPage
 ├── shared/             Button, TermTooltip
 ├── hooks/              useScrollSpy, useTheme, useIsTouchDevice, useCookieConsent
 ├── data/               siteConfig, content arrays
@@ -79,6 +80,17 @@ to avoid the `aria-hidden` conflict that occurs when portals are direct children
 
 **Scroll-spy.** Active section is tracked via `IntersectionObserver` and reflected in the
 navbar, implemented in a custom `useScrollSpy` hook.
+
+**WCAG AA contrast in dark mode.** The primary button background (`--color-btn-primary-bg`) is
+a separate token from `--color-accent`. In dark mode, the accent color lightens to remain readable
+as text on a dark surface — but that same lighter value fails contrast when used as a button
+background with white text. Decoupling the two tokens lets each fulfill its contrast requirement
+independently.
+
+**404 page.** Intentionally standalone — no navbar or footer. All navigation links are in-page
+anchors (`#why`, `#results`, etc.) that carry no meaning outside the homepage context, so
+reusing the navbar would add chrome without utility. The site name is kept as a centered anchor
+to orient the user without redundant navigation.
 
 ---
 
@@ -129,7 +141,8 @@ npm run preview    # preview the build locally
 
 ## Deployment
 
-Automatic deployment to Vercel on every push to `main`.
+Automatic deployment to Vercel on every push to `main`. A `vercel.json` rewrite rule
+serves `index.html` for all paths, delegating route resolution to react-router-dom client-side.
 
 ---
 
