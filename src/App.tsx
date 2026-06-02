@@ -1,9 +1,11 @@
+import { Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 
 import { Navbar } from './features/layout/Navbar'
 import { Footer } from './features/layout/Footer'
 import { CookieConsentBanner } from './features/layout/CookieConsentBanner'
+import { NotFoundPage } from './features/layout/NotFoundPage'
 import { SurveySection } from './features/survey/SurveySection'
 import { HeroSection }   from './features/hero/HeroSection'
 import { WhySection }    from './features/why/WhySection'
@@ -20,30 +22,33 @@ export function App() {
 
   return (
     <>
-      {/* outside <main> — position: fixed */}
-      <Navbar surveyUrl={siteConfig.surveyUrl} />
-
-      <main>
-        <HeroSection />
-        <WhySection />
-        <PeopleSection />
-        <MethodSection />
-        <ResultsSection
-          bookPdfUrl="/assets/livret-soutenance.pdf"
-          bookCoverUrl="/assets/livret-cover.webp"
-          memes={memes}
-          thesisUrl={siteConfig.thesisUrl}
-        />
-
-        <SurveySection surveyUrl={siteConfig.surveyUrl} />
-      </main>
-
-      <Footer
-        surveyUrl={siteConfig.surveyUrl}
-        thesisUrl={siteConfig.thesisUrl}
-        contactEmail={siteConfig.contactEmail}
-        onResetConsent={reset}
-      />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Navbar surveyUrl={siteConfig.surveyUrl} />
+            <main>
+              <HeroSection />
+              <WhySection />
+              <PeopleSection />
+              <MethodSection />
+              <ResultsSection
+                bookPdfUrl="/assets/livret-soutenance.pdf"
+                bookCoverUrl="/assets/livret-cover.webp"
+                memes={memes}
+                thesisUrl={siteConfig.thesisUrl}
+              />
+              <SurveySection surveyUrl={siteConfig.surveyUrl} />
+            </main>
+            <Footer
+              surveyUrl={siteConfig.surveyUrl}
+              thesisUrl={siteConfig.thesisUrl}
+              contactEmail={siteConfig.contactEmail}
+              onResetConsent={reset}
+            />
+          </>
+        } />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
 
       {consent === 'unset' && (
         <CookieConsentBanner onAccept={accept} onRefuse={refuse} />

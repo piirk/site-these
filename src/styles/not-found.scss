@@ -1,0 +1,50 @@
+.not-found {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(-1 * var(--navbar-height)); // annule le padding-top de #root
+  min-height: 100vh;
+  padding: var(--section-padding-y) var(--content-padding-x);
+  text-align: center;
+
+  &__brand {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover { opacity: 0.7; }
+  }
+
+  &__code {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 18vw, 9rem);
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  &__body {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 38ch;
+    margin-bottom: 2rem;
+  }
+}
